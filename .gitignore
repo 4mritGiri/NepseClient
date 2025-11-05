@@ -1,0 +1,7 @@
+.github
+.venv
+.env
+__pycache__
+
+projectstructure
+
