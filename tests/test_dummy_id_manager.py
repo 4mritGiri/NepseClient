@@ -1,0 +1,3 @@
+# tests/test_dummy_id_manager.py
+"""Tests for the Dummy id manager class."""
+# ... rest of the file ...

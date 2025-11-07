@@ -1,0 +1,153 @@
+# EditorConfig is awesome: https://EditorConfig.org
+# EditorConfig helps maintain consistent coding styles across
+# different editors and IDEs for multiple developers
+
+# Top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+# Python files
+[*.py]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+# PEP 8 compliance
+
+# Python stub files
+[*.pyi]
+indent_style = space
+indent_size = 4
+
+# YAML files
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+max_line_length = 150
+
+# JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+max_line_length = 0
+
+# TOML files (pyproject.toml, etc.)
+[*.toml]
+indent_style = space
+indent_size = 4
+
+# INI files
+[*.{ini,cfg}]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = false
+max_line_length = 150
+
+# reStructuredText files
+[*.rst]
+indent_style = space
+indent_size = 3
+max_line_length = 150
+
+# Makefile (must use tabs)
+[Makefile]
+indent_style = tab
+indent_size = 4
+
+# Shell scripts
+[*.{sh,bash,zsh}]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+
+# Batch files (Windows)
+[*.{bat,cmd}]
+indent_style = space
+indent_size = 2
+end_of_line = crlf
+
+# PowerShell scripts
+[*.ps1]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+
+# HTML files
+[*.{html,htm}]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# CSS files
+[*.css]
+indent_style = space
+indent_size = 2
+
+# JavaScript/TypeScript files
+[*.{js,jsx,ts,tsx}]
+indent_style = space
+indent_size = 2
+max_line_length = 100
+
+# XML files
+[*.xml]
+indent_style = space
+indent_size = 2
+
+# SVG files
+[*.svg]
+indent_style = space
+indent_size = 2
+insert_final_newline = false
+
+# Docker files
+[Dockerfile*]
+indent_style = space
+indent_size = 2
+
+# Git files
+[.git*]
+indent_style = space
+indent_size = 2
+
+# CI/CD configuration
+[*.{yml,yaml}]
+# GitHub Actions, GitLab CI, etc.
+indent_style = space
+indent_size = 2
+
+# Requirements files
+[requirements*.txt]
+indent_style = space
+indent_size = 4
+
+# License files
+[LICENSE*]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+
+# Changelog
+[CHANGELOG*]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+# README files
+[README*]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = false
+max_line_length = 80

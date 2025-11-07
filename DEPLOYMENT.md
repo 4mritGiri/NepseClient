@@ -6,8 +6,8 @@ This guide covers how to build, test, and publish the nepse-client package to Py
 
 1. **Python 3.8+** installed
 2. **Git** for version control
-3. **PyPI account** (https://pypi.org/account/register/)
-4. **TestPyPI account** (https://test.pypi.org/account/register/) for testing
+3. **PyPI account** (<https://pypi.org/account/register/>)
+4. **TestPyPI account** (<https://test.pypi.org/account/register/>) for testing
 
 ## 🛠️ Setup
 
@@ -38,14 +38,16 @@ password = pypi-your-testpypi-api-token-here
 ```
 
 **Security Note**: Use API tokens instead of passwords. Generate tokens at:
-- PyPI: https://pypi.org/manage/account/token/
-- TestPyPI: https://test.pypi.org/manage/account/token/
+
+- PyPI: <https://pypi.org/manage/account/token/>
+- TestPyPI: <https://test.pypi.org/manage/account/token/>
 
 ## 🔍 Pre-Deployment Checklist
 
 ### 1. Update Version Number
 
 Update version in:
+
 - `setup.py`
 - `pyproject.toml`
 - `nepse_client/__init__.py`
@@ -56,7 +58,7 @@ Update version in:
 __version__ = "1.0.0"
 ```
 
-### 2. Update Documentation
+### 2. Update pre-deployment Documentation
 
 - [ ] Update README.md with new features
 - [ ] Update CHANGELOG.md with changes
@@ -202,16 +204,17 @@ rm -rf verify-env
 
 ### 1. Create GitHub Release
 
-1. Go to https://github.com/yourusername/nepse-client/releases
+1. Go to <https://github.com/yourusername/nepse-client/releases>
 2. Click "Draft a new release"
 3. Select the tag you created
 4. Add release notes from CHANGELOG.md
 5. Attach distribution files (optional)
 6. Publish release
 
-### 2. Update Documentation
+### 2. Update post-deployment Documentation
 
 If using Read the Docs:
+
 - Trigger documentation build
 - Verify docs are updated
 
@@ -239,20 +242,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install build twine
-      
+
       - name: Build package
         run: python -m build
-      
+
       - name: Publish to PyPI
         env:
           TWINE_USERNAME: __token__

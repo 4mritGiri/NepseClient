@@ -1,0 +1,3 @@
+# tests/test_async_client.py
+"""Tests for the AsyncNepse client class."""
+# ... rest of the file ...

@@ -1,0 +1,10 @@
+# PEP 561 marker file
+# This file indicates that the nepse_client package contains type hints
+# and should be recognized by type checkers like mypy, pyright, etc.
+#
+# The presence of this file (even if empty) tells type checkers that:
+# 1. The package supports type checking
+# 2. Inline type hints are available
+# 3. Type stubs are distributed with the package
+#
+# For more information, see: https://www.python.org/dev/peps/pep-0561/

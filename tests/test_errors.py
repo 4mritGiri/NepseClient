@@ -1,0 +1,3 @@
+# tests/test_errors.py
+"""Tests for the Errors/exceptions class."""
+# ... rest of the file ...

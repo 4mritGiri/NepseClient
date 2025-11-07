@@ -1,7 +1,30 @@
-.github
-.venv
+
+**/__pycache__/**
+
+
+**/.pytest_cache/**
+
+**/.idea/**
+**/.vscode/**
+*.swp
+*.env
+*.log
+*.pyc
+*.pyo
+*.pyd
+*.venv
 .env
+
+.pypirc
+
 __pycache__
 
 projectstructure
 
+docs/source/_*
+
+/build
+
+/*.egg-info/
+
+dist/

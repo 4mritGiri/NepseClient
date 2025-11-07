@@ -1,3 +1,6 @@
+# Project structure tree view
+
+```sh
 nepse-client/
 │
 ├── nepse_client/                      # Main package directory
@@ -70,3 +73,4 @@ nepse-client/
 ├── CODE_OF_CONDUCT.md                 # Code of conduct
 ├── DEPLOYMENT.md                      # Deployment guide
 └── PROJECT_STRUCTURE.md               # This file
+```

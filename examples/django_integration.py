@@ -1,0 +1,3 @@
+# examples/django_integration.py
+"""Django integration example for NEPSE Client."""
+# ... rest of the file ...

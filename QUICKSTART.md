@@ -47,14 +47,14 @@ from nepse_client import AsyncNepse
 async def main():
     # Create async client
     client = AsyncNepse()
-    
+
     # Get multiple data concurrently
     status, gainers, summary = await asyncio.gather(
         client.getMarketStatus(),
         client.getTopGainers(),
         client.getSummary()
     )
-    
+
     print(f"Market: {status['isOpen']}")
     print(f"Top Gainer: {gainers[0]['symbol']}")
     print(f"Turnover: {summary['totalTurnover']}")
@@ -143,11 +143,11 @@ client = Nepse()
 try:
     details = client.getCompanyDetails("NABIL")
     print(details)
-    
+
 except NepseTokenExpired:
     # Token expired - client will auto-refresh
     print("Token expired, retrying...")
-    
+
 except NepseError as e:
     # Handle any NEPSE error
     print(f"Error: {e}")
@@ -188,22 +188,22 @@ client = Nepse()
 def calculate_portfolio(portfolio):
     """
     Calculate portfolio value.
-    
+
     Args:
         portfolio: Dict of {symbol: quantity}
-    
+
     Returns:
         Total value in NPR
     """
     client = Nepse()
     total = 0
-    
+
     for symbol, quantity in portfolio.items():
         details = client.getCompanyDetails(symbol)
         price = float(details['lastTradedPrice'])
         total += price * quantity
         print(f"{symbol}: {quantity} @ {price} = {price * quantity}")
-    
+
     return total
 
 # Example usage
@@ -226,13 +226,13 @@ from nepse_client import AsyncNepse
 async def fetch_multiple_symbols(symbols):
     """Fetch details for multiple symbols concurrently."""
     client = AsyncNepse()
-    
+
     # Create tasks for all symbols
     tasks = [client.getCompanyDetails(symbol) for symbol in symbols]
-    
+
     # Fetch all concurrently
     results = await asyncio.gather(*tasks, return_exceptions=True)
-    
+
     # Process results
     for symbol, result in zip(symbols, results):
         if isinstance(result, Exception):
@@ -263,7 +263,7 @@ with Nepse() as client:
 def test_market_status():
     client = Nepse()
     status = client.getMarketStatus()
-    
+
     assert 'isOpen' in status
     assert 'asOf' in status
     print("✓ Test passed!")
@@ -324,9 +324,9 @@ except NepseRateLimitError as e:
 
 ## 📞 Getting Help
 
-- **Issues**: https://github.com/yourusername/nepse-client/issues
-- **Discussions**: https://github.com/yourusername/nepse-client/discussions
-- **Email**: your.email@example.com
+- **Issues**: <https://github.com/yourusername/nepse-client/issues>
+- **Discussions**: <https://github.com/yourusername/nepse-client/discussions>
+- **Email**: <your.email@example.com>
 
 ## ⭐ Show Your Support
 
@@ -334,4 +334,4 @@ If you find this library helpful, please give it a star on GitHub!
 
 ---
 
-**Ready to build something awesome? Start coding! 🚀**
+### Ready to build something awesome? Start coding! 🚀

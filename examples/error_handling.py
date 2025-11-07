@@ -1,0 +1,3 @@
+# examples/error_handling.py
+"""Error handling examples for NEPSE Client."""
+# ... rest of the file ...
