@@ -29,7 +29,7 @@ dev_requirements = [
 
 setup(
     name="nepse-client",
-    version="1.0.0",
+    version="0.1.1",
     author="Amrit Giri",
     author_email="amritgiri.dev@gmail.com",
     description="A comprehensive Python client for Nepal Stock Exchange (NEPSE) API",

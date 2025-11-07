@@ -44,7 +44,7 @@ from .exceptions import (
 from .sync_client import NepseClient
 
 
-__version__ = "1.0.0"
+__version__ = "0.1.1"
 __author__ = "Amrit Giri"
 __email__ = "amritgiri.dev@gmail.com"
 __license__ = "MIT"
