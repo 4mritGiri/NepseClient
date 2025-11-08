@@ -334,22 +334,12 @@ jobs:
 
       - name: Send Discord Notification
         uses: Ilshidur/action-discord@0.3.2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          embeds: |
-            [
-              {
-                "title": "📚 Docs CI — ${{ github.repository }}",
-                "description": "${{ steps.msg.outputs.result }}",
-                "color": ${{ steps.msg.outputs.color }},
-                "fields": [
-                  { "name": "Branch", "value": "${{ github.ref_name }}", "inline": true },
-                  { "name": "Commit", "value": "[${{ github.sha }}](${{ github.event.head_commit.url }})", "inline": true },
-                  { "name": "Triggered by", "value": "${{ github.actor }}", "inline": true }
-                ],
-                "footer": {
-                  "text": "GitHub Actions Docs Pipeline"
-                },
-                "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-              }
-            ]
+          args: |
+            📌 **CI Build Result**
+            🧾 Repo: ${{ github.repository }}
+            👤 Trigger: ${{ github.actor }}
+            ✅ Status: ${{ job.status }}
+            🔗 Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
