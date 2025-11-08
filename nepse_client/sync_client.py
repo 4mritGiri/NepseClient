@@ -120,7 +120,11 @@ class NepseClient(_NepseBase):
         for attempt in range(max_retries):
             try:
                 return request_func(*args, **kwargs)
-            except (httpx.RemoteProtocolError, httpx.ReadError, httpx.ConnectError) as e:
+            except (
+                httpx.RemoteProtocolError,
+                httpx.ReadError,
+                httpx.ConnectError,
+            ) as e:
                 if attempt == max_retries - 1:
                     self.logger.error(f"Request failed after {max_retries} attempts: {e}")
                     raise NepseNetworkError(

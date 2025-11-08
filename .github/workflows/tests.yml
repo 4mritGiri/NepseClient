@@ -21,8 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -35,20 +34,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install black isort flake8 flake8-docstrings flake8-bugbear
 
-      - name: Check code formatting with Black
+      - name: Check Black formatting
         run: black --check --diff nepse_client tests examples
 
-      - name: Check import sorting with isort
+      - name: Check import sorting
         run: isort --check-only --diff nepse_client tests examples
 
       - name: Lint with flake8
-        shell: bash
-        run: |
-          flake8 nepse_client tests examples \
-            --count \
-            --statistics \
-            --max-line-length=100 \
-            --extend-ignore=E203,W503
+        run: flake8 nepse_client tests examples \
+              --count \
+              --statistics \
+              --max-line-length=100 \
+              --extend-ignore=E203,W503
 
   # ============================================================
   # Type Checking
