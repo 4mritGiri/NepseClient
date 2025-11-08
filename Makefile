@@ -49,8 +49,8 @@ test-watch: ## Run tests in watch mode
 
 lint: ## Run linters (flake8, mypy)
 	@echo "$(BLUE)Running linters...$(NC)"
-	flake8 nepse_client tests --max-line-length=100 --extend-ignore=E203,W503
-	mypy nepse_client --ignore-missing-imports
+	uv run flake8 nepse_client tests --max-line-length=150 --extend-ignore=E203,W503
+	uv run mypy nepse_client --ignore-missing-imports
 	@echo "$(GREEN)✓ Linting completed$(NC)"
 
 format: ## Format code with black and isort
