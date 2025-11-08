@@ -42,6 +42,7 @@ jobs:
         run: isort --check-only --diff nepse_client tests examples
 
       - name: Lint with flake8
+        shell: bash
         run: |
           flake8 nepse_client tests examples \
             --count \
@@ -134,6 +135,7 @@ jobs:
           pip install pytest pytest-cov
 
       - name: Run tests with pytest
+        shell: bash
         run: |
           pytest tests/ \
             -v \
@@ -141,6 +143,7 @@ jobs:
             --cov-report=xml \
             --cov-report=term-missing \
             --tb=short
+
 
       - name: Upload coverage to Codecov
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
