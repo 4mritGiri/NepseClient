@@ -1,0 +1,1239 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog &mdash; NEPSE Client v0.1.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://nepse-client.readthedocs.io/changelog.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=a58bc63e"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=35a8b989"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing Guide" href="contributing.html" />
+    <link rel="prev" title="Important Disclaimers" href="disclaimer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #0078d7" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            NEPSE Client
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#supported-platforms">Supported Platforms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-methods">Installation Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#from-pypi-recommended">From PyPI (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#using-uv-fast">Using uv (Fast)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#using-poetry">Using poetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#using-pipenv">Using pipenv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#from-source">From Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#development-installation">Development Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#optional-dependencies">Optional Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#upgrading">Upgrading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#uninstallation">Uninstallation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#virtual-environments">Virtual Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#using-venv">Using venv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#using-conda">Using conda</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#import-error">Import Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#ssl-certificate-error">SSL Certificate Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#permission-denied">Permission Denied</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#version-conflicts">Version Conflicts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verifying-installation">Verifying Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#next-steps">Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#support">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#synchronous-client">Synchronous Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#asynchronous-client">Asynchronous Client</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#common-operations">Common Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#market-information">Market Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#company-data">Company Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#trading-data">Trading Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#top-performers">Top Performers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#error-handling">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#context-managers">Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#custom-timeout">Custom Timeout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#tls-verification">TLS Verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#custom-logging">Custom Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#complete-example">Complete Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#next-steps">Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#tips-and-best-practices">Tips and Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#import-error">Import Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#connection-errors">Connection Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#rate-limiting">Rate Limiting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#getting-help">Getting Help</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/basic_usage.html">Basic Usage Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/basic_usage.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="examples/basic_usage.html#simple-market-data">Simple Market Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/async_usage.html">Asynchronous Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/async_usage.html#basic-async-example">Basic Async Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/advanced_examples.html">Advanced Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/advanced_examples.html#portfolio-calculator">Portfolio Calculator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/index.html#example-categories">Example Categories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/index.html#asynchronous-usage">Asynchronous Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/index.html#advanced-examples">Advanced Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/index.html#quick-examples">Quick Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/index.html#get-market-status">Get Market Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/index.html#get-top-gainers">Get Top Gainers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/index.html#async-concurrent-requests">Async Concurrent Requests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/index.html#example-projects">Example Projects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/index.html#github-repository">GitHub Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/index.html#running-examples">Running Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/index.html#community-examples">Community Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/index.html#contributing-examples">Contributing Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/index.html#need-help">Need Help?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/basic_usage.html">Basic Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/basic_usage.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/basic_usage.html#simple-market-data">Simple Market Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/async_usage.html">Asynchronous Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/async_usage.html#basic-async-example">Basic Async Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/advanced_examples.html">Advanced Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/advanced_examples.html#portfolio-calculator">Portfolio Calculator</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/modules.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html">nepse_client Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient"><code class="docutils literal notranslate"><span class="pre">NepseClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseError"><code class="docutils literal notranslate"><span class="pre">NepseError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClientError"><code class="docutils literal notranslate"><span class="pre">NepseClientError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseServerError"><code class="docutils literal notranslate"><span class="pre">NepseServerError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseAuthenticationError"><code class="docutils literal notranslate"><span class="pre">NepseAuthenticationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseNetworkError"><code class="docutils literal notranslate"><span class="pre">NepseNetworkError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseValidationError"><code class="docutils literal notranslate"><span class="pre">NepseValidationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseBadGatewayError"><code class="docutils literal notranslate"><span class="pre">NepseBadGatewayError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseRateLimitError"><code class="docutils literal notranslate"><span class="pre">NepseRateLimitError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseDataNotFoundError"><code class="docutils literal notranslate"><span class="pre">NepseDataNotFoundError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseTimeoutError"><code class="docutils literal notranslate"><span class="pre">NepseTimeoutError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseConnectionError"><code class="docutils literal notranslate"><span class="pre">NepseConnectionError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseConfigurationError"><code class="docutils literal notranslate"><span class="pre">NepseConfigurationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#main-classes">Main Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#package-metadata">Package Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html">Client Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#module-nepse_client.client">Base Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepseclient-synchronous">NepseClient (Synchronous)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#asyncnepseclient-asynchronous">AsyncNepseClient (Asynchronous)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#module-nepse_client.token_manager">Token Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#module-nepse_client.dummy_id_manager">Dummy ID Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#performance-considerations">Performance Considerations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#best-practices">Best Practices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html">Exception Handling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseError"><code class="docutils literal notranslate"><span class="pre">NepseError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseClientError"><code class="docutils literal notranslate"><span class="pre">NepseClientError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseAuthenticationError"><code class="docutils literal notranslate"><span class="pre">NepseAuthenticationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseBadGatewayError"><code class="docutils literal notranslate"><span class="pre">NepseBadGatewayError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseServerError"><code class="docutils literal notranslate"><span class="pre">NepseServerError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseNetworkError"><code class="docutils literal notranslate"><span class="pre">NepseNetworkError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseValidationError"><code class="docutils literal notranslate"><span class="pre">NepseValidationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseRateLimitError"><code class="docutils literal notranslate"><span class="pre">NepseRateLimitError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseDataNotFoundError"><code class="docutils literal notranslate"><span class="pre">NepseDataNotFoundError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseTimeoutError"><code class="docutils literal notranslate"><span class="pre">NepseTimeoutError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseConnectionError"><code class="docutils literal notranslate"><span class="pre">NepseConnectionError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseConfigurationError"><code class="docutils literal notranslate"><span class="pre">NepseConfigurationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.get_exception_for_status"><code class="docutils literal notranslate"><span class="pre">get_exception_for_status()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#exception-hierarchy">Exception Hierarchy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#base-exception">Base Exception</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#client-errors">Client Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#authentication-errors">Authentication Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#server-errors">Server Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#network-errors">Network Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#rate-limiting">Rate Limiting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#data-errors">Data Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#configuration-errors">Configuration Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#error-handling-best-practices">Error Handling Best Practices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/utils.html">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#helper-functions">Helper Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#token-parser">Token Parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#data-type-conversions">Data Type Conversions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#type-annotations">Type Annotations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#configuration-loading">Configuration Loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#logging-utilities">Logging Utilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#response-processing">Response Processing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#caching-mechanisms">Caching Mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#progress-tracking">Progress Tracking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#pagination-helpers">Pagination Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#testing-utilities">Testing Utilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/utils.html#constants">Constants</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/modules.html#main-modules">Main Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/modules.html#nepse-client">nepse_client</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/nepse_client.NepseClient.html">nepse_client.NepseClient</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/nepse_client.AsyncNepseClient.html">nepse_client.AsyncNepseClient</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/modules.html#client-modules">Client Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/nepse_client.client.html">nepse_client.client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/nepse_client.sync_client.html">nepse_client.sync_client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/nepse_client.async_client.html">nepse_client.async_client</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/modules.html#support-modules">Support Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/nepse_client.token_manager.html">nepse_client.token_manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/nepse_client.dummy_id_manager.html">nepse_client.dummy_id_manager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/modules.html#exception-handling">Exception Handling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/generated/nepse_client.exceptions.html">nepse_client.exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/modules.html#package-information">Package Information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/modules.html#version-information">Version Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/modules.html#available-exports">Available Exports</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/modules.html#usage-examples">Usage Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/modules.html#basic-import">Basic Import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/modules.html#id1">Exception Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/modules.html#type-hints">Type Hints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/modules.html#module-index">Module Index</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/nepse_client.html">nepse_client Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient"><code class="docutils literal notranslate"><span class="pre">NepseClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.__enter__"><code class="docutils literal notranslate"><span class="pre">NepseClient.__enter__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.__exit__"><code class="docutils literal notranslate"><span class="pre">NepseClient.__exit__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.__init__"><code class="docutils literal notranslate"><span class="pre">NepseClient.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.close"><code class="docutils literal notranslate"><span class="pre">NepseClient.close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getAuthorizationHeaders"><code class="docutils literal notranslate"><span class="pre">NepseClient.getAuthorizationHeaders()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getCompanyAGM"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyAGM()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getCompanyDetails"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyDetails()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getCompanyDividend"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyDividend()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getCompanyFinancialDetails"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyFinancialDetails()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getCompanyIDKeyMap"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyIDKeyMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getCompanyList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getCompanyMarketDepth"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyMarketDepth()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getCompanyPriceVolumeHistory"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyPriceVolumeHistory()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getDailyScripPriceGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyScripPriceGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getDebentureAndBondList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDebentureAndBondList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getFloorSheet"><code class="docutils literal notranslate"><span class="pre">NepseClient.getFloorSheet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getFloorSheetOf"><code class="docutils literal notranslate"><span class="pre">NepseClient.getFloorSheetOf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getHolidayList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getHolidayList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getPOSTPayloadID"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPOSTPayloadID()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getPOSTPayloadIDForFloorSheet"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPOSTPayloadIDForFloorSheet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getPOSTPayloadIDForScrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPOSTPayloadIDForScrips()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getPriceVolumeHistory"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPriceVolumeHistory()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getSectorScrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSectorScrips()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getSecurityIDKeyMap"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSecurityIDKeyMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getSecurityList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSecurityList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.getSymbolMarketDepth"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSymbolMarketDepth()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.init_client"><code class="docutils literal notranslate"><span class="pre">NepseClient.init_client()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.requestGETAPI"><code class="docutils literal notranslate"><span class="pre">NepseClient.requestGETAPI()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClient.requestPOSTAPI"><code class="docutils literal notranslate"><span class="pre">NepseClient.requestPOSTAPI()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.__aenter__"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.__aenter__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.__aexit__"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.__aexit__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.__init__"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.close"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getAuthorizationHeaders"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getAuthorizationHeaders()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getCompanyDetails"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getCompanyDetails()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getCompanyIDKeyMap"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getCompanyIDKeyMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getCompanyList"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getCompanyList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getCompanyPriceVolumeHistory"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getCompanyPriceVolumeHistory()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getDailyScripPriceGraph"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getDailyScripPriceGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getFloorSheet"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getFloorSheet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getFloorSheetOf"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getFloorSheetOf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getLiveMarket"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getLiveMarket()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getMarketStatus"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getMarketStatus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getNepseIndex"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getNepseIndex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getNepseSubIndices"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getNepseSubIndices()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getPOSTPayloadID"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getPOSTPayloadID()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getPOSTPayloadIDForFloorSheet"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getPOSTPayloadIDForFloorSheet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getPOSTPayloadIDForScrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getPOSTPayloadIDForScrips()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getPriceVolume"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getPriceVolume()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getSectorScrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSectorScrips()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getSecurityIDKeyMap"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSecurityIDKeyMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getSecurityList"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSecurityList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getSummary"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSummary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getSupplyDemand"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSupplyDemand()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getSymbolMarketDepth"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSymbolMarketDepth()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getTopGainers"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTopGainers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getTopLosers"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTopLosers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getTopTenTradeScrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTopTenTradeScrips()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getTopTenTransactionScrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTopTenTransactionScrips()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getTopTenTurnoverScrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTopTenTurnoverScrips()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.getTradingAverage"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTradingAverage()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.init_client"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.init_client()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.requestGETAPI"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.requestGETAPI()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.AsyncNepseClient.requestPOSTAPI"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.requestPOSTAPI()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseError"><code class="docutils literal notranslate"><span class="pre">NepseError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseError.message"><code class="docutils literal notranslate"><span class="pre">NepseError.message</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseError.status_code"><code class="docutils literal notranslate"><span class="pre">NepseError.status_code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseError.response_data"><code class="docutils literal notranslate"><span class="pre">NepseError.response_data</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseError.request_data"><code class="docutils literal notranslate"><span class="pre">NepseError.request_data</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseError.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseError.__repr__"><code class="docutils literal notranslate"><span class="pre">NepseError.__repr__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseError.__str__"><code class="docutils literal notranslate"><span class="pre">NepseError.__str__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseError.to_dict"><code class="docutils literal notranslate"><span class="pre">NepseError.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClientError"><code class="docutils literal notranslate"><span class="pre">NepseClientError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseClientError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseClientError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseServerError"><code class="docutils literal notranslate"><span class="pre">NepseServerError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseServerError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseServerError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseAuthenticationError"><code class="docutils literal notranslate"><span class="pre">NepseAuthenticationError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseAuthenticationError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseAuthenticationError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseNetworkError"><code class="docutils literal notranslate"><span class="pre">NepseNetworkError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseNetworkError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseNetworkError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseValidationError"><code class="docutils literal notranslate"><span class="pre">NepseValidationError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseValidationError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseValidationError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseBadGatewayError"><code class="docutils literal notranslate"><span class="pre">NepseBadGatewayError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseBadGatewayError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseBadGatewayError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseRateLimitError"><code class="docutils literal notranslate"><span class="pre">NepseRateLimitError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseRateLimitError.retry_after"><code class="docutils literal notranslate"><span class="pre">NepseRateLimitError.retry_after</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseRateLimitError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseRateLimitError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseDataNotFoundError"><code class="docutils literal notranslate"><span class="pre">NepseDataNotFoundError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseDataNotFoundError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseDataNotFoundError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseTimeoutError"><code class="docutils literal notranslate"><span class="pre">NepseTimeoutError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseTimeoutError.timeout"><code class="docutils literal notranslate"><span class="pre">NepseTimeoutError.timeout</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseTimeoutError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseTimeoutError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseConnectionError"><code class="docutils literal notranslate"><span class="pre">NepseConnectionError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseConnectionError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseConnectionError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseConfigurationError"><code class="docutils literal notranslate"><span class="pre">NepseConfigurationError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepse_client.NepseConfigurationError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseConfigurationError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#main-classes">Main Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#nepseclient">NepseClient</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#id0"><code class="docutils literal notranslate"><span class="pre">NepseClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#asyncnepseclient">AsyncNepseClient</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#id30"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#package-metadata">Package Metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#version">Version</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.__version__"><code class="docutils literal notranslate"><span class="pre">__version__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#author">Author</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.__author__"><code class="docutils literal notranslate"><span class="pre">__author__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/nepse_client.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#module-nepse_client.client">client</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.client.mask_sensitive_data"><code class="docutils literal notranslate"><span class="pre">mask_sensitive_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.client.safe_serialize"><code class="docutils literal notranslate"><span class="pre">safe_serialize()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#module-nepse_client.sync_client">sync_client</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.sync_client.NepseClient"><code class="docutils literal notranslate"><span class="pre">NepseClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#module-nepse_client.async_client">async_client</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.async_client.AsyncNepseClient"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#module-nepse_client.token_manager">token_manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.token_manager.TokenManager"><code class="docutils literal notranslate"><span class="pre">TokenManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.token_manager.AsyncTokenManager"><code class="docutils literal notranslate"><span class="pre">AsyncTokenManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.token_manager.TokenParser"><code class="docutils literal notranslate"><span class="pre">TokenParser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#module-nepse_client.dummy_id_manager">dummy_id_manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.dummy_id_manager.DummyIDManager"><code class="docutils literal notranslate"><span class="pre">DummyIDManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.dummy_id_manager.AsyncDummyIDManager"><code class="docutils literal notranslate"><span class="pre">AsyncDummyIDManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/nepse_client.html#module-nepse_client.exceptions">exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseError"><code class="docutils literal notranslate"><span class="pre">NepseError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseClientError"><code class="docutils literal notranslate"><span class="pre">NepseClientError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseAuthenticationError"><code class="docutils literal notranslate"><span class="pre">NepseAuthenticationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseBadGatewayError"><code class="docutils literal notranslate"><span class="pre">NepseBadGatewayError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseServerError"><code class="docutils literal notranslate"><span class="pre">NepseServerError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseNetworkError"><code class="docutils literal notranslate"><span class="pre">NepseNetworkError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseValidationError"><code class="docutils literal notranslate"><span class="pre">NepseValidationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseRateLimitError"><code class="docutils literal notranslate"><span class="pre">NepseRateLimitError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseDataNotFoundError"><code class="docutils literal notranslate"><span class="pre">NepseDataNotFoundError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseTimeoutError"><code class="docutils literal notranslate"><span class="pre">NepseTimeoutError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseConnectionError"><code class="docutils literal notranslate"><span class="pre">NepseConnectionError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.NepseConfigurationError"><code class="docutils literal notranslate"><span class="pre">NepseConfigurationError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/nepse_client.html#nepse_client.exceptions.get_exception_for_status"><code class="docutils literal notranslate"><span class="pre">get_exception_for_status()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/client.html">Client Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/client.html#module-nepse_client.client">Base Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#nepse_client.client.mask_sensitive_data"><code class="docutils literal notranslate"><span class="pre">mask_sensitive_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#nepse_client.client.safe_serialize"><code class="docutils literal notranslate"><span class="pre">safe_serialize()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/client.html#nepseclient-synchronous">NepseClient (Synchronous)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient"><code class="docutils literal notranslate"><span class="pre">NepseClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.__init__"><code class="docutils literal notranslate"><span class="pre">NepseClient.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.init_client"><code class="docutils literal notranslate"><span class="pre">NepseClient.init_client()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.__enter__"><code class="docutils literal notranslate"><span class="pre">NepseClient.__enter__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.__exit__"><code class="docutils literal notranslate"><span class="pre">NepseClient.__exit__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.close"><code class="docutils literal notranslate"><span class="pre">NepseClient.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.requestGETAPI"><code class="docutils literal notranslate"><span class="pre">NepseClient.requestGETAPI()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.requestPOSTAPI"><code class="docutils literal notranslate"><span class="pre">NepseClient.requestPOSTAPI()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getAuthorizationHeaders"><code class="docutils literal notranslate"><span class="pre">NepseClient.getAuthorizationHeaders()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getPOSTPayloadIDForScrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPOSTPayloadIDForScrips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getPOSTPayloadID"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPOSTPayloadID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getPOSTPayloadIDForFloorSheet"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPOSTPayloadIDForFloorSheet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getCompanyList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getSecurityList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSecurityList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getCompanyIDKeyMap"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyIDKeyMap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getSecurityIDKeyMap"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSecurityIDKeyMap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getSectorScrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSectorScrips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getCompanyDetails"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyDetails()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getCompanyFinancialDetails"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyFinancialDetails()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getCompanyAGM"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyAGM()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getCompanyDividend"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyDividend()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getCompanyMarketDepth"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyMarketDepth()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getCompanyPriceVolumeHistory"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyPriceVolumeHistory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getDailyScripPriceGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyScripPriceGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getFloorSheet"><code class="docutils literal notranslate"><span class="pre">NepseClient.getFloorSheet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getFloorSheetOf"><code class="docutils literal notranslate"><span class="pre">NepseClient.getFloorSheetOf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getSymbolMarketDepth"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSymbolMarketDepth()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getHolidayList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getHolidayList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getDebentureAndBondList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDebentureAndBondList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getPriceVolumeHistory"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPriceVolumeHistory()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#market-data-methods">Market Data Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getMarketStatus"><code class="docutils literal notranslate"><span class="pre">NepseClient.getMarketStatus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getSummary"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSummary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getNepseIndex"><code class="docutils literal notranslate"><span class="pre">NepseClient.getNepseIndex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getNepseSubIndices"><code class="docutils literal notranslate"><span class="pre">NepseClient.getNepseSubIndices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getLiveMarket"><code class="docutils literal notranslate"><span class="pre">NepseClient.getLiveMarket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getPriceVolume"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPriceVolume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getSupplyDemand"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSupplyDemand()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#company-information-methods">Company Information Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id0"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id1"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSecurityList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id2"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyDetails()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id3"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyPriceVolumeHistory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id4"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyScripPriceGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id5"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyFinancialDetails()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id6"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyAGM()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id7"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyDividend()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#trading-data-methods">Trading Data Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id8"><code class="docutils literal notranslate"><span class="pre">NepseClient.getFloorSheet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id9"><code class="docutils literal notranslate"><span class="pre">NepseClient.getFloorSheetOf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id10"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSymbolMarketDepth()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getTradingAverage"><code class="docutils literal notranslate"><span class="pre">NepseClient.getTradingAverage()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#top-performers-methods">Top Performers Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getTopGainers"><code class="docutils literal notranslate"><span class="pre">NepseClient.getTopGainers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getTopLosers"><code class="docutils literal notranslate"><span class="pre">NepseClient.getTopLosers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getTopTenTradeScrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.getTopTenTradeScrips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getTopTenTransactionScrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.getTopTenTransactionScrips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.getTopTenTurnoverScrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.getTopTenTurnoverScrips()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#utility-methods">Utility Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id11"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyIDKeyMap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id12"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSecurityIDKeyMap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id13"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSectorScrips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.sync_client.NepseClient.setTLSVerification"><code class="docutils literal notranslate"><span class="pre">NepseClient.setTLSVerification()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/client.html#asyncnepseclient-asynchronous">AsyncNepseClient (Asynchronous)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.__init__"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.init_client"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.init_client()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.__aenter__"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.__aenter__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.__aexit__"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.__aexit__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.close"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.requestGETAPI"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.requestGETAPI()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.requestPOSTAPI"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.requestPOSTAPI()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getAuthorizationHeaders"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getAuthorizationHeaders()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getPOSTPayloadIDForScrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getPOSTPayloadIDForScrips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getPOSTPayloadID"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getPOSTPayloadID()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getPOSTPayloadIDForFloorSheet"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getPOSTPayloadIDForFloorSheet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getMarketStatus"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getMarketStatus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getPriceVolume"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getPriceVolume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getSummary"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSummary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getTopGainers"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTopGainers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getTopLosers"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTopLosers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getTopTenTradeScrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTopTenTradeScrips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getTopTenTransactionScrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTopTenTransactionScrips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getTopTenTurnoverScrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTopTenTurnoverScrips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getSupplyDemand"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSupplyDemand()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getNepseIndex"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getNepseIndex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getNepseSubIndices"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getNepseSubIndices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getLiveMarket"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getLiveMarket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getTradingAverage"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getTradingAverage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getCompanyList"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getCompanyList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getSecurityList"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSecurityList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getCompanyIDKeyMap"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getCompanyIDKeyMap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getSecurityIDKeyMap"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSecurityIDKeyMap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getSectorScrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSectorScrips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getCompanyDetails"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getCompanyDetails()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getCompanyPriceVolumeHistory"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getCompanyPriceVolumeHistory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getDailyScripPriceGraph"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getDailyScripPriceGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getFloorSheet"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getFloorSheet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getFloorSheetOf"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getFloorSheetOf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.async_client.AsyncNepseClient.getSymbolMarketDepth"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.getSymbolMarketDepth()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/client.html#module-nepse_client.token_manager">Token Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#nepse_client.token_manager.TokenManager"><code class="docutils literal notranslate"><span class="pre">TokenManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.token_manager.TokenManager.__init__"><code class="docutils literal notranslate"><span class="pre">TokenManager.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.token_manager.TokenManager.getAccessToken"><code class="docutils literal notranslate"><span class="pre">TokenManager.getAccessToken()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.token_manager.TokenManager.getRefreshToken"><code class="docutils literal notranslate"><span class="pre">TokenManager.getRefreshToken()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.token_manager.TokenManager.update"><code class="docutils literal notranslate"><span class="pre">TokenManager.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#nepse_client.token_manager.AsyncTokenManager"><code class="docutils literal notranslate"><span class="pre">AsyncTokenManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.token_manager.AsyncTokenManager.__init__"><code class="docutils literal notranslate"><span class="pre">AsyncTokenManager.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.token_manager.AsyncTokenManager.getAccessToken"><code class="docutils literal notranslate"><span class="pre">AsyncTokenManager.getAccessToken()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.token_manager.AsyncTokenManager.getRefreshToken"><code class="docutils literal notranslate"><span class="pre">AsyncTokenManager.getRefreshToken()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.token_manager.AsyncTokenManager.update"><code class="docutils literal notranslate"><span class="pre">AsyncTokenManager.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#nepse_client.token_manager.TokenParser"><code class="docutils literal notranslate"><span class="pre">TokenParser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.token_manager.TokenParser.__init__"><code class="docutils literal notranslate"><span class="pre">TokenParser.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.token_manager.TokenParser.parse_token_response"><code class="docutils literal notranslate"><span class="pre">TokenParser.parse_token_response()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#tokenmanager-synchronous">TokenManager (Synchronous)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id14"><code class="docutils literal notranslate"><span class="pre">TokenManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#asynctokenmanager-asynchronous">AsyncTokenManager (Asynchronous)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id19"><code class="docutils literal notranslate"><span class="pre">AsyncTokenManager</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/client.html#module-nepse_client.dummy_id_manager">Dummy ID Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#nepse_client.dummy_id_manager.DummyIDManager"><code class="docutils literal notranslate"><span class="pre">DummyIDManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.dummy_id_manager.DummyIDManager.__init__"><code class="docutils literal notranslate"><span class="pre">DummyIDManager.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.dummy_id_manager.DummyIDManager.populateData"><code class="docutils literal notranslate"><span class="pre">DummyIDManager.populateData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.dummy_id_manager.DummyIDManager.getDummyID"><code class="docutils literal notranslate"><span class="pre">DummyIDManager.getDummyID()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#nepse_client.dummy_id_manager.AsyncDummyIDManager"><code class="docutils literal notranslate"><span class="pre">AsyncDummyIDManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.dummy_id_manager.AsyncDummyIDManager.__init__"><code class="docutils literal notranslate"><span class="pre">AsyncDummyIDManager.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.dummy_id_manager.AsyncDummyIDManager.populateData"><code class="docutils literal notranslate"><span class="pre">AsyncDummyIDManager.populateData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#nepse_client.dummy_id_manager.AsyncDummyIDManager.getDummyID"><code class="docutils literal notranslate"><span class="pre">AsyncDummyIDManager.getDummyID()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#dummyidmanager-synchronous">DummyIDManager (Synchronous)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id24"><code class="docutils literal notranslate"><span class="pre">DummyIDManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#asyncdummyidmanager-asynchronous">AsyncDummyIDManager (Asynchronous)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/client.html#id28"><code class="docutils literal notranslate"><span class="pre">AsyncDummyIDManager</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/client.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/client.html#performance-considerations">Performance Considerations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#synchronous-vs-asynchronous">Synchronous vs Asynchronous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/client.html#caching">Caching</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/client.html#best-practices">Best Practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/errors.html">Exception Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseError"><code class="docutils literal notranslate"><span class="pre">NepseError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseError.message"><code class="docutils literal notranslate"><span class="pre">NepseError.message</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseError.status_code"><code class="docutils literal notranslate"><span class="pre">NepseError.status_code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseError.response_data"><code class="docutils literal notranslate"><span class="pre">NepseError.response_data</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseError.request_data"><code class="docutils literal notranslate"><span class="pre">NepseError.request_data</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseError.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseError.__str__"><code class="docutils literal notranslate"><span class="pre">NepseError.__str__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseError.__repr__"><code class="docutils literal notranslate"><span class="pre">NepseError.__repr__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseError.to_dict"><code class="docutils literal notranslate"><span class="pre">NepseError.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseClientError"><code class="docutils literal notranslate"><span class="pre">NepseClientError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseClientError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseClientError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseAuthenticationError"><code class="docutils literal notranslate"><span class="pre">NepseAuthenticationError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseAuthenticationError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseAuthenticationError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseBadGatewayError"><code class="docutils literal notranslate"><span class="pre">NepseBadGatewayError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseBadGatewayError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseBadGatewayError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseServerError"><code class="docutils literal notranslate"><span class="pre">NepseServerError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseServerError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseServerError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseNetworkError"><code class="docutils literal notranslate"><span class="pre">NepseNetworkError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseNetworkError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseNetworkError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseValidationError"><code class="docutils literal notranslate"><span class="pre">NepseValidationError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseValidationError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseValidationError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseRateLimitError"><code class="docutils literal notranslate"><span class="pre">NepseRateLimitError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseRateLimitError.retry_after"><code class="docutils literal notranslate"><span class="pre">NepseRateLimitError.retry_after</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseRateLimitError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseRateLimitError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseDataNotFoundError"><code class="docutils literal notranslate"><span class="pre">NepseDataNotFoundError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseDataNotFoundError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseDataNotFoundError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseTimeoutError"><code class="docutils literal notranslate"><span class="pre">NepseTimeoutError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseTimeoutError.timeout"><code class="docutils literal notranslate"><span class="pre">NepseTimeoutError.timeout</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseTimeoutError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseTimeoutError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseConnectionError"><code class="docutils literal notranslate"><span class="pre">NepseConnectionError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseConnectionError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseConnectionError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseConfigurationError"><code class="docutils literal notranslate"><span class="pre">NepseConfigurationError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.NepseConfigurationError.__init__"><code class="docutils literal notranslate"><span class="pre">NepseConfigurationError.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#nepse_client.exceptions.get_exception_for_status"><code class="docutils literal notranslate"><span class="pre">get_exception_for_status()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#exception-hierarchy">Exception Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#base-exception">Base Exception</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepseerror">NepseError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseError"><code class="docutils literal notranslate"><span class="pre">NepseError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#client-errors">Client Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepseclienterror">NepseClientError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseClientError"><code class="docutils literal notranslate"><span class="pre">NepseClientError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepsevalidationerror">NepseValidationError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseValidationError"><code class="docutils literal notranslate"><span class="pre">NepseValidationError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#authentication-errors">Authentication Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepseauthenticationerror">NepseAuthenticationError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseAuthenticationError"><code class="docutils literal notranslate"><span class="pre">NepseAuthenticationError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#server-errors">Server Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepseservererror">NepseServerError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseServerError"><code class="docutils literal notranslate"><span class="pre">NepseServerError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepsebadgatewayerror">NepseBadGatewayError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseBadGatewayError"><code class="docutils literal notranslate"><span class="pre">NepseBadGatewayError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#network-errors">Network Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepsenetworkerror">NepseNetworkError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseNetworkError"><code class="docutils literal notranslate"><span class="pre">NepseNetworkError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepseconnectionerror">NepseConnectionError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseConnectionError"><code class="docutils literal notranslate"><span class="pre">NepseConnectionError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepsetimeouterror">NepseTimeoutError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseTimeoutError"><code class="docutils literal notranslate"><span class="pre">NepseTimeoutError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#rate-limiting">Rate Limiting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepseratelimiterror">NepseRateLimitError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseRateLimitError"><code class="docutils literal notranslate"><span class="pre">NepseRateLimitError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#data-errors">Data Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepsedatanotfounderror">NepseDataNotFoundError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseDataNotFoundError"><code class="docutils literal notranslate"><span class="pre">NepseDataNotFoundError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#configuration-errors">Configuration Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#nepseconfigurationerror">NepseConfigurationError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/errors.html#nepse_client.NepseConfigurationError"><code class="docutils literal notranslate"><span class="pre">NepseConfigurationError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/errors.html#error-handling-best-practices">Error Handling Best Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#catch-specific-exceptions">Catch Specific Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#retry-logic">Retry Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#logging-errors">Logging Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/errors.html#graceful-degradation">Graceful Degradation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Additional Information</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Important Disclaimers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#unofficial-library">Unofficial Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#financial-disclaimer">Financial Disclaimer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#liability-disclaimer">Liability Disclaimer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#data-accuracy">Data Accuracy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#user-responsibilities">User Responsibilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="disclaimer.html#legal-compliance">Legal Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="disclaimer.html#prohibited-uses">Prohibited Uses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="disclaimer.html#responsible-use">Responsible Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#security-warnings">Security Warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#trademark-notice">Trademark Notice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#no-warranty">No Warranty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#support-contact">Support &amp; Contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#acceptance-of-terms">Acceptance of Terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#final-warning">Final Warning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disclaimer.html#questions">Questions?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#unreleased">[Unreleased]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">[1.0.0] - 2024-01-15</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#added">Added</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#beta">[0.9.0] - 2024-01-10 [BETA]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changed">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#alpha">[0.5.0] - 2024-01-05 [ALPHA]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#migration-guides">Migration Guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#migrating-to-1-0-0-from-0-x">Migrating to 1.0.0 from 0.x</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#deprecation-warnings">Deprecation Warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support-policy">Support Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-process">Release Process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Semantic Versioning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#links">Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#development-workflow">Development Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#making-changes">Making Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-standards">Code Standards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#style-guidelines">Style Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#pull-request-process">Pull Request Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#reporting-issues">Reporting Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#bug-reports">Bug Reports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#feature-requests">Feature Requests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-of-conduct">Code of Conduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#questions">Questions?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#official-nepse-resources">Official NEPSE Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#mit-license">MIT License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#what-this-means">What This Means</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="license.html#you-can">You can:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="license.html#you-must">You must:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="license.html#you-cannot">You cannot:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#responsible-use">Responsible Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#liability-disclaimer">Liability Disclaimer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#data-source-disclaimer">Data Source Disclaimer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#trademark-notice">Trademark Notice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="license.html#httpx">httpx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="license.html#pywasm">pywasm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="license.html#tqdm">tqdm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#security-considerations">Security Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#reporting-issues">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#legal-compliance">Legal Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#updates-and-changes">Updates and Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#contact-information">Contact Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#questions">Questions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#full-license-text">Full License Text</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #0078d7" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NEPSE Client</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Changelog</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/changelog.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h1>
+<p>All notable changes to nepse-client will be documented in this file.</p>
+<p>The format is based on <a class="reference external" href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,
+and this project adheres to <a class="reference external" href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<section id="unreleased">
+<h2>[Unreleased]<a class="headerlink" href="#unreleased" title="Link to this heading"></a></h2>
+<p>Planned features for future releases:</p>
+<ul class="simple">
+<li><p>WebSocket support for real-time data streaming</p></li>
+<li><p>Advanced caching layer with TTL support</p></li>
+<li><p>CLI tool for command-line queries</p></li>
+<li><p>Data export utilities (CSV, Excel, JSON)</p></li>
+<li><p>Django/Flask integration packages</p></li>
+<li><p>Interactive Jupyter notebook examples</p></li>
+<li><p>Prometheus metrics export</p></li>
+<li><p>Request rate limiting with automatic backoff</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>[1.0.0] - 2024-01-15<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>Initial release of nepse-client with complete NEPSE API coverage.</p>
+<section id="added">
+<h3>Added<a class="headerlink" href="#added" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Core Functionality</strong></p>
+<ul>
+<li><p>Synchronous client (NepseClient) for blocking operations</p></li>
+<li><p>Asynchronous client (AsyncNepseClient) for concurrent operations</p></li>
+<li><p>Automatic token management with refresh logic</p></li>
+<li><p>Dummy ID management for POST request payloads</p></li>
+</ul>
+</li>
+<li><p><strong>API Coverage</strong></p>
+<ul>
+<li><p>Market status and summary endpoints</p></li>
+<li><p>Company information and details</p></li>
+<li><p>Historical price and volume data</p></li>
+<li><p>Floor sheet (trading) data with pagination</p></li>
+<li><p>Market depth data</p></li>
+<li><p>Top performers (gainers, losers, turnover)</p></li>
+<li><p>News and announcements</p></li>
+<li><p>Holiday lists</p></li>
+<li><p>Debenture and bond information</p></li>
+<li><p>NEPSE indices and sub-indices</p></li>
+</ul>
+</li>
+<li><p><strong>Error Handling</strong></p>
+<ul>
+<li><p>Comprehensive exception hierarchy</p></li>
+<li><p>Automatic retry logic with exponential backoff</p></li>
+<li><p>Network error handling</p></li>
+<li><p>Rate limiting detection</p></li>
+<li><p>TLS verification controls</p></li>
+</ul>
+</li>
+<li><p><strong>Developer Experience</strong></p>
+<ul>
+<li><p>Full type hints for all public APIs</p></li>
+<li><p>Context manager support (<code class="docutils literal notranslate"><span class="pre">with</span></code> and <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code>)</p></li>
+<li><p>Progress bars for long-running operations</p></li>
+<li><p>Configurable logging</p></li>
+<li><p>Custom timeout settings</p></li>
+</ul>
+</li>
+<li><p><strong>Documentation</strong></p>
+<ul>
+<li><p>Complete Sphinx documentation</p></li>
+<li><p>API reference with examples</p></li>
+<li><p>Quickstart guide</p></li>
+<li><p>Installation instructions</p></li>
+<li><p>Usage examples (basic, async, advanced)</p></li>
+</ul>
+</li>
+<li><p><strong>Testing</strong></p>
+<ul>
+<li><p>Comprehensive test suite with pytest</p></li>
+<li><p>Unit tests for all modules</p></li>
+<li><p>Integration tests</p></li>
+<li><p>Test coverage &gt;80%</p></li>
+</ul>
+</li>
+<li><p><strong>CI/CD</strong></p>
+<ul>
+<li><p>GitHub Actions workflows for testing</p></li>
+<li><p>Automated PyPI publishing</p></li>
+<li><p>Documentation auto-deployment</p></li>
+<li><p>Pre-commit hooks configuration</p></li>
+</ul>
+</li>
+<li><p><strong>Code Quality</strong></p>
+<ul>
+<li><p>Black code formatting</p></li>
+<li><p>isort import sorting</p></li>
+<li><p>flake8 linting</p></li>
+<li><p>mypy type checking</p></li>
+<li><p>bandit security scanning</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="beta">
+<h2>[0.9.0] - 2024-01-10 [BETA]<a class="headerlink" href="#beta" title="Link to this heading"></a></h2>
+<p>Beta release for testing and feedback.</p>
+<section id="id2">
+<h3>Added<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Basic synchronous client implementation</p></li>
+<li><p>Core API endpoints</p></li>
+<li><p>Token management</p></li>
+<li><p>Basic error handling</p></li>
+<li><p>Initial documentation</p></li>
+</ul>
+</section>
+<section id="changed">
+<h3>Changed<a class="headerlink" href="#changed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Improved API response parsing</p></li>
+<li><p>Enhanced error messages</p></li>
+<li><p>Better logging</p></li>
+</ul>
+</section>
+<section id="fixed">
+<h3>Fixed<a class="headerlink" href="#fixed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Token refresh issues</p></li>
+<li><p>Date parsing errors</p></li>
+<li><p>TLS verification bugs</p></li>
+</ul>
+</section>
+</section>
+<section id="alpha">
+<h2>[0.5.0] - 2024-01-05 [ALPHA]<a class="headerlink" href="#alpha" title="Link to this heading"></a></h2>
+<p>Alpha release for early adopters.</p>
+<section id="id3">
+<h3>Added<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Proof of concept implementation</p></li>
+<li><p>Basic market data endpoints</p></li>
+<li><p>Simple authentication flow</p></li>
+</ul>
+</section>
+<section id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Limited error handling</p></li>
+<li><p>No async support</p></li>
+<li><p>Incomplete documentation</p></li>
+</ul>
+</section>
+</section>
+<section id="migration-guides">
+<h2>Migration Guides<a class="headerlink" href="#migration-guides" title="Link to this heading"></a></h2>
+<section id="migrating-to-1-0-0-from-0-x">
+<h3>Migrating to 1.0.0 from 0.x<a class="headerlink" href="#migrating-to-1-0-0-from-0-x" title="Link to this heading"></a></h3>
+<p>Version 1.0.0 introduces breaking changes. Follow this guide to migrate:</p>
+<p><strong>1. Import Changes</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Old (0.x)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nepse_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">Nepse</span>
+
+<span class="c1"># New (1.0.0)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nepse_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">NepseClient</span>
+</pre></div>
+</div>
+<p><strong>2. Client Initialization</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Old (0.x)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Nepse</span><span class="p">()</span>
+
+<span class="c1"># New (1.0.0)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">NepseClient</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>3. Exception Handling</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Old (0.x)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nepse_client.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">NepseException</span>
+
+<span class="c1"># New (1.0.0)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nepse_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">NepseError</span>
+</pre></div>
+</div>
+<p><strong>4. Async Support</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># New in 1.0.0</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nepse_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsyncNepseClient</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+   <span class="k">async</span> <span class="k">with</span> <span class="n">AsyncNepseClient</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">getMarketStatus</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="deprecation-warnings">
+<h2>Deprecation Warnings<a class="headerlink" href="#deprecation-warnings" title="Link to this heading"></a></h2>
+<p>The following features are deprecated and will be removed in future versions:</p>
+<p>None currently.</p>
+</section>
+<section id="version-history">
+<h2>Version History<a class="headerlink" href="#version-history" title="Link to this heading"></a></h2>
+</section>
+<section id="support-policy">
+<h2>Support Policy<a class="headerlink" href="#support-policy" title="Link to this heading"></a></h2>
+<p><strong>Stable Releases</strong> (1.x.x)</p>
+<ul class="simple">
+<li><p>Security updates: 2 years</p></li>
+<li><p>Bug fixes: 1 year</p></li>
+<li><p>Feature updates: 6 months</p></li>
+</ul>
+<p><strong>Beta Releases</strong> (0.9.x)</p>
+<ul class="simple">
+<li><p>Limited support</p></li>
+<li><p>Migration path provided</p></li>
+</ul>
+<p><strong>Alpha Releases</strong> (0.x.x)</p>
+<ul class="simple">
+<li><p>No support guarantee</p></li>
+<li><p>Breaking changes expected</p></li>
+</ul>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h2>
+<p>We welcome contributions! Please see our <a class="reference external" href="https://github.com/4mritgiri/NepseClient/blob/master/CONTRIBUTING.md">Contributing Guide</a> for details.</p>
+<p>To report bugs or suggest features:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/4mritgiri/NepseClient/issues">GitHub Issues</a></p></li>
+<li><p><a class="reference external" href="https://github.com/4mritgiri/NepseClient/discussions">GitHub Discussions</a></p></li>
+</ul>
+</section>
+<section id="release-process">
+<h2>Release Process<a class="headerlink" href="#release-process" title="Link to this heading"></a></h2>
+<p>Our release process:</p>
+<ol class="arabic simple">
+<li><p><strong>Development</strong> - Features developed in feature branches</p></li>
+<li><p><strong>Testing</strong> - Comprehensive testing on develop branch</p></li>
+<li><p><strong>Beta Release</strong> - Released as 0.9.x for testing</p></li>
+<li><p><strong>Stable Release</strong> - Tagged as 1.x.x after validation</p></li>
+<li><p><strong>Documentation</strong> - Auto-deployed to Read the Docs</p></li>
+<li><p><strong>PyPI</strong> - Auto-published via GitHub Actions</p></li>
+</ol>
+<section id="id4">
+<h3>Semantic Versioning<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>We follow <a class="reference external" href="https://semver.org/">Semantic Versioning</a>:</p>
+<ul class="simple">
+<li><p><strong>MAJOR</strong> (1.x.x) - Breaking changes</p></li>
+<li><p><strong>MINOR</strong> (x.1.x) - New features, backwards compatible</p></li>
+<li><p><strong>PATCH</strong> (x.x.1) - Bug fixes, backwards compatible</p></li>
+</ul>
+</section>
+</section>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/4mritgiri/NepseClient/blob/master/CHANGELOG.md">Full Changelog on GitHub</a></p></li>
+<li><p><a class="reference external" href="https://github.com/4mritgiri/NepseClient/releases">Release Notes</a></p></li>
+<li><p><a class="reference external" href="https://nepse-client.readthedocs.io/en/latest/changelog.html#migration-guides">Migration Guides</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="disclaimer.html" class="btn btn-neutral float-left" title="Important Disclaimers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Amrit Giri.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
