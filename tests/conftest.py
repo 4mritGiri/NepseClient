@@ -6,7 +6,7 @@ This module provides shared fixtures and configuration for all test modules.
 
 import json
 from datetime import datetime
-from unittest.mock import MagicMock, Mock, patch
+from unittest.mock import MagicMock, Mock
 
 import httpx
 import pytest
@@ -235,48 +235,9 @@ def mock_config_files(tmp_path, mock_api_endpoints, mock_dummy_data, mock_header
 
 
 @pytest.fixture
-def sync_client_with_mocks(mock_config_files, monkeypatch):
-    """Create a sync client with mocked configuration."""
-    # Mock the data directory path
-    import nepse_client.client
-    from nepse_client import Nepse
-
-    monkeypatch.setattr(
-        nepse_client.client, "pathlib.Path(__file__).parent", mock_config_files.parent
-    )
-
-    with patch("nepse_client.sync_client.httpx.Client"):
-        client = Nepse()
-        return client
-
-
-@pytest.fixture
-def async_client_with_mocks(mock_config_files, monkeypatch):
-    """Create an async client with mocked configuration."""
-    # Mock the data directory path
-    import nepse_client.client
-    from nepse_client import AsyncNepse
-
-    monkeypatch.setattr(
-        nepse_client.client, "pathlib.Path(__file__).parent", mock_config_files.parent
-    )
-
-    with patch("nepse_client.async_client.httpx.AsyncClient"):
-        client = AsyncNepse()
-        return client
-
-
-@pytest.fixture
 def mock_httpx_client():
     """Create a mock httpx.Client."""
     mock_client = MagicMock(spec=httpx.Client)
-    return mock_client
-
-
-@pytest.fixture
-def mock_httpx_async_client():
-    """Create a mock httpx.AsyncClient."""
-    mock_client = MagicMock(spec=httpx.AsyncClient)
     return mock_client
 
 
@@ -293,35 +254,3 @@ def reset_cache():
     """Reset client cache before each test."""
     yield
     # Cleanup code here if needed
-
-
-# Helper functions
-def create_mock_token_manager(salts=None):
-    """Create a mock token manager."""
-    if salts is None:
-        salts = [100, 200, 300, 400, 500]
-
-    mock_manager = Mock()
-    mock_manager.salts = salts
-    mock_manager.getAccessToken.return_value = "mock_access_token"
-    mock_manager.getRefreshToken.return_value = "mock_refresh_token"
-    mock_manager.isTokenValid.return_value = True
-    mock_manager.update = Mock()
-
-    return mock_manager
-
-
-def create_mock_dummy_id_manager(dummy_id=80):
-    """Create a mock dummy ID manager."""
-    mock_manager = Mock()
-    mock_manager.getDummyID.return_value = dummy_id
-    mock_manager.populateData = Mock()
-
-    return mock_manager
-
-
-# Export helper functions
-__all__ = [
-    "create_mock_token_manager",
-    "create_mock_dummy_id_manager",
-]
