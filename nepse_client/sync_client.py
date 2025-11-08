@@ -353,6 +353,153 @@ class NepseClient(_NepseBase):
         url = f"{self.api_end_points['company_details']}{company_id}"
         return self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForScrips)
 
+    def getCompanyFinancialDetails(self, company_id: str = None):
+        """
+        Get financial details for a specific company.
+
+        Args:
+            company_id (str, optional): The unique identifier for the company.
+                                        If not provided, the behavior depends on
+                                        the API endpoint's default or requirements.
+
+        Returns:
+            list: A list of dictionaries containing financial details for the company.
+                Each dictionary might include keys like 'period', 'financialMetrics',
+                'applicationDocumentDetailsList', etc., as returned by the API.
+                Returns an empty list if no data is found or an error occurs
+                during the API request or processing.
+
+                The 'applicationDocumentDetailsList' within each item may be
+                augmented with 'fullFilePath' and 'fullEncryptedPath' keys for
+        """
+        url = f"{self.api_end_points['company-financial']}/{company_id}"
+
+        data = list(self.requestGETAPI(url=url) or [])
+        base_file_url = self.get_full_url(self.api_end_points["application-fetch-files"])
+        base_sec_file_url = self.get_full_url(self.api_end_points["fetch-security-files"])
+
+        for item in data:
+            try:
+                application_doc_list = item.get("applicationDocumentDetailsList", [])
+
+                if not isinstance(application_doc_list, list):
+                    continue
+
+                for doc in application_doc_list:
+                    encrypted_id = doc.get("encryptedId")
+                    file_path = doc.get("filePath")
+                    if file_path:
+                        doc["fullFilePath"] = f"{base_sec_file_url}{file_path}"
+                    if encrypted_id:
+                        doc["fullEncryptedPath"] = f"{base_file_url}{encrypted_id}"
+            except (AttributeError, TypeError, KeyError):
+                continue
+
+        return data
+
+    def getCompanyAGM(self, company_id: str = None):
+        """
+        Get Annual General Meeting (AGM) information for a specific company.
+
+        Args:
+            company_id (str, optional): The unique identifier for the company.
+                                        If not provided, the behavior depends on
+                                        the API endpoint's default or requirements.
+
+        Returns:
+            list: A list of dictionaries containing AGM details for the company.
+                Each dictionary might include keys like 'meetingDate', 'agenda',
+                'applicationDocumentDetailsList', etc., as returned by the API.
+                Returns an empty list if no data is found or an error occurs
+                during the API request or processing.
+
+                The 'applicationDocumentDetailsList' within each item may be
+                augmented with a 'fullFilePath' key for document access.
+        """
+        url = f"{self.api_end_points['company-agm']}/{company_id}"
+
+        data = list(self.requestGETAPI(url=url) or [])
+        base_file_url = self.get_full_url(self.api_end_points["application-fetch-files"])
+
+        for item in data:
+            try:
+                application_doc_list = item.get("applicationDocumentDetailsList", [])
+
+                if not isinstance(application_doc_list, list):
+                    continue
+
+                for doc in application_doc_list:
+                    encrypted_id = doc.get("encryptedId")
+                    if encrypted_id:
+                        doc["fullFilePath"] = f"{base_file_url}{encrypted_id}"
+            except (AttributeError, TypeError, KeyError):
+                continue
+
+        return data
+
+    def getCompanyDividend(self, company_id: str = None):
+        """
+        Get dividend information for a specific company.
+
+        Args:
+            company_id (str, optional): The unique identifier for the company.
+                                        If not provided, the behavior depends on
+                                        the API endpoint's default or requirements.
+
+        Returns:
+            list: A list of dictionaries containing dividend details for the company.
+                Each dictionary might include keys like 'dividendType', 'rate',
+                'applicationDocumentDetailsList', etc., as returned by the API.
+                Returns an empty list if no data is found or an error occurs
+                during the API request or processing.
+
+                The 'applicationDocumentDetailsList' within each item may be
+                augmented with a 'fullFilePath' key for document access.
+        """
+        url = f"{self.api_end_points['company-dividend']}/{company_id}"
+
+        data = list(self.requestGETAPI(url=url) or [])
+        base_file_url = self.get_full_url(self.api_end_points["application-fetch-files"])
+
+        for item in data:
+            try:
+                application_doc_list = item.get("applicationDocumentDetailsList", [])
+
+                if not isinstance(application_doc_list, list):
+                    continue
+
+                for doc in application_doc_list:
+                    encrypted_id = doc.get("encryptedId")
+                    if encrypted_id:
+                        doc["fullFilePath"] = f"{base_file_url}{encrypted_id}"
+            except (AttributeError, TypeError, KeyError):
+                continue
+
+        return data
+
+    def getCompanyMarketDepth(self, company_id: str = None):
+        """
+        Get market depth information for a specific company.
+
+        Market depth typically includes buy and sell orders at various price levels.
+
+        Args:
+            company_id (str, optional): The unique identifier (symbol or code)
+                                        for the company/security.
+                                        If not provided, the behavior depends on
+                                        the API endpoint's default or requirements.
+
+        Returns:
+            list: A list containing market depth data for the company.
+                The structure of the data depends on the API response,
+                but it usually includes buy/sell orders with prices and volumes.
+                Returns an empty list if no data is found or an error occurs
+                during the API request.
+        """
+        url = f"{self.api_end_points['company-market-depth']}/{company_id}"
+        data = self.requestGETAPI(url=url) or []
+        return data
+
     def getCompanyPriceVolumeHistory(
         self,
         symbol: str,

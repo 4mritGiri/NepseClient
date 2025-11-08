@@ -1,0 +1,11 @@
+﻿nepse\_client.async\_client
+===========================
+
+.. automodule:: nepse_client.async_client
+
+
+   .. rubric:: Classes
+
+   .. autosummary::
+
+      AsyncNepseClient

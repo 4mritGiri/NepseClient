@@ -1,8 +1,8 @@
 # NEPSE Client
 
-[![Tests](https://github.com/4mritgiri/nepse-client/workflows/Tests/badge.svg)](https://github.com/4mritgiri/nepse-client/actions/workflows/tests.yml)
-[![Publish](https://github.com/4mritgiri/nepse-client/workflows/Publish%20to%20PyPI/badge.svg)](https://github.com/4mritgiri/nepse-client/actions/workflows/publish.yml)
-[![Documentation](https://github.com/4mritgiri/nepse-client/workflows/Documentation/badge.svg)](https://github.com/4mritgiri/nepse-client/actions/workflows/docs.yml)
+[![Tests](https://github.com/4mritgiri/NepseClient/workflows/Tests/badge.svg)](https://github.com/4mritgiri/NepseClient/actions/workflows/tests.yml)
+[![Publish](https://github.com/4mritgiri/NepseClient/workflows/Publish%20to%20PyPI/badge.svg)](https://github.com/4mritgiri/NepseClient/actions/workflows/publish.yml)
+[![Documentation](https://github.com/4mritgiri/NepseClient/workflows/Documentation/badge.svg)](https://github.com/4mritgiri/NepseClient/actions/workflows/docs.yml)
 [![PyPI version](https://badge.fury.io/py/nepse-client.svg)](https://badge.fury.io/py/nepse-client)
 [![Python versions](https://img.shields.io/pypi/pyversions/nepse-client.svg)](https://pypi.org/project/nepse-client/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -41,7 +41,7 @@ uv pip install nepse-client
 ### From Source
 
 ```bash
-git clone https://github.com/4mritgiri/nepse-client.git
+git clone https://github.com/4mritgiri/NepseClient.git
 cd nepse-client
 pip install -e .
 ```
@@ -50,7 +50,7 @@ pip install -e .
 
 ```bash
 # Clone and install with dev dependencies
-git clone https://github.com/4mritgiri/nepse-client.git
+git clone https://github.com/4mritgiri/NepseClient.git
 cd nepse-client
 pip install -e ".[dev]"
 
@@ -497,7 +497,6 @@ nepse-client/
 ├── .github/                 # GitHub Actions
 │   ├── workflows/           # CI/CD pipelines
 │   └── ISSUE_TEMPLATE/      # Issue templates
-├── setup.py                 # Setup script
 ├── pyproject.toml           # Project config
 └── README.md                # This file
 ```
@@ -551,7 +550,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ```bash
 # Clone repository
-git clone https://github.com/4mritgiri/nepse-client.git
+git clone https://github.com/4mritgiri/NepseClient.git
 cd nepse-client
 
 # Create virtual environment (recommended)
@@ -615,24 +614,24 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
  > **Amrit Giri**
 
 - GitHub: [@4mritgiri](https://github.com/4mritgiri)
-- Email: <amrit.dev@gmail.com>
+- Email: <amritgiri.dev@gmail.com>
 
 ## 🔗 Links
 
 - 📦 [PyPI Package](https://pypi.org/project/nepse-client/)
 - 📖 [Documentation](https://nepse-client.readthedocs.io)
-- 🐛 [Issue Tracker](https://github.com/4mritgiri/nepse-client/issues)
-- 💬 [Discussions](https://github.com/4mritgiri/nepse-client/discussions)
+- 🐛 [Issue Tracker](https://github.com/4mritgiri/NepseClient/issues)
+- 💬 [Discussions](https://github.com/4mritgiri/NepseClient/discussions)
 - 📋 [Changelog](CHANGELOG.md)
 - 🤝 [Contributing Guide](CONTRIBUTING.md)
 
 ## 📈 Project Stats
 
-![GitHub stars](https://img.shields.io/github/stars/4mritgiri/nepse-client?style=social)
-![GitHub forks](https://img.shields.io/github/forks/4mritgiri/nepse-client?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/4mritgiri/nepse-client?style=social)
-![GitHub issues](https://img.shields.io/github/issues/4mritgiri/nepse-client)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/4mritgiri/nepse-client)
+![GitHub stars](https://img.shields.io/github/stars/4mritgiri/NepseClient?style=social)
+![GitHub forks](https://img.shields.io/github/forks/4mritgiri/NepseClient?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/4mritgiri/NepseClient?style=social)
+![GitHub issues](https://img.shields.io/github/issues/4mritgiri/NepseClient)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/4mritgiri/NepseClient)
 
 ## 💖 Support
 
@@ -670,7 +669,7 @@ A: Yes! The library is production-ready with comprehensive error handling, retri
 A: Python 3.8 and above are supported.
 
 **Q: How do I report a bug?**  
-A: Please open an issue on [GitHub Issues](https://github.com/4mritgiri/nepse-client/issues) with details and a minimal reproduction example.
+A: Please open an issue on [GitHub Issues](https://github.com/4mritgiri/NepseClient/issues) with details and a minimal reproduction example.
 
 **Q: Can I contribute?**  
 A: Absolutely! Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.

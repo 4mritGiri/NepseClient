@@ -22,7 +22,7 @@ pip install -e .
 from nepse_client import Nepse
 
 # Create client
-client = Nepse()
+client = NepseClient()
 
 # Get market status
 status = client.getMarketStatus()
@@ -46,7 +46,7 @@ from nepse_client import AsyncNepse
 
 async def main():
     # Create async client
-    client = AsyncNepse()
+    client = AsyncNepseClient()
 
     # Get multiple data concurrently
     status, gainers, summary = await asyncio.gather(
@@ -68,7 +68,7 @@ asyncio.run(main())
 ### Market Information
 
 ```python
-client = Nepse()
+client = NepseClient()
 
 # Market status
 status = client.getMarketStatus()
@@ -138,7 +138,7 @@ top_turnover = client.getTopTenTurnoverScrips()
 ```python
 from nepse_client import Nepse, NepseError, NepseTokenExpired
 
-client = Nepse()
+client = NepseClient()
 
 try:
     details = client.getCompanyDetails("NABIL")
@@ -158,13 +158,13 @@ except NepseError as e:
 ### Custom Timeout
 
 ```python
-client = Nepse(timeout=60.0)  # 60 seconds timeout
+client = NepseClient(timeout=60.0)  # 60 seconds timeout
 ```
 
 ### Disable TLS Verification (Not Recommended)
 
 ```python
-client = Nepse()
+client = NepseClient()
 client.setTLSVerification(False)
 ```
 
@@ -177,7 +177,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 # Client will use the configured logger
-client = Nepse()
+client = NepseClient()
 ```
 
 ## 📈 Advanced Examples
@@ -195,7 +195,7 @@ def calculate_portfolio(portfolio):
     Returns:
         Total value in NPR
     """
-    client = Nepse()
+    client = NepseClient()
     total = 0
 
     for symbol, quantity in portfolio.items():
@@ -225,7 +225,7 @@ from nepse_client import AsyncNepse
 
 async def fetch_multiple_symbols(symbols):
     """Fetch details for multiple symbols concurrently."""
-    client = AsyncNepse()
+    client = AsyncNepseClient()
 
     # Create tasks for all symbols
     tasks = [client.getCompanyDetails(symbol) for symbol in symbols]
@@ -250,7 +250,7 @@ asyncio.run(fetch_multiple_symbols(symbols))
 
 ```python
 # Automatic cleanup
-with Nepse() as client:
+with NepseClient() as client:
     status = client.getMarketStatus()
     print(status)
 # Client automatically closed
@@ -261,7 +261,7 @@ with Nepse() as client:
 ```python
 # Create a simple test
 def test_market_status():
-    client = Nepse()
+    client = NepseClient()
     status = client.getMarketStatus()
 
     assert 'isOpen' in status
@@ -294,10 +294,10 @@ python -c "import nepse_client; print(nepse_client.__file__)"
 
 ```python
 # Increase timeout
-client = Nepse(timeout=120.0)
+client = NepseClient(timeout=120.0)
 
 # Or increase retries
-client = Nepse(max_retries=5)
+client = NepseClient(max_retries=5)
 ```
 
 ### Rate Limiting

@@ -1,0 +1,60 @@
+﻿nepse\_client.NepseClient
+=========================
+
+.. currentmodule:: nepse_client
+
+.. autoclass:: NepseClient
+
+
+   .. automethod:: __init__
+
+
+   .. rubric:: Methods
+
+   .. autosummary::
+
+      ~NepseClient.__init__
+      ~NepseClient.close
+      ~NepseClient.getAuthorizationHeaders
+      ~NepseClient.getCompanyAGM
+      ~NepseClient.getCompanyDetails
+      ~NepseClient.getCompanyDividend
+      ~NepseClient.getCompanyFinancialDetails
+      ~NepseClient.getCompanyIDKeyMap
+      ~NepseClient.getCompanyList
+      ~NepseClient.getCompanyMarketDepth
+      ~NepseClient.getCompanyPriceVolumeHistory
+      ~NepseClient.getDailyScripPriceGraph
+      ~NepseClient.getDebentureAndBondList
+      ~NepseClient.getDummyData
+      ~NepseClient.getDummyID
+      ~NepseClient.getFloorSheet
+      ~NepseClient.getFloorSheetOf
+      ~NepseClient.getHolidayList
+      ~NepseClient.getLiveMarket
+      ~NepseClient.getMarketStatus
+      ~NepseClient.getNepseIndex
+      ~NepseClient.getNepseSubIndices
+      ~NepseClient.getPOSTPayloadID
+      ~NepseClient.getPOSTPayloadIDForFloorSheet
+      ~NepseClient.getPOSTPayloadIDForScrips
+      ~NepseClient.getPriceVolume
+      ~NepseClient.getPriceVolumeHistory
+      ~NepseClient.getSectorScrips
+      ~NepseClient.getSecurityIDKeyMap
+      ~NepseClient.getSecurityList
+      ~NepseClient.getSummary
+      ~NepseClient.getSupplyDemand
+      ~NepseClient.getSymbolMarketDepth
+      ~NepseClient.getTopGainers
+      ~NepseClient.getTopLosers
+      ~NepseClient.getTopTenTradeScrips
+      ~NepseClient.getTopTenTransactionScrips
+      ~NepseClient.getTopTenTurnoverScrips
+      ~NepseClient.getTradingAverage
+      ~NepseClient.get_full_url
+      ~NepseClient.handle_response
+      ~NepseClient.init_client
+      ~NepseClient.requestGETAPI
+      ~NepseClient.requestPOSTAPI
+      ~NepseClient.setTLSVerification

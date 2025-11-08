@@ -48,7 +48,6 @@ password = pypi-your-testpypi-api-token-here
 
 Update version in:
 
-- `setup.py`
 - `pyproject.toml`
 - `nepse_client/__init__.py`
 - `CHANGELOG.md`
@@ -293,7 +292,7 @@ python -m build
 
 ```bash
 # Version already published - bump version number
-# Edit version in setup.py, pyproject.toml, and __init__.py
+# Edit version in pyproject.toml, and __init__.py
 ```
 
 ### Import Errors After Installation
@@ -308,7 +307,7 @@ tar -tzf dist/nepse_client-1.0.0.tar.gz
 ### Missing Dependencies
 
 ```bash
-# Ensure all dependencies in setup.py and pyproject.toml match
+# Ensure all dependencies in pyproject.toml match
 # Test in fresh virtual environment
 ```
 

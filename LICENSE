@@ -1,0 +1,111 @@
+MIT License
+
+Copyright (c) 2024 Amrit Giri
+
+===============================================================================
+IMPORTANT DISCLAIMER
+===============================================================================
+
+THIS IS AN UNOFFICIAL LIBRARY FOR THE NEPAL STOCK EXCHANGE (NEPSE) API.
+
+This project is NOT affiliated with, endorsed by, or in any way officially
+connected to the Nepal Stock Exchange Limited (NEPSE) or any of its
+subsidiaries or affiliates. The official Nepal Stock Exchange website can
+be found at https://www.nepalstock.com.np
+
+FINANCIAL DISCLAIMER:
+- This software does NOT provide financial, investment, or trading advice
+- Use for informational and educational purposes only
+- Always verify data from official NEPSE sources
+- Past performance does not guarantee future results
+- Consult licensed financial advisors for investment decisions
+- Authors are NOT liable for any trading or investment decisions
+
+DATA DISCLAIMER:
+- Data provided "as is" without warranty of accuracy or completeness
+- May contain errors, delays, or inaccuracies
+- Not guaranteed to be real-time or current
+- API may change without notice
+
+LEGAL COMPLIANCE:
+- Users must comply with all applicable securities laws and regulations
+- Users must comply with SEBON (Securities Board of Nepal) regulations
+- Users must comply with NEPSE terms of service
+- Users are responsible for ensuring legal compliance
+
+USE AT YOUR OWN RISK.
+
+===============================================================================
+MIT LICENSE TERMS
+===============================================================================
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice, the above disclaimers, and this permission notice
+shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+===============================================================================
+ADDITIONAL TERMS
+===============================================================================
+
+Users of this software agree to:
+
+1. NOT claim official affiliation with Nepal Stock Exchange Limited (NEPSE)
+2. NOT misrepresent the source of data
+3. Clearly state this is an unofficial library when redistributing
+4. Respect NEPSE's terms of service and API usage policies
+5. Not use for purposes that violate securities laws or regulations
+6. Verify all critical data with official NEPSE sources
+7. Use responsibly and ethically
+
+===============================================================================
+TRADEMARK NOTICE
+===============================================================================
+
+"NEPSE" and "Nepal Stock Exchange" are trademarks of Nepal Stock Exchange
+Limited. This project is not affiliated with or endorsed by Nepal Stock
+Exchange Limited. All trademarks belong to their respective owners.
+
+===============================================================================
+LIMITATION OF LIABILITY
+===============================================================================
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR:
+- Direct, indirect, incidental, or consequential damages
+- Loss of profits, revenue, data, or business interruption
+- Investment losses or financial damages
+- Inaccurate or delayed data
+- Service interruptions or API changes
+- Any damages arising from the use of this software
+
+You acknowledge and agree that you use this software entirely at your own risk.
+
+===============================================================================
+CONTACT
+===============================================================================
+
+For questions about this license:
+- Email: amrit.dev@gmail.com
+- GitHub: https://github.com/4mritgiri/NepseClient
+
+For official NEPSE inquiries:
+- Visit: https://www.nepalstock.com.np
+- Contact Nepal Stock Exchange Limited directly
+
+===============================================================================
+
+By using this software, you acknowledge that you have read, understood, and
+agree to be bound by these terms and conditions.

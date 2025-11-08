@@ -59,7 +59,6 @@ nepse-client/
 │   │   └── feature_request.md
 │   └── pull_request_template.md       # PR template
 │
-├── setup.py                           # Setup script (legacy)
 ├── pyproject.toml                     # Modern build configuration
 ├── MANIFEST.in                        # Package data inclusion
 ├── requirements.txt                   # Runtime dependencies
