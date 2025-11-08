@@ -168,12 +168,12 @@ repos:
         types: [python]
         args:
           - --line-length=100
-          - --target-version=py38
           - --target-version=py39
           - --target-version=py310
           - --target-version=py311
           - --target-version=py312
         stages: [pre-commit]
+
 
   # ============================================================
   # Python import sorting with isort
