@@ -1083,7 +1083,11 @@
         <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_retries</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">request_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">except</span> <span class="p">(</span><span class="n">httpx</span><span class="o">.</span><span class="n">RemoteProtocolError</span><span class="p">,</span> <span class="n">httpx</span><span class="o">.</span><span class="n">ReadError</span><span class="p">,</span> <span class="n">httpx</span><span class="o">.</span><span class="n">ConnectError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">except</span> <span class="p">(</span>
+                <span class="n">httpx</span><span class="o">.</span><span class="n">RemoteProtocolError</span><span class="p">,</span>
+                <span class="n">httpx</span><span class="o">.</span><span class="n">ReadError</span><span class="p">,</span>
+                <span class="n">httpx</span><span class="o">.</span><span class="n">ConnectError</span><span class="p">,</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">attempt</span> <span class="o">==</span> <span class="n">max_retries</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Request failed after </span><span class="si">{</span><span class="n">max_retries</span><span class="si">}</span><span class="s2"> attempts: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                     <span class="k">raise</span> <span class="n">NepseNetworkError</span><span class="p">(</span>
