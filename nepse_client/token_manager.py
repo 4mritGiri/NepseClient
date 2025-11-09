@@ -11,9 +11,11 @@ import logging
 import pathlib
 import time
 from datetime import datetime
-from typing import Optional
+from typing import Any, Optional, cast
 
 import pywasm
+
+from .exceptions import NepseValidationError
 
 
 logger = logging.getLogger(__name__)
@@ -187,14 +189,14 @@ class _TokenManagerBase:
         Returns:
             str: Token Manager
         """
-        if self.access_token is None:
+        if self.access_token is None or self.token_time_stamp is None:
             return "Token Manager: Not Initialized"
 
         timestamp_str = datetime.fromtimestamp(self.token_time_stamp).strftime("%Y-%m-%d %H:%M:%S")
         return (
             f"Token Manager:\n"
             f"  Access Token: {self.access_token[:20]}...\n"
-            f"  Refresh Token: {self.refresh_token[:20]}...\n"
+            f"  Refresh Token: {self.refresh_token[:20] if self.refresh_token else ''}...\n"
             f"  Salts: {self.salts}\n"
             f"  Timestamp: {timestamp_str}\n"
             f"  Valid: {self.isTokenValid()}"
@@ -222,6 +224,7 @@ class TokenManager(_TokenManagerBase):
         """
         if not self.isTokenValid():
             self.update()
+        assert self.access_token is not None
         return self.access_token
 
     def getRefreshToken(self) -> str:
@@ -233,6 +236,7 @@ class TokenManager(_TokenManagerBase):
         """
         if not self.isTokenValid():
             self.update()
+        assert self.refresh_token is not None
         return self.refresh_token
 
     def update(self) -> None:
@@ -253,14 +257,17 @@ class TokenManager(_TokenManagerBase):
 
         logger.info("Authentication token refreshed successfully")
 
-    def _getTokenHttpRequest(self) -> dict:
+    def _getTokenHttpRequest(self) -> dict[str, Any]:
         """
         Make HTTP request to get token.
 
         Returns:
            Token response dictionary
         """
-        return self.nepse.requestGETAPI(url=self.token_url, include_authorization_headers=False)
+        response = self.nepse.requestGETAPI(url=self.token_url, include_authorization_headers=False)
+        if not isinstance(response, dict):
+            raise NepseValidationError(f"Expected dict from token API, got {type(response)}")
+        return cast(dict[str, Any], response)
 
 
 class AsyncTokenManager(_TokenManagerBase):
@@ -288,6 +295,7 @@ class AsyncTokenManager(_TokenManagerBase):
         """
         if not self.isTokenValid():
             await self.update()
+        assert self.access_token is not None
         return self.access_token
 
     async def getRefreshToken(self) -> str:
@@ -299,6 +307,7 @@ class AsyncTokenManager(_TokenManagerBase):
         """
         if not self.isTokenValid():
             await self.update()
+        assert self.refresh_token is not None
         return self.refresh_token
 
     async def update(self) -> None:
@@ -346,8 +355,9 @@ class AsyncTokenManager(_TokenManagerBase):
         Returns:
            Token response dictionary
         """
-        return await self.nepse.requestGETAPI(
-            url=self.token_url, include_authorization_headers=False
+        return cast(
+            dict[Any, Any],
+            await self.nepse.requestGETAPI(url=self.token_url, include_authorization_headers=False),
         )
 
 

@@ -10,7 +10,7 @@ import logging
 import pathlib
 from datetime import datetime
 from functools import singledispatch
-from typing import Any, Optional, Union
+from typing import Any, Optional, Union, cast
 
 from .exceptions import (
     NepseAuthenticationError,
@@ -90,6 +90,8 @@ class _NepseBase:
         timeout: Request timeout in seconds
     """
 
+    headers: dict[str, str]
+
     def __init__(
         self,
         token_manager_class: type,
@@ -135,13 +137,18 @@ class _NepseBase:
 
         try:
             # Load API endpoints
-            self.api_end_points = self._load_json_file(data_dir / "API_ENDPOINTS.json")
+            self.api_end_points = cast(
+                dict[str, str], self._load_json_file(data_dir / "API_ENDPOINTS.json")
+            )
 
             # Load dummy data
-            self.dummy_data = self._load_json_file(data_dir / "DUMMY_DATA.json")
+            self.dummy_data = cast(list[int], self._load_json_file(data_dir / "DUMMY_DATA.json"))
 
             # Load headers
-            self.headers = self._load_json_file(data_dir / "HEADERS.json")
+            headers_raw = self._load_json_file(data_dir / "HEADERS.json")
+            if not isinstance(headers_raw, dict):
+                raise NepseConfigurationError("HEADERS.json must contain a JSON object")
+            self.headers = headers_raw
             self.headers["Host"] = self.base_url.replace("https://", "")
             self.headers["Referer"] = self.base_url
 
@@ -167,7 +174,8 @@ class _NepseBase:
         """
         try:
             with open(filepath, encoding="utf-8") as f:
-                return json.load(f)
+                data = json.load(f)
+                return cast(Union[dict, list], data)
         except FileNotFoundError as e:
             raise NepseConfigurationError(f"Configuration file not found: {filepath}") from e
         except json.JSONDecodeError as e:
@@ -204,7 +212,7 @@ class _NepseBase:
         Note:
             This must be implemented by subclasses (sync/async)
         """
-        return self.dummy_id_manager.getDummyID()
+        return int(self.dummy_id_manager.getDummyID())
 
     def handle_response(self, response: Any, request_data: Optional[dict] = None) -> Any:
         """
@@ -321,7 +329,7 @@ class _NepseBase:
         Returns:
             Dictionary with market status information
         """
-        return self.requestGETAPI(url=self.api_end_points["nepse_open_url"])
+        return cast(dict[str, Any], self.requestGETAPI(url=self.api_end_points["nepse_open_url"]))
 
     def getPriceVolume(self) -> list[dict[str, Any]]:
         """
@@ -330,7 +338,9 @@ class _NepseBase:
         Returns:
             List of price/volume records
         """
-        return self.requestGETAPI(url=self.api_end_points["price_volume_url"])
+        return cast(
+            list[dict[str, Any]], self.requestGETAPI(url=self.api_end_points["price_volume_url"])
+        )
 
     def getSummary(self) -> dict[str, Any]:
         """
@@ -339,7 +349,7 @@ class _NepseBase:
         Returns:
             Dictionary with market summary data
         """
-        return self.requestGETAPI(url=self.api_end_points["summary_url"])
+        return cast(dict[str, Any], self.requestGETAPI(url=self.api_end_points["summary_url"]))
 
     def getTopGainers(self) -> list[dict[str, Any]]:
         """
@@ -348,7 +358,9 @@ class _NepseBase:
         Returns:
             List of top gainer records
         """
-        return self.requestGETAPI(url=self.api_end_points["top_gainers_url"])
+        return cast(
+            list[dict[str, Any]], self.requestGETAPI(url=self.api_end_points["top_gainers_url"])
+        )
 
     def getTopLosers(self) -> list[dict[str, Any]]:
         """
@@ -357,35 +369,50 @@ class _NepseBase:
         Returns:
             List of top loser records
         """
-        return self.requestGETAPI(url=self.api_end_points["top_losers_url"])
+        return cast(
+            list[dict[str, Any]], self.requestGETAPI(url=self.api_end_points["top_losers_url"])
+        )
 
     def getTopTenTradeScrips(self) -> list[dict[str, Any]]:
         """Get top 10 scrips by trade volume."""
-        return self.requestGETAPI(url=self.api_end_points["top_ten_trade_url"])
+        return cast(
+            list[dict[str, Any]], self.requestGETAPI(url=self.api_end_points["top_ten_trade_url"])
+        )
 
     def getTopTenTransactionScrips(self) -> list[dict[str, Any]]:
         """Get top 10 scrips by transaction count."""
-        return self.requestGETAPI(url=self.api_end_points["top_ten_transaction_url"])
+        return cast(
+            list[dict[str, Any]],
+            self.requestGETAPI(url=self.api_end_points["top_ten_transaction_url"]),
+        )
 
     def getTopTenTurnoverScrips(self) -> list[dict[str, Any]]:
         """Get top 10 scrips by turnover."""
-        return self.requestGETAPI(url=self.api_end_points["top_ten_turnover_url"])
+        return cast(
+            list[dict[str, Any]],
+            self.requestGETAPI(url=self.api_end_points["top_ten_turnover_url"]),
+        )
 
     def getSupplyDemand(self) -> dict[str, Any]:
         """Get supply and demand data."""
-        return self.requestGETAPI(url=self.api_end_points["supply_demand_url"])
+        return cast(
+            dict[str, Any], self.requestGETAPI(url=self.api_end_points["supply_demand_url"])
+        )
 
     def getNepseIndex(self) -> dict[str, Any]:
         """Get NEPSE index data."""
-        return self.requestGETAPI(url=self.api_end_points["nepse_index_url"])
+        return cast(dict[str, Any], self.requestGETAPI(url=self.api_end_points["nepse_index_url"]))
 
     def getNepseSubIndices(self) -> list[dict[str, Any]]:
         """Get all NEPSE sub-indices."""
-        return self.requestGETAPI(url=self.api_end_points["nepse_subindices_url"])
+        return cast(
+            list[dict[str, Any]],
+            self.requestGETAPI(url=self.api_end_points["nepse_subindices_url"]),
+        )
 
     def getLiveMarket(self) -> dict[str, Any]:
         """Get live market data."""
-        return self.requestGETAPI(url=self.api_end_points["live-market"])
+        return cast(dict[str, Any], self.requestGETAPI(url=self.api_end_points["live-market"]))
 
     def getTradingAverage(
         self, business_date: Optional[str] = None, nDays: int = 180
@@ -408,7 +435,7 @@ class _NepseBase:
 
         query_string = "&".join(params)
         url = f"{self.api_end_points['trading-average']}?{query_string}"
-        return self.requestGETAPI(url=url)
+        return cast(dict[str, Any], self.requestGETAPI(url=url))
 
 
 __all__ = ["_NepseBase", "mask_sensitive_data", "safe_serialize"]

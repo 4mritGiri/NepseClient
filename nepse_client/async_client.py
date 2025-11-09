@@ -5,12 +5,13 @@ This module provides a non-blocking, asynchronous interface to the NEPSE API,
 suitable for concurrent operations and high-performance applications.
 """
 
+# import json
+
 import asyncio
-import json
 import logging
 from collections import defaultdict
 from datetime import date, datetime, timedelta
-from typing import Any, Optional, Union
+from typing import Any, Optional, Union, cast
 
 import httpx
 import tqdm.asyncio
@@ -195,7 +196,8 @@ class AsyncNepseClient(_NepseBase):
             response = await self.client.post(
                 self.get_full_url(api_url=url),
                 headers=await self.getAuthorizationHeaders(),
-                data=json.dumps(payload),
+                data=payload,
+                # data=json.dumps(payload),
             )
             return self.handle_response(response, request_data=payload)
 
@@ -219,8 +221,8 @@ class AsyncNepseClient(_NepseBase):
 
     async def getPOSTPayloadIDForScrips(self) -> int:
         """Generate payload ID for scrip-related requests."""
-        dummy_id = await self.getDummyID()
-        return self.getDummyData()[dummy_id] + dummy_id + 2 * date.today().day
+        dummy_id = self.getDummyID()
+        return int(self.getDummyData()[dummy_id] + dummy_id + 2 * date.today().day)
 
     async def getPOSTPayloadID(self) -> int:
         """Generate general payload ID."""
@@ -229,7 +231,7 @@ class AsyncNepseClient(_NepseBase):
         await self.token_manager.update_completed.wait()
 
         salt_index = 3 if e % 10 < 5 else 1
-        return (
+        return int(
             e
             + self.token_manager.salts[salt_index] * date.today().day
             - self.token_manager.salts[salt_index - 1]
@@ -268,7 +270,7 @@ class AsyncNepseClient(_NepseBase):
                 ) from ex
 
         salt_index = 1 if e % 10 < 4 else 3
-        return (
+        return int(
             e
             + self.token_manager.salts[salt_index] * day
             - self.token_manager.salts[salt_index - 1]
@@ -276,55 +278,86 @@ class AsyncNepseClient(_NepseBase):
 
     # Override base methods with async versions
 
-    async def getMarketStatus(self) -> dict[str, Any]:
+    async def getMarketStatus(self) -> dict[str, Any]:  # type: ignore[override]
         """Get current market status (open/closed)."""
-        return await self.requestGETAPI(url=self.api_end_points["nepse_open_url"])
+        return cast(
+            dict[str, Any], await self.requestGETAPI(url=self.api_end_points["nepse_open_url"])
+        )
 
-    async def getPriceVolume(self) -> list[dict[str, Any]]:
+    async def getPriceVolume(self) -> list[dict[str, Any]]:  # type: ignore[override]
         """Get current price and volume data for all securities."""
-        return await self.requestGETAPI(url=self.api_end_points["price_volume_url"])
+        return cast(
+            list[dict[str, Any]],
+            await self.requestGETAPI(url=self.api_end_points["price_volume_url"]),
+        )
 
-    async def getSummary(self) -> dict[str, Any]:
+    async def getSummary(self) -> dict[str, Any]:  # type: ignore[override]
         """Get market summary with turnover, trades, etc."""
-        return await self.requestGETAPI(url=self.api_end_points["summary_url"])
+        return cast(
+            dict[str, Any], await self.requestGETAPI(url=self.api_end_points["summary_url"])
+        )
 
-    async def getTopGainers(self) -> list[dict[str, Any]]:
+    async def getTopGainers(self) -> list[dict[str, Any]]:  # type: ignore[override]
         """Get list of top gaining stocks."""
-        return await self.requestGETAPI(url=self.api_end_points["top_gainers_url"])
+        return cast(
+            list[dict[str, Any]],
+            await self.requestGETAPI(url=self.api_end_points["top_gainers_url"]),
+        )
 
-    async def getTopLosers(self) -> list[dict[str, Any]]:
+    async def getTopLosers(self) -> list[dict[str, Any]]:  # type: ignore[override]
         """Get list of top losing stocks."""
-        return await self.requestGETAPI(url=self.api_end_points["top_losers_url"])
+        return cast(
+            list[dict[str, Any]],
+            await self.requestGETAPI(url=self.api_end_points["top_losers_url"]),
+        )
 
-    async def getTopTenTradeScrips(self) -> list[dict[str, Any]]:
+    async def getTopTenTradeScrips(self) -> list[dict[str, Any]]:  # type: ignore[override]
         """Get top 10 scrips by trade volume."""
-        return await self.requestGETAPI(url=self.api_end_points["top_ten_trade_url"])
+        return cast(
+            list[dict[str, Any]],
+            await self.requestGETAPI(url=self.api_end_points["top_ten_trade_url"]),
+        )
 
-    async def getTopTenTransactionScrips(self) -> list[dict[str, Any]]:
+    async def getTopTenTransactionScrips(self) -> list[dict[str, Any]]:  # type: ignore[override]
         """Get top 10 scrips by transaction count."""
-        return await self.requestGETAPI(url=self.api_end_points["top_ten_transaction_url"])
+        return cast(
+            list[dict[str, Any]],
+            await self.requestGETAPI(url=self.api_end_points["top_ten_transaction_url"]),
+        )
 
-    async def getTopTenTurnoverScrips(self) -> list[dict[str, Any]]:
+    async def getTopTenTurnoverScrips(self) -> list[dict[str, Any]]:  # type: ignore[override]
         """Get top 10 scrips by turnover."""
-        return await self.requestGETAPI(url=self.api_end_points["top_ten_turnover_url"])
+        return cast(
+            list[dict[str, Any]],
+            await self.requestGETAPI(url=self.api_end_points["top_ten_turnover_url"]),
+        )
 
-    async def getSupplyDemand(self) -> dict[str, Any]:
+    async def getSupplyDemand(self) -> dict[str, Any]:  # type: ignore[override]
         """Get supply and demand data."""
-        return await self.requestGETAPI(url=self.api_end_points["supply_demand_url"])
+        return cast(
+            dict[str, Any], await self.requestGETAPI(url=self.api_end_points["supply_demand_url"])
+        )
 
-    async def getNepseIndex(self) -> dict[str, Any]:
+    async def getNepseIndex(self) -> dict[str, Any]:  # type: ignore[override]
         """Get NEPSE index data."""
-        return await self.requestGETAPI(url=self.api_end_points["nepse_index_url"])
+        return cast(
+            dict[str, Any], await self.requestGETAPI(url=self.api_end_points["nepse_index_url"])
+        )
 
-    async def getNepseSubIndices(self) -> list[dict[str, Any]]:
+    async def getNepseSubIndices(self) -> list[dict[str, Any]]:  # type: ignore[override]
         """Get all NEPSE sub-indices."""
-        return await self.requestGETAPI(url=self.api_end_points["nepse_subindices_url"])
+        return cast(
+            list[dict[str, Any]],
+            await self.requestGETAPI(url=self.api_end_points["nepse_subindices_url"]),
+        )
 
-    async def getLiveMarket(self) -> dict[str, Any]:
+    async def getLiveMarket(self) -> dict[str, Any]:  # type: ignore[override]
         """Get live market data."""
-        return await self.requestGETAPI(url=self.api_end_points["live-market"])
+        return cast(
+            dict[str, Any], await self.requestGETAPI(url=self.api_end_points["live-market"])
+        )
 
-    async def getTradingAverage(
+    async def getTradingAverage(  # type: ignore[override]
         self, business_date: Optional[str] = None, nDays: int = 180
     ) -> dict[str, Any]:
         """Get trading average data."""
@@ -336,7 +369,7 @@ class AsyncNepseClient(_NepseBase):
 
         query_string = "&".join(params)
         url = f"{self.api_end_points['trading-average']}?{query_string}"
-        return await self.requestGETAPI(url=url)
+        return cast(dict[str, Any], await self.requestGETAPI(url=url))
 
     # Company and Security data methods
 
@@ -395,7 +428,10 @@ class AsyncNepseClient(_NepseBase):
         symbol = symbol.upper()
         company_id = (await self.getSecurityIDKeyMap())[symbol]
         url = f"{self.api_end_points['company_details']}{company_id}"
-        return await self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForScrips)
+        return cast(
+            dict[str, Any],
+            await self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForScrips),
+        )
 
     async def getCompanyPriceVolumeHistory(
         self,
@@ -404,8 +440,15 @@ class AsyncNepseClient(_NepseBase):
         end_date: Optional[Union[str, date]] = None,
     ) -> dict[str, Any]:
         """Get price and volume history for a company."""
-        end_date = end_date if end_date else date.today()
-        start_date = start_date if start_date else (end_date - timedelta(days=365))
+        # Convert strings to date objects
+        if isinstance(end_date, str):
+            end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
+        if isinstance(start_date, str):
+            start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
+
+        # Default dates
+        end_date = end_date or date.today()
+        start_date = start_date or (end_date - timedelta(days=365))
 
         symbol = symbol.upper()
         company_id = (await self.getSecurityIDKeyMap())[symbol]
@@ -414,15 +457,19 @@ class AsyncNepseClient(_NepseBase):
             f"{self.api_end_points['company_price_volume_history']}{company_id}"
             f"?size=500&startDate={start_date}&endDate={end_date}"
         )
+
         result = await self.requestGETAPI(url=url)
-        return result.get("content", result)
+        return cast(dict[str, Any], result.get("content", result))
 
     async def getDailyScripPriceGraph(self, symbol: str) -> dict[str, Any]:
         """Get daily price graph data for a scrip."""
         symbol = symbol.upper()
         company_id = (await self.getSecurityIDKeyMap())[symbol]
         url = f"{self.api_end_points['company_daily_graph']}{company_id}"
-        return await self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForScrips)
+        return cast(
+            dict[str, Any],
+            await self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForScrips),
+        )
 
     # Floor sheet methods
 
@@ -460,7 +507,7 @@ class AsyncNepseClient(_NepseBase):
 
         # Combine all pages
         all_pages = [first_page] + remaining_pages
-        return [row for page in all_pages for row in page]
+        return cast(list[dict[str, Any]], [row for page in all_pages for row in page])
 
     async def _getFloorSheetPageNumber(self, url: str, page_number: int) -> list[dict[str, Any]]:
         """
@@ -477,7 +524,9 @@ class AsyncNepseClient(_NepseBase):
             url=f"{url}&page={page_number}",
             payload_generator=self.getPOSTPayloadIDForFloorSheet,
         )
-        return current_sheet["floorsheets"]["content"] if current_sheet else []
+        return cast(
+            list[dict[str, Any]], current_sheet["floorsheets"]["content"] if current_sheet else []
+        )
 
     async def getFloorSheetOf(
         self,
@@ -524,14 +573,14 @@ class AsyncNepseClient(_NepseBase):
             for sheet in remaining_sheets:
                 floor_sheets.extend(sheet["floorsheets"]["content"])
 
-        return floor_sheets
+        return cast(list[dict[str, Any]], floor_sheets)
 
     async def getSymbolMarketDepth(self, symbol: str) -> dict[str, Any]:
         """Get market depth for a symbol."""
         symbol = symbol.upper()
         company_id = (await self.getSecurityIDKeyMap())[symbol]
         url = f"{self.api_end_points['market-depth']}{company_id}/"
-        return await self.requestGETAPI(url=url)
+        return cast(dict[str, Any], await self.requestGETAPI(url=url))
 
 
 __all__ = ["AsyncNepseClient"]

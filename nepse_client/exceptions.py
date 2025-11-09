@@ -352,8 +352,10 @@ class NepseConfigurationError(NepseError):
         super().__init__(message)
 
 
+NepseErrorType = type[NepseError]
+
 # Exception mapping for HTTP status codes
-HTTP_STATUS_EXCEPTIONS = {
+HTTP_STATUS_EXCEPTIONS: dict[int, NepseErrorType] = {
     400: NepseClientError,
     401: NepseAuthenticationError,
     404: NepseDataNotFoundError,
@@ -380,7 +382,7 @@ def get_exception_for_status(
     Returns:
        Appropriate exception instance
     """
-    exception_class = HTTP_STATUS_EXCEPTIONS.get(
+    exception_class: type[NepseError] = HTTP_STATUS_EXCEPTIONS.get(
         status_code,
         NepseServerError if 500 <= status_code < 600 else NepseError,
     )

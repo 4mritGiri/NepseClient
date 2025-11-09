@@ -37,10 +37,10 @@ jobs:
           pip install black isort flake8 flake8-docstrings flake8-bugbear
 
       - name: Check code formatting with Black
-        run: black --check --diff --line-length=88 --target-version=py39 nepse_client tests examples
+        run: black --check --diff --line-length=100 --target-version=py39 nepse_client tests examples
 
       - name: Check import sorting with isort
-        run: isort --check-only --diff --profile=black --line-length=88 nepse_client tests examples
+        run: isort --check-only --diff --profile=black --line-length=100 nepse_client tests examples
 
       - name: Lint with flake8
         shell: bash
@@ -48,7 +48,7 @@ jobs:
           flake8 nepse_client tests examples \
             --count \
             --statistics \
-            --max-line-length=88 \
+            --max-line-length=100 \
             --extend-ignore=E203,W503,E501,D212,D200 \
             --per-file-ignores='*/__init__.py:F401,*/typing.py:F401'
 

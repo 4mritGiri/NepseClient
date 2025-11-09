@@ -5,11 +5,12 @@ This module provides a blocking, synchronous interface to the NEPSE API,
 suitable for scripts, notebooks, and applications that don't require concurrency.
 """
 
-import json
+# import json
+
 import logging
 from collections import defaultdict
 from datetime import date, datetime, timedelta
-from typing import Any, Optional, Union
+from typing import Any, Optional, Union, cast
 
 import httpx
 import tqdm
@@ -180,7 +181,8 @@ class NepseClient(_NepseBase):
             response = self.client.post(
                 self.get_full_url(api_url=url),
                 headers=self.getAuthorizationHeaders(),
-                data=json.dumps(payload),
+                data=payload,
+                # data=json.dumps(payload),
             )
             return self.handle_response(response, request_data=payload)
 
@@ -211,7 +213,7 @@ class NepseClient(_NepseBase):
         """Generate general payload ID."""
         e = self.getPOSTPayloadIDForScrips()
         salt_index = 3 if e % 10 < 5 else 1
-        return (
+        return int(
             e
             + self.token_manager.salts[salt_index] * date.today().day
             - self.token_manager.salts[salt_index - 1]
@@ -248,7 +250,7 @@ class NepseClient(_NepseBase):
                 ) from ex
 
         salt_index = 1 if e % 10 < 4 else 3
-        return (
+        return int(
             e
             + self.token_manager.salts[salt_index] * day
             - self.token_manager.salts[salt_index - 1]
@@ -352,12 +354,17 @@ class NepseClient(_NepseBase):
         Raises:
            KeyError: If symbol not found
         """
+        if symbol is None:
+            raise NepseValidationError("symbol is required", field="symbol")
         symbol = symbol.upper()
         company_id = self.getSecurityIDKeyMap()[symbol]
         url = f"{self.api_end_points['company_details']}{company_id}"
-        return self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForScrips)
+        return cast(
+            dict[str, Any],
+            self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForScrips),
+        )
 
-    def getCompanyFinancialDetails(self, company_id: str = None):
+    def getCompanyFinancialDetails(self, company_id: Optional[str] = None) -> list[dict[str, Any]]:
         """
         Get financial details for a specific company.
 
@@ -401,7 +408,7 @@ class NepseClient(_NepseBase):
 
         return data
 
-    def getCompanyAGM(self, company_id: str = None):
+    def getCompanyAGM(self, company_id: Optional[str] = None) -> list[dict[str, Any]]:
         """
         Get Annual General Meeting (AGM) information for a specific company.
 
@@ -441,7 +448,7 @@ class NepseClient(_NepseBase):
 
         return data
 
-    def getCompanyDividend(self, company_id: str = None):
+    def getCompanyDividend(self, company_id: Optional[str] = None) -> list[dict[str, Any]]:
         """
         Get dividend information for a specific company.
 
@@ -481,7 +488,7 @@ class NepseClient(_NepseBase):
 
         return data
 
-    def getCompanyMarketDepth(self, company_id: str = None):
+    def getCompanyMarketDepth(self, company_id: Optional[str] = None) -> list[dict[str, Any]]:
         """
         Get market depth information for a specific company.
 
@@ -521,17 +528,32 @@ class NepseClient(_NepseBase):
         Returns:
            Dictionary with paginated history data
         """
-        end_date = end_date if end_date else date.today()
-        start_date = start_date if start_date else (end_date - timedelta(days=365))
+        # Default end_date to today
+        if end_date is None:
+            end_date_date = date.today()
+        elif isinstance(end_date, str):
+            end_date_date = datetime.strptime(end_date, "%Y-%m-%d").date()
+        else:
+            end_date_date = end_date  # already a date
+
+        # Default start_date to one year before end_date
+        if start_date is None:
+            start_date_date = end_date_date - timedelta(days=365)
+        elif isinstance(start_date, str):
+            start_date_date = datetime.strptime(start_date, "%Y-%m-%d").date()
+        else:
+            start_date_date = start_date
 
         symbol = symbol.upper()
         company_id = self.getSecurityIDKeyMap()[symbol]
 
         url = (
             f"{self.api_end_points['company_price_volume_history']}{company_id}"
-            f"?size=500&startDate={start_date}&endDate={end_date}"
+            f"?size=500&startDate={start_date_date}&endDate={end_date_date}"
         )
-        return self.requestGETAPI(url=url)
+        result = self.requestGETAPI(url=url)
+        assert isinstance(result, dict)
+        return result
 
     def getDailyScripPriceGraph(self, symbol: str) -> dict[str, Any]:
         """
@@ -546,7 +568,10 @@ class NepseClient(_NepseBase):
         symbol = symbol.upper()
         company_id = self.getSecurityIDKeyMap()[symbol]
         url = f"{self.api_end_points['company_daily_graph']}{company_id}"
-        return self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForScrips)
+        return cast(
+            dict[str, Any],
+            self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForScrips),
+        )
 
     # Floor sheet methods
 
@@ -575,7 +600,10 @@ class NepseClient(_NepseBase):
             sheet = self.requestPOSTAPI(
                 url=page_url, payload_generator=self.getPOSTPayloadIDForFloorSheet
             )
-            return sheet["floorsheets"]
+            return cast(
+                Union[list[dict[str, Any]], list[list[dict[str, Any]]], dict[str, Any]],
+                sheet["floorsheets"],
+            )
 
         # Fetch all pages
         sheet = self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForFloorSheet)
@@ -647,7 +675,7 @@ class NepseClient(_NepseBase):
             )
             floor_sheets.extend(next_sheet["floorsheets"]["content"])
 
-        return floor_sheets
+        return cast(list[dict[str, Any]], floor_sheets)
 
     def getSymbolMarketDepth(self, symbol: str) -> dict[str, Any]:
         """
@@ -662,7 +690,7 @@ class NepseClient(_NepseBase):
         symbol = symbol.upper()
         company_id = self.getSecurityIDKeyMap()[symbol]
         url = f"{self.api_end_points['market-depth']}{company_id}/"
-        return self.requestGETAPI(url=url)
+        return cast(dict[str, Any], self.requestGETAPI(url=url))
 
     # Additional data methods (continued in next message due to length)
 
@@ -675,13 +703,16 @@ class NepseClient(_NepseBase):
     def getDebentureAndBondList(self, bond_type: str = "debenture") -> list[dict[str, Any]]:
         """Get list of debentures and bonds."""
         url = f"{self.api_end_points['debenture-and-bond']}?type={bond_type}"
-        return self.requestGETAPI(url=url)
+        return cast(list[dict[str, Any]], self.requestGETAPI(url=url))
 
     def getPriceVolumeHistory(self, business_date: Optional[str] = None) -> dict[str, Any]:
         """Get price volume history for a business date."""
         date_param = f"&businessDate={business_date}" if business_date else ""
         url = f"{self.api_end_points['todays_price']}?size=500{date_param}"
-        return self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForFloorSheet)
+        return cast(
+            dict[str, Any],
+            self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForFloorSheet),
+        )
 
 
 __all__ = ["NepseClient"]

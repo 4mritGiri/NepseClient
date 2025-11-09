@@ -61,7 +61,7 @@ echo ""
 # Run flake8 to see remaining issues
 echo "Flake8 report:"
 uv run flake8 nepse_client tests examples \
-  --max-line-length=88 \
+  --max-line-length=100 \
   --extend-ignore=E203,W503,E501,D212 \
   --per-file-ignores='*/__init__.py:F401' \
   --count --statistics 2>&1 || true

@@ -38,7 +38,9 @@ class _DummyIDManagerBase:
         self.date_stamp: Optional[datetime] = None
 
         self.setDateFunction(date_function)
-        self.setMarketStatusFunction(market_status_function)
+        self.setMarketStatusFunction(
+            market_status_function or (lambda: {"id": 0, "asOf": datetime.now().isoformat()})
+        )
 
     def setDateFunction(self, func: Callable) -> None:
         """
@@ -139,7 +141,8 @@ class DummyIDManager(_DummyIDManagerBase):
             return
 
         # Check if date has changed
-        if self.date_stamp.date() < today.date():
+        if self.date_stamp is None or self.date_stamp.date() < today.date():
+            # if self.date_stamp.date() < today.date():
             logger.debug("Date changed, updating dummy ID")
             new_data = self.market_status_function()
             new_converted_date = self.convertToDateTime(new_data["asOf"])
@@ -166,6 +169,7 @@ class DummyIDManager(_DummyIDManagerBase):
            Current dummy ID
         """
         self.populateData()
+        assert self.dummy_id is not None
         return self.dummy_id
 
 
@@ -224,7 +228,8 @@ class AsyncDummyIDManager(_DummyIDManagerBase):
             return
 
         # Check if date has changed
-        if self.date_stamp.date() < today.date():
+        if self.date_stamp is None or self.date_stamp.date() < today.date():
+            # if self.date_stamp.date() < today.date():
             # Check if another coroutine is already updating
             if self.update_started.is_set():
                 # Wait for ongoing update
@@ -264,6 +269,7 @@ class AsyncDummyIDManager(_DummyIDManagerBase):
            Current dummy ID
         """
         await self.populateData()
+        assert self.dummy_id is not None
         return self.dummy_id
 
 
