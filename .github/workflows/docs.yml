@@ -341,7 +341,7 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
         with:
           args: |
-            📌 **CI Build Result**
+            📌 **CI Build Result From Docs**
             🧾 Repo: ${{ github.repository }}
             👤 Trigger: ${{ github.actor }}
             ✅ Status: ${{ job.status }}

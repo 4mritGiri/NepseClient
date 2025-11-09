@@ -14,6 +14,7 @@ def test_version():
 def test_sync_client_initialization():
     """Test synchronous client can be initialized."""
     client = NepseClient()
+    client.setTLSVerification(False)
     assert client is not None
     assert hasattr(client, "getMarketStatus")
     assert hasattr(client, "getCompanyList")
