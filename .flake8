@@ -1,0 +1,31 @@
+[flake8]
+max-line-length = 100
+extend-ignore = E203,W503,E501,D212,D200
+max-complexity = 15
+statistics = True
+count = True
+per-file-ignores =
+    */__init__.py:F401
+    */typing.py:F401
+
+# Exclude directories
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    venv,
+    .eggs,
+    *.egg,
+    build,
+    dist,
+    .tox,
+    .mypy_cache,
+    .pytest_cache,
+    htmlcov,
+    *.egg-info
+
+# File patterns
+filename = *.py
+
+# Plugins (if installed)
+docstring-convention = google

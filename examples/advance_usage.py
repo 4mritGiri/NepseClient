@@ -9,7 +9,6 @@ real-world use cases for the NEPSE client library.
 import asyncio
 import logging
 from datetime import date, timedelta
-from typing import Dict, List
 
 from nepse_client import AsyncNepseClient, NepseClient
 from nepse_client.exceptions import (
@@ -58,7 +57,7 @@ class NepsePortfolioAnalyzer:
         self.client = AsyncNepseClient() if use_async else NepseClient()
         self.use_async = use_async
 
-    def calculate_portfolio_value(self, portfolio: Dict[str, int]) -> float:
+    def calculate_portfolio_value(self, portfolio: dict[str, int]) -> float:
         """
         Calculate total portfolio value.
 
@@ -72,7 +71,7 @@ class NepsePortfolioAnalyzer:
             return asyncio.run(self._calculate_async(portfolio))
         return self._calculate_sync(portfolio)
 
-    def _calculate_sync(self, portfolio: Dict[str, int]) -> float:
+    def _calculate_sync(self, portfolio: dict[str, int]) -> float:
         """Configure comprehensive logging."""
         total_value = 0.0
 
@@ -91,7 +90,7 @@ class NepsePortfolioAnalyzer:
 
         return total_value
 
-    async def _calculate_async(self, portfolio: Dict[str, int]) -> float:
+    async def _calculate_async(self, portfolio: dict[str, int]) -> float:
         """Asynchronous calculation with concurrent requests.
 
         Args:
@@ -134,7 +133,7 @@ class NepsePriceAlertSystem:
     def __init__(self):
         """Initialize alert system."""
         self.client = NepseClient()
-        self.alerts: List[Dict] = []
+        self.alerts: list[dict] = []
 
     def add_alert(self, symbol: str, target_price: float, above: bool = True, callback=None):
         """
@@ -179,7 +178,7 @@ class NepsePriceAlertSystem:
             except NepseError as e:
                 logger.error(f"Error checking alert for {alert['symbol']}: {e}")
 
-    def _trigger_alert(self, alert: Dict, current_price: float):
+    def _trigger_alert(self, alert: dict, current_price: float):
         """Trigger an alert."""
         direction = "above" if alert["above"] else "below"
         message = (
@@ -207,7 +206,7 @@ class NepseHistoricalAnalyzer:
         """Initialize the historical analyzer."""
         self.client = NepseClient()
 
-    def calculate_returns(self, symbol: str, days: int = 30) -> Dict[str, float]:
+    def calculate_returns(self, symbol: str, days: int = 30) -> dict[str, float]:
         """
         Calculate returns over specified period.
 
@@ -266,7 +265,7 @@ class NepseHistoricalAnalyzer:
             logger.error(f"Error analyzing {symbol}: {e}")
             return {}
 
-    def _calculate_volatility(self, prices: List[float]) -> float:
+    def _calculate_volatility(self, prices: list[float]) -> float:
         """Calculate price volatility (standard deviation)."""
         if len(prices) < 2:
             return 0.0
@@ -348,7 +347,7 @@ class RobustNepseClient:
 # ============== Async Batch Operations ==============
 
 
-async def fetch_multiple_companies(symbols: List[str]) -> Dict[str, Dict]:
+async def fetch_multiple_companies(symbols: list[str]) -> dict[str, dict]:
     """
     Fetch details for multiple companies concurrently.
 

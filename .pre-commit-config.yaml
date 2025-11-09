@@ -13,7 +13,7 @@
 
 # Specify default Python version
 default_language_version:
-  python: python3.14
+  python: python3.12
 
 # Default stages for hooks (using updated stage names)
 default_stages: [pre-commit, pre-push]
@@ -164,14 +164,11 @@ repos:
     hooks:
       - id: black
         name: Black code formatter
-        language_version: python3.14
+        language_version: python3.12
         types: [python]
         args:
           - --line-length=100
           - --target-version=py39
-          - --target-version=py310
-          - --target-version=py311
-          - --target-version=py312
         stages: [pre-commit]
 
 
@@ -207,10 +204,11 @@ repos:
         types: [python]
         args:
           - --max-line-length=100
-          - --extend-ignore=E203,W503,E501
+          - --extend-ignore=E203,W503,E501,D212,D200
           - --max-complexity=15
           - --statistics
           - --count
+          - --per-file-ignores=*/__init__.py:F401,*/typing.py:F401
         additional_dependencies:
           - flake8-docstrings>=1.7.0
           - flake8-bugbear>=23.0.0
@@ -261,7 +259,7 @@ repos:
           - --ignore-missing-imports
           - --install-types
           - --non-interactive
-          - --python-version=3.8
+          - --python-version=3.9
         additional_dependencies:
           - types-requests
           - types-setuptools
@@ -278,7 +276,7 @@ repos:
         name: pyupgrade syntax upgrader
         types: [python]
         args:
-          - --py38-plus
+          - --py39-plus
         stages: [pre-commit]
 
   # ============================================================

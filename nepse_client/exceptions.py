@@ -5,7 +5,7 @@ This module provides a comprehensive exception hierarchy for handling
 various error scenarios when interacting with the NEPSE API.
 """
 
-from typing import Any, Dict, Optional
+from typing import Any, Optional
 
 
 class NepseError(Exception):
@@ -27,7 +27,7 @@ class NepseError(Exception):
         message: str,
         status_code: Optional[int] = None,
         response_data: Optional[Any] = None,
-        request_data: Optional[Dict[str, Any]] = None,
+        request_data: Optional[dict[str, Any]] = None,
     ):
         """
         Initialize NepseError.
@@ -38,11 +38,11 @@ class NepseError(Exception):
            response_data: Response from the API
            request_data: Original request data
         """
+        super().__init__(message, status_code, response_data, request_data)
         self.message = message
         self.status_code = status_code
         self.response_data = response_data
         self.request_data = request_data
-        super().__init__(self.message)
 
     def __str__(self) -> str:
         """Return string representation of the error."""
@@ -60,7 +60,7 @@ class NepseError(Exception):
             f"response_data={self.response_data!r})"
         )
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """
         Convert exception to dictionary for logging/serialization.
 
@@ -97,7 +97,7 @@ class NepseClientError(NepseError):
         message: str = "Invalid client request",
         status_code: int = 400,
         response_data: Optional[Any] = None,
-        request_data: Optional[Dict[str, Any]] = None,
+        request_data: Optional[dict[str, Any]] = None,
     ):
         """Initialize the exception with a default message."""
         super().__init__(message, status_code, response_data, request_data)
@@ -225,12 +225,12 @@ class NepseValidationError(NepseError):
            field: Name of the invalid field
            value: Invalid value provided
         """
-        self.field = field
-        self.value = value
         full_message = message
         if field:
             full_message = f"{message} (field: {field})"
-        super().__init__(full_message)
+        super().__init__(full_message, None, None)
+        self.field = field
+        self.value = value
 
 
 class NepseRateLimitError(NepseError):
@@ -255,10 +255,10 @@ class NepseRateLimitError(NepseError):
            status_code: HTTP status code
            retry_after: Seconds to wait before retry
         """
-        self.retry_after = retry_after
         if retry_after:
             message = f"{message}. Retry after {retry_after} seconds"
-        super().__init__(message, status_code)
+        super().__init__(message, status_code, None)
+        self.retry_after = retry_after
 
 
 class NepseDataNotFoundError(NepseError):
@@ -289,10 +289,10 @@ class NepseDataNotFoundError(NepseError):
            message: Error description
            resource: Resource that was not found
         """
-        self.resource = resource
         if resource:
             message = f"{message}: {resource}"
-        super().__init__(message, status_code=404)
+        super().__init__(message, None)
+        self.resource = resource
 
 
 class NepseTimeoutError(NepseError):
@@ -317,11 +317,11 @@ class NepseTimeoutError(NepseError):
            message: Error description
            timeout: Timeout value in seconds
         """
-        self.timeout = timeout
         if timeout:
             message = f"{message} after {timeout} seconds"
         """Initialize the exception with a default message."""
-        super().__init__(message)
+        super().__init__(message, None)
+        self.timeout = timeout
 
 
 class NepseConnectionError(NepseError):

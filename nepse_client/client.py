@@ -10,7 +10,7 @@ import logging
 import pathlib
 from datetime import datetime
 from functools import singledispatch
-from typing import Any, Dict, List, Optional, Type, Union
+from typing import Any, Optional, Union
 
 from .exceptions import (
     NepseAuthenticationError,
@@ -27,8 +27,8 @@ logger = logging.getLogger(__name__)
 
 
 def mask_sensitive_data(
-    data: Dict[str, Any], keys: tuple = ("token", "password", "Authorization")
-) -> Dict[str, Any]:
+    data: dict[str, Any], keys: tuple = ("token", "password", "Authorization")
+) -> dict[str, Any]:
     """
     Mask sensitive fields in data for safe logging.
 
@@ -47,7 +47,7 @@ def mask_sensitive_data(
 
 
 @singledispatch
-def safe_serialize(obj: Any) -> Union[str, Dict, List]:
+def safe_serialize(obj: Any) -> Union[str, dict, list]:
     """
     Safely serialize objects for logging.
 
@@ -64,13 +64,13 @@ def safe_serialize(obj: Any) -> Union[str, Dict, List]:
 
 
 @safe_serialize.register(dict)
-def _(obj: Dict) -> str:
+def _(obj: dict) -> str:
     """Serialize dictionary to JSON string."""
     return json.dumps(obj, default=safe_serialize)
 
 
 @safe_serialize.register(list)
-def _(obj: List) -> List:
+def _(obj: list) -> list:
     """Serialize list recursively."""
     return [safe_serialize(item) for item in obj]
 
@@ -92,8 +92,8 @@ class _NepseBase:
 
     def __init__(
         self,
-        token_manager_class: Type,
-        dummy_id_manager_class: Type,
+        token_manager_class: type,
+        dummy_id_manager_class: type,
         logger: Optional[logging.Logger] = None,
         mask_request_data: bool = True,
         timeout: float = 100.0,
@@ -115,12 +115,12 @@ class _NepseBase:
         self._tls_verify = True
 
         # Cache variables
-        self.company_symbol_id_keymap: Optional[Dict[str, int]] = None
-        self.security_symbol_id_keymap: Optional[Dict[str, int]] = None
-        self.company_list: Optional[List[Dict]] = None
-        self.security_list: Optional[List[Dict]] = None
-        self.holiday_list: Optional[List[Dict]] = None
-        self.sector_scrips: Optional[Dict[str, List[str]]] = None
+        self.company_symbol_id_keymap: Optional[dict[str, int]] = None
+        self.security_symbol_id_keymap: Optional[dict[str, int]] = None
+        self.company_list: Optional[list[dict]] = None
+        self.security_list: Optional[list[dict]] = None
+        self.holiday_list: Optional[list[dict]] = None
+        self.sector_scrips: Optional[dict[str, list[str]]] = None
 
         # Configuration
         self.floor_sheet_size = 500
@@ -152,7 +152,7 @@ class _NepseBase:
             raise NepseConfigurationError(f"Configuration loading failed: {e}") from e
 
     @staticmethod
-    def _load_json_file(filepath: pathlib.Path) -> Union[Dict, List]:
+    def _load_json_file(filepath: pathlib.Path) -> Union[dict, list]:
         """
         Load and parse a JSON file.
 
@@ -185,7 +185,7 @@ class _NepseBase:
         """
         return f"{self.base_url}{api_url}"
 
-    def getDummyData(self) -> List[int]:
+    def getDummyData(self) -> list[int]:
         """
         Get dummy data array.
 
@@ -206,7 +206,7 @@ class _NepseBase:
         """
         return self.dummy_id_manager.getDummyID()
 
-    def handle_response(self, response: Any, request_data: Optional[Dict] = None) -> Any:
+    def handle_response(self, response: Any, request_data: Optional[dict] = None) -> Any:
         """
         Process HTTP response and handle errors.
 
@@ -314,7 +314,7 @@ class _NepseBase:
 
     # Common API methods (GET requests)False
 
-    def getMarketStatus(self) -> Dict[str, Any]:
+    def getMarketStatus(self) -> dict[str, Any]:
         """
         Get current market status (open/closed).
 
@@ -323,7 +323,7 @@ class _NepseBase:
         """
         return self.requestGETAPI(url=self.api_end_points["nepse_open_url"])
 
-    def getPriceVolume(self) -> List[Dict[str, Any]]:
+    def getPriceVolume(self) -> list[dict[str, Any]]:
         """
         Get current price and volume data for all securities.
 
@@ -332,7 +332,7 @@ class _NepseBase:
         """
         return self.requestGETAPI(url=self.api_end_points["price_volume_url"])
 
-    def getSummary(self) -> Dict[str, Any]:
+    def getSummary(self) -> dict[str, Any]:
         """
         Get market summary with turnover, trades, etc.
 
@@ -341,7 +341,7 @@ class _NepseBase:
         """
         return self.requestGETAPI(url=self.api_end_points["summary_url"])
 
-    def getTopGainers(self) -> List[Dict[str, Any]]:
+    def getTopGainers(self) -> list[dict[str, Any]]:
         """
         Get list of top gaining stocks.
 
@@ -350,7 +350,7 @@ class _NepseBase:
         """
         return self.requestGETAPI(url=self.api_end_points["top_gainers_url"])
 
-    def getTopLosers(self) -> List[Dict[str, Any]]:
+    def getTopLosers(self) -> list[dict[str, Any]]:
         """
         Get list of top losing stocks.
 
@@ -359,37 +359,37 @@ class _NepseBase:
         """
         return self.requestGETAPI(url=self.api_end_points["top_losers_url"])
 
-    def getTopTenTradeScrips(self) -> List[Dict[str, Any]]:
+    def getTopTenTradeScrips(self) -> list[dict[str, Any]]:
         """Get top 10 scrips by trade volume."""
         return self.requestGETAPI(url=self.api_end_points["top_ten_trade_url"])
 
-    def getTopTenTransactionScrips(self) -> List[Dict[str, Any]]:
+    def getTopTenTransactionScrips(self) -> list[dict[str, Any]]:
         """Get top 10 scrips by transaction count."""
         return self.requestGETAPI(url=self.api_end_points["top_ten_transaction_url"])
 
-    def getTopTenTurnoverScrips(self) -> List[Dict[str, Any]]:
+    def getTopTenTurnoverScrips(self) -> list[dict[str, Any]]:
         """Get top 10 scrips by turnover."""
         return self.requestGETAPI(url=self.api_end_points["top_ten_turnover_url"])
 
-    def getSupplyDemand(self) -> Dict[str, Any]:
+    def getSupplyDemand(self) -> dict[str, Any]:
         """Get supply and demand data."""
         return self.requestGETAPI(url=self.api_end_points["supply_demand_url"])
 
-    def getNepseIndex(self) -> Dict[str, Any]:
+    def getNepseIndex(self) -> dict[str, Any]:
         """Get NEPSE index data."""
         return self.requestGETAPI(url=self.api_end_points["nepse_index_url"])
 
-    def getNepseSubIndices(self) -> List[Dict[str, Any]]:
+    def getNepseSubIndices(self) -> list[dict[str, Any]]:
         """Get all NEPSE sub-indices."""
         return self.requestGETAPI(url=self.api_end_points["nepse_subindices_url"])
 
-    def getLiveMarket(self) -> Dict[str, Any]:
+    def getLiveMarket(self) -> dict[str, Any]:
         """Get live market data."""
         return self.requestGETAPI(url=self.api_end_points["live-market"])
 
     def getTradingAverage(
         self, business_date: Optional[str] = None, nDays: int = 180
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """
         Get trading average data.
 

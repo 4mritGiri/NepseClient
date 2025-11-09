@@ -11,7 +11,7 @@ import logging
 import pathlib
 import time
 from datetime import datetime
-from typing import List, Optional, Tuple
+from typing import Optional
 
 import pywasm
 
@@ -39,7 +39,7 @@ class TokenParser:
             logger.error(f"Failed to load WASM module: {e}")
             raise
 
-    def parse_token_response(self, token_response: dict) -> Tuple[str, str]:
+    def parse_token_response(self, token_response: dict) -> tuple[str, str]:
         """
         Parse access and refresh tokens from API response.
 
@@ -145,7 +145,7 @@ class _TokenManagerBase:
         self.access_token: Optional[str] = None
         self.refresh_token: Optional[str] = None
         self.token_time_stamp: Optional[int] = None
-        self.salts: Optional[List[int]] = None
+        self.salts: Optional[list[int]] = None
 
     def isTokenValid(self) -> bool:
         """
@@ -160,7 +160,7 @@ class _TokenManagerBase:
         elapsed = int(time.time()) - self.token_time_stamp
         return elapsed < self.MAX_UPDATE_PERIOD
 
-    def _getValidTokenFromJSON(self, token_response: dict) -> Tuple[str, str, int, List[int]]:
+    def _getValidTokenFromJSON(self, token_response: dict) -> tuple[str, str, int, list[int]]:
         """
         Extract and validate token data from API response.
 

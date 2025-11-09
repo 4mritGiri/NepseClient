@@ -9,7 +9,7 @@ import json
 import logging
 from collections import defaultdict
 from datetime import date, datetime, timedelta
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Optional, Union
 
 import httpx
 import tqdm
@@ -186,7 +186,7 @@ class NepseClient(_NepseBase):
 
         return self._retry_request(_make_request)
 
-    def getAuthorizationHeaders(self) -> Dict[str, str]:
+    def getAuthorizationHeaders(self) -> dict[str, str]:
         """
         Get headers with authorization token.
 
@@ -256,7 +256,7 @@ class NepseClient(_NepseBase):
 
     # Company and Security data methods
 
-    def getCompanyList(self) -> List[Dict[str, Any]]:
+    def getCompanyList(self) -> list[dict[str, Any]]:
         """
         Get list of all listed companies.
 
@@ -270,7 +270,7 @@ class NepseClient(_NepseBase):
         self.company_list = self.requestGETAPI(url=self.api_end_points["company_list_url"])
         return list(self.company_list)
 
-    def getSecurityList(self) -> List[Dict[str, Any]]:
+    def getSecurityList(self) -> list[dict[str, Any]]:
         """
         Get list of all securities (non-delisted).
 
@@ -280,7 +280,7 @@ class NepseClient(_NepseBase):
         self.security_list = self.requestGETAPI(url=self.api_end_points["security_list_url"])
         return list(self.security_list)
 
-    def getCompanyIDKeyMap(self, force_update: bool = False) -> Dict[str, int]:
+    def getCompanyIDKeyMap(self, force_update: bool = False) -> dict[str, int]:
         """
         Get mapping of company symbols to IDs.
 
@@ -297,7 +297,7 @@ class NepseClient(_NepseBase):
             }
         return self.company_symbol_id_keymap.copy()
 
-    def getSecurityIDKeyMap(self, force_update: bool = False) -> Dict[str, int]:
+    def getSecurityIDKeyMap(self, force_update: bool = False) -> dict[str, int]:
         """
         Get mapping of security symbols to IDs.
 
@@ -314,7 +314,7 @@ class NepseClient(_NepseBase):
             }
         return self.security_symbol_id_keymap.copy()
 
-    def getSectorScrips(self) -> Dict[str, List[str]]:
+    def getSectorScrips(self) -> dict[str, list[str]]:
         """
         Get scrips grouped by sector.
 
@@ -339,7 +339,7 @@ class NepseClient(_NepseBase):
 
         return dict(self.sector_scrips)
 
-    def getCompanyDetails(self, symbol: str) -> Dict[str, Any]:
+    def getCompanyDetails(self, symbol: str) -> dict[str, Any]:
         """
         Get detailed information for a specific company.
 
@@ -509,7 +509,7 @@ class NepseClient(_NepseBase):
         symbol: str,
         start_date: Optional[Union[str, date]] = None,
         end_date: Optional[Union[str, date]] = None,
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """
         Get price and volume history for a company.
 
@@ -533,7 +533,7 @@ class NepseClient(_NepseBase):
         )
         return self.requestGETAPI(url=url)
 
-    def getDailyScripPriceGraph(self, symbol: str) -> Dict[str, Any]:
+    def getDailyScripPriceGraph(self, symbol: str) -> dict[str, Any]:
         """
         Get daily price graph data for a scrip.
 
@@ -555,7 +555,7 @@ class NepseClient(_NepseBase):
         show_progress: bool = False,
         paginated: bool = False,
         page: Optional[int] = None,
-    ) -> Union[List[Dict[str, Any]], List[List[Dict[str, Any]]], Dict[str, Any]]:
+    ) -> Union[list[dict[str, Any]], list[list[dict[str, Any]]], dict[str, Any]]:
         """
         Get floor sheet data.
 
@@ -607,7 +607,7 @@ class NepseClient(_NepseBase):
         self,
         symbol: str,
         business_date: Optional[Union[str, date]] = None,
-    ) -> List[Dict[str, Any]]:
+    ) -> list[dict[str, Any]]:
         """
         Get floor sheet for a specific company.
 
@@ -649,7 +649,7 @@ class NepseClient(_NepseBase):
 
         return floor_sheets
 
-    def getSymbolMarketDepth(self, symbol: str) -> Dict[str, Any]:
+    def getSymbolMarketDepth(self, symbol: str) -> dict[str, Any]:
         """
         Get market depth for a symbol.
 
@@ -666,18 +666,18 @@ class NepseClient(_NepseBase):
 
     # Additional data methods (continued in next message due to length)
 
-    def getHolidayList(self, year: int = 2025) -> List[Dict[str, Any]]:
+    def getHolidayList(self, year: int = 2025) -> list[dict[str, Any]]:
         """Get list of market holidays for specified year."""
         url = f"{self.api_end_points['holiday-list']}?year={year}"
         self.holiday_list = self.requestGETAPI(url=url)
         return list(self.holiday_list)
 
-    def getDebentureAndBondList(self, bond_type: str = "debenture") -> List[Dict[str, Any]]:
+    def getDebentureAndBondList(self, bond_type: str = "debenture") -> list[dict[str, Any]]:
         """Get list of debentures and bonds."""
         url = f"{self.api_end_points['debenture-and-bond']}?type={bond_type}"
         return self.requestGETAPI(url=url)
 
-    def getPriceVolumeHistory(self, business_date: Optional[str] = None) -> Dict[str, Any]:
+    def getPriceVolumeHistory(self, business_date: Optional[str] = None) -> dict[str, Any]:
         """Get price volume history for a business date."""
         date_param = f"&businessDate={business_date}" if business_date else ""
         url = f"{self.api_end_points['todays_price']}?size=500{date_param}"
