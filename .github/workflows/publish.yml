@@ -54,10 +54,10 @@ jobs:
 
       - name: Check code quality
         run: |
-          black --check --line-length=88 --target-version=py39 nepse_client tests
-          isort --check-only --profile=black --line-length=88 nepse_client tests
+          black --check --line-length=100 --target-version=py39 nepse_client tests
+          isort --check-only --profile=black --line-length=100 nepse_client tests
           flake8 nepse_client tests \
-            --max-line-length=88 \
+            --max-line-length=100 \
             --extend-ignore=E203,W503,E501,D212,D200 \
             --per-file-ignores='*/__init__.py:F401'
 
