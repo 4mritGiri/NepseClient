@@ -42,11 +42,14 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
+        shell: bash
         run: |
           python -m pip install --upgrade pip
           # Install build tools and the package in editable mode with dev dependencies
+          pip install mypy types-requests types-setuptools
           pip install build setuptools wheel
           pip install -e ".[dev]"
+          pip install pytest pytest-cov pytest-asyncio
 
       - name: Run tests
         run: pytest tests/ -v --cov=nepse_client
@@ -233,18 +236,29 @@ jobs:
     if: always()
 
     steps:
-      - name: Create success notification
-        if: needs.publish-pypi.result == 'success'
+      - name: Set notification message
+        id: msg
         run: |
-          echo "✅ Successfully published to PyPI!"
-          echo "Version: ${GITHUB_REF#refs/tags/v}"
-          echo "Package: https://pypi.org/project/nepse-client/"
+          if [[ "${{ needs.publish-pypi.result }}" == "success" ]]; then
+            echo "title=✅ PyPI Publish Successful" >> $GITHUB_OUTPUT
+            echo "color=3066993" >> $GITHUB_OUTPUT  # Green
+          else
+            echo "title=❌ PyPI Publish Failed" >> $GITHUB_OUTPUT
+            echo "color=15158332" >> $GITHUB_OUTPUT  # Red
+          fi
 
-      - name: Create failure notification
-        if: needs.publish-pypi.result != 'success'
-        run: |
-          echo "❌ Publication failed!"
-          exit 1
+      - name: Send Discord Notification
+        uses: Ilshidur/action-discord@0.3.2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        with:
+          args: |
+            ${{ steps.msg.outputs.title }}
+            🧾 Repo: ${{ github.repository }}
+            👤 Trigger: ${{ github.actor }}
+            🔗 Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            🏷 Version: ${GITHUB_REF#refs/tags/v}
+
 
   # ============================================================
   # Update Documentation
