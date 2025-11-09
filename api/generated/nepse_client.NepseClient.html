@@ -323,6 +323,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.init_client"><code class="docutils literal notranslate"><span class="pre">NepseClient.init_client()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.requestGETAPI"><code class="docutils literal notranslate"><span class="pre">NepseClient.requestGETAPI()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.requestPOSTAPI"><code class="docutils literal notranslate"><span class="pre">NepseClient.requestPOSTAPI()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.headers"><code class="docutils literal notranslate"><span class="pre">NepseClient.headers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.company_symbol_id_keymap"><code class="docutils literal notranslate"><span class="pre">NepseClient.company_symbol_id_keymap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.security_symbol_id_keymap"><code class="docutils literal notranslate"><span class="pre">NepseClient.security_symbol_id_keymap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.company_list"><code class="docutils literal notranslate"><span class="pre">NepseClient.company_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.security_list"><code class="docutils literal notranslate"><span class="pre">NepseClient.security_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.holiday_list"><code class="docutils literal notranslate"><span class="pre">NepseClient.holiday_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.sector_scrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.sector_scrips</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a><ul>
@@ -361,6 +368,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.init_client"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.init_client()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.requestGETAPI"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.requestGETAPI()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.requestPOSTAPI"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.requestPOSTAPI()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.headers"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.headers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.company_symbol_id_keymap"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.company_symbol_id_keymap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.security_symbol_id_keymap"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.security_symbol_id_keymap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.company_list"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.company_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.security_list"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.security_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.holiday_list"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.holiday_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.sector_scrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.sector_scrips</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseError"><code class="docutils literal notranslate"><span class="pre">NepseError</span></code></a><ul>
@@ -426,7 +440,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#asyncnepseclient">AsyncNepseClient</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../nepse_client.html#id30"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nepse_client.html#id37"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1139,6 +1153,14 @@ token expiration transparently.</p>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTLSVerification</span></code>([flag])</p></td>
 <td><p>Enable or disable TLS certificate verification.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id30" title="nepse_client.NepseClient.headers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">headers</span></code></a></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>

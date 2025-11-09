@@ -56,4 +56,10 @@
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~AsyncNepseClient.headers
+   
    

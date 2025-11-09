@@ -323,6 +323,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.init_client"><code class="docutils literal notranslate"><span class="pre">NepseClient.init_client()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.requestGETAPI"><code class="docutils literal notranslate"><span class="pre">NepseClient.requestGETAPI()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.requestPOSTAPI"><code class="docutils literal notranslate"><span class="pre">NepseClient.requestPOSTAPI()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.headers"><code class="docutils literal notranslate"><span class="pre">NepseClient.headers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.company_symbol_id_keymap"><code class="docutils literal notranslate"><span class="pre">NepseClient.company_symbol_id_keymap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.security_symbol_id_keymap"><code class="docutils literal notranslate"><span class="pre">NepseClient.security_symbol_id_keymap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.company_list"><code class="docutils literal notranslate"><span class="pre">NepseClient.company_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.security_list"><code class="docutils literal notranslate"><span class="pre">NepseClient.security_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.holiday_list"><code class="docutils literal notranslate"><span class="pre">NepseClient.holiday_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseClient.sector_scrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.sector_scrips</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a><ul>
@@ -361,6 +368,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.init_client"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.init_client()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.requestGETAPI"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.requestGETAPI()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.requestPOSTAPI"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.requestPOSTAPI()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.headers"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.headers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.company_symbol_id_keymap"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.company_symbol_id_keymap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.security_symbol_id_keymap"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.security_symbol_id_keymap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.company_list"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.company_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.security_list"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.security_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.holiday_list"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.holiday_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#nepse_client.AsyncNepseClient.sector_scrips"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient.sector_scrips</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../nepse_client.html#nepse_client.NepseError"><code class="docutils literal notranslate"><span class="pre">NepseError</span></code></a><ul>
@@ -426,7 +440,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../nepse_client.html#asyncnepseclient">AsyncNepseClient</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../nepse_client.html#id30"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../nepse_client.html#id37"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1012,28 +1026,28 @@ manages authentication tokens and handles token expiration.</p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id31" title="nepse_client.AsyncNepseClient.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([logger, mask_request_data, timeout])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id38" title="nepse_client.AsyncNepseClient.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([logger, mask_request_data, timeout])</p></td>
 <td><p>Initialize asynchronous NEPSE client.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id35" title="nepse_client.AsyncNepseClient.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id42" title="nepse_client.AsyncNepseClient.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
 <td><p>Close HTTP client and cleanup resources.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id38" title="nepse_client.AsyncNepseClient.getAuthorizationHeaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAuthorizationHeaders</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id45" title="nepse_client.AsyncNepseClient.getAuthorizationHeaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAuthorizationHeaders</span></code></a>()</p></td>
 <td><p>Get headers with authorization token.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id60" title="nepse_client.AsyncNepseClient.getCompanyDetails"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCompanyDetails</span></code></a>(symbol)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id67" title="nepse_client.AsyncNepseClient.getCompanyDetails"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCompanyDetails</span></code></a>(symbol)</p></td>
 <td><p>Get detailed information for a specific company.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id57" title="nepse_client.AsyncNepseClient.getCompanyIDKeyMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCompanyIDKeyMap</span></code></a>([force_update])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id64" title="nepse_client.AsyncNepseClient.getCompanyIDKeyMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCompanyIDKeyMap</span></code></a>([force_update])</p></td>
 <td><p>Get mapping of company symbols to IDs.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id55" title="nepse_client.AsyncNepseClient.getCompanyList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCompanyList</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id62" title="nepse_client.AsyncNepseClient.getCompanyList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCompanyList</span></code></a>()</p></td>
 <td><p>Get list of all listed companies.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id61" title="nepse_client.AsyncNepseClient.getCompanyPriceVolumeHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCompanyPriceVolumeHistory</span></code></a>(symbol[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id68" title="nepse_client.AsyncNepseClient.getCompanyPriceVolumeHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCompanyPriceVolumeHistory</span></code></a>(symbol[, ...])</p></td>
 <td><p>Get price and volume history for a company.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id62" title="nepse_client.AsyncNepseClient.getDailyScripPriceGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDailyScripPriceGraph</span></code></a>(symbol)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id69" title="nepse_client.AsyncNepseClient.getDailyScripPriceGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDailyScripPriceGraph</span></code></a>(symbol)</p></td>
 <td><p>Get daily price graph data for a scrip.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDummyData</span></code>()</p></td>
@@ -1042,70 +1056,70 @@ manages authentication tokens and handles token expiration.</p>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDummyID</span></code>()</p></td>
 <td><p>Get dummy ID for current market state.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id63" title="nepse_client.AsyncNepseClient.getFloorSheet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFloorSheet</span></code></a>([show_progress])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id70" title="nepse_client.AsyncNepseClient.getFloorSheet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFloorSheet</span></code></a>([show_progress])</p></td>
 <td><p>Get complete floor sheet data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id64" title="nepse_client.AsyncNepseClient.getFloorSheetOf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFloorSheetOf</span></code></a>(symbol[, business_date])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id71" title="nepse_client.AsyncNepseClient.getFloorSheetOf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFloorSheetOf</span></code></a>(symbol[, business_date])</p></td>
 <td><p>Get floor sheet for a specific company.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id53" title="nepse_client.AsyncNepseClient.getLiveMarket"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLiveMarket</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id60" title="nepse_client.AsyncNepseClient.getLiveMarket"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLiveMarket</span></code></a>()</p></td>
 <td><p>Get live market data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id42" title="nepse_client.AsyncNepseClient.getMarketStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarketStatus</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id49" title="nepse_client.AsyncNepseClient.getMarketStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarketStatus</span></code></a>()</p></td>
 <td><p>Get current market status (open/closed).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id51" title="nepse_client.AsyncNepseClient.getNepseIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNepseIndex</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id58" title="nepse_client.AsyncNepseClient.getNepseIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNepseIndex</span></code></a>()</p></td>
 <td><p>Get NEPSE index data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id52" title="nepse_client.AsyncNepseClient.getNepseSubIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNepseSubIndices</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id59" title="nepse_client.AsyncNepseClient.getNepseSubIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNepseSubIndices</span></code></a>()</p></td>
 <td><p>Get all NEPSE sub-indices.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id40" title="nepse_client.AsyncNepseClient.getPOSTPayloadID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPOSTPayloadID</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id47" title="nepse_client.AsyncNepseClient.getPOSTPayloadID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPOSTPayloadID</span></code></a>()</p></td>
 <td><p>Generate general payload ID.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id41" title="nepse_client.AsyncNepseClient.getPOSTPayloadIDForFloorSheet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPOSTPayloadIDForFloorSheet</span></code></a>([business_date])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id48" title="nepse_client.AsyncNepseClient.getPOSTPayloadIDForFloorSheet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPOSTPayloadIDForFloorSheet</span></code></a>([business_date])</p></td>
 <td><p>Generate payload ID for floor sheet requests.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id39" title="nepse_client.AsyncNepseClient.getPOSTPayloadIDForScrips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPOSTPayloadIDForScrips</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id46" title="nepse_client.AsyncNepseClient.getPOSTPayloadIDForScrips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPOSTPayloadIDForScrips</span></code></a>()</p></td>
 <td><p>Generate payload ID for scrip-related requests.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id43" title="nepse_client.AsyncNepseClient.getPriceVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPriceVolume</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id50" title="nepse_client.AsyncNepseClient.getPriceVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPriceVolume</span></code></a>()</p></td>
 <td><p>Get current price and volume data for all securities.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id59" title="nepse_client.AsyncNepseClient.getSectorScrips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSectorScrips</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id66" title="nepse_client.AsyncNepseClient.getSectorScrips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSectorScrips</span></code></a>()</p></td>
 <td><p>Get scrips grouped by sector.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id58" title="nepse_client.AsyncNepseClient.getSecurityIDKeyMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSecurityIDKeyMap</span></code></a>([force_update])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id65" title="nepse_client.AsyncNepseClient.getSecurityIDKeyMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSecurityIDKeyMap</span></code></a>([force_update])</p></td>
 <td><p>Get mapping of security symbols to IDs.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id56" title="nepse_client.AsyncNepseClient.getSecurityList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSecurityList</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id63" title="nepse_client.AsyncNepseClient.getSecurityList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSecurityList</span></code></a>()</p></td>
 <td><p>Get list of all securities (non-delisted).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id44" title="nepse_client.AsyncNepseClient.getSummary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSummary</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id51" title="nepse_client.AsyncNepseClient.getSummary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSummary</span></code></a>()</p></td>
 <td><p>Get market summary with turnover, trades, etc.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id50" title="nepse_client.AsyncNepseClient.getSupplyDemand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSupplyDemand</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id57" title="nepse_client.AsyncNepseClient.getSupplyDemand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSupplyDemand</span></code></a>()</p></td>
 <td><p>Get supply and demand data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id65" title="nepse_client.AsyncNepseClient.getSymbolMarketDepth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSymbolMarketDepth</span></code></a>(symbol)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id72" title="nepse_client.AsyncNepseClient.getSymbolMarketDepth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSymbolMarketDepth</span></code></a>(symbol)</p></td>
 <td><p>Get market depth for a symbol.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id45" title="nepse_client.AsyncNepseClient.getTopGainers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTopGainers</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id52" title="nepse_client.AsyncNepseClient.getTopGainers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTopGainers</span></code></a>()</p></td>
 <td><p>Get list of top gaining stocks.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id46" title="nepse_client.AsyncNepseClient.getTopLosers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTopLosers</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id53" title="nepse_client.AsyncNepseClient.getTopLosers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTopLosers</span></code></a>()</p></td>
 <td><p>Get list of top losing stocks.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id47" title="nepse_client.AsyncNepseClient.getTopTenTradeScrips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTopTenTradeScrips</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id54" title="nepse_client.AsyncNepseClient.getTopTenTradeScrips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTopTenTradeScrips</span></code></a>()</p></td>
 <td><p>Get top 10 scrips by trade volume.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id48" title="nepse_client.AsyncNepseClient.getTopTenTransactionScrips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTopTenTransactionScrips</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id55" title="nepse_client.AsyncNepseClient.getTopTenTransactionScrips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTopTenTransactionScrips</span></code></a>()</p></td>
 <td><p>Get top 10 scrips by transaction count.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id49" title="nepse_client.AsyncNepseClient.getTopTenTurnoverScrips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTopTenTurnoverScrips</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id56" title="nepse_client.AsyncNepseClient.getTopTenTurnoverScrips"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTopTenTurnoverScrips</span></code></a>()</p></td>
 <td><p>Get top 10 scrips by turnover.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id54" title="nepse_client.AsyncNepseClient.getTradingAverage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTradingAverage</span></code></a>([business_date, nDays])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id61" title="nepse_client.AsyncNepseClient.getTradingAverage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTradingAverage</span></code></a>([business_date, nDays])</p></td>
 <td><p>Get trading average data.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_full_url</span></code>(api_url)</p></td>
@@ -1114,17 +1128,25 @@ manages authentication tokens and handles token expiration.</p>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_response</span></code>(response[, request_data])</p></td>
 <td><p>Process HTTP response and handle errors.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id32" title="nepse_client.AsyncNepseClient.init_client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_client</span></code></a>(tls_verify)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id39" title="nepse_client.AsyncNepseClient.init_client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_client</span></code></a>(tls_verify)</p></td>
 <td><p>Initialize async HTTP client with specified settings.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id36" title="nepse_client.AsyncNepseClient.requestGETAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">requestGETAPI</span></code></a>(url[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id43" title="nepse_client.AsyncNepseClient.requestGETAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">requestGETAPI</span></code></a>(url[, ...])</p></td>
 <td><p>Make async GET request to NEPSE API.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id37" title="nepse_client.AsyncNepseClient.requestPOSTAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">requestPOSTAPI</span></code></a>(url, payload_generator)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id44" title="nepse_client.AsyncNepseClient.requestPOSTAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">requestPOSTAPI</span></code></a>(url, payload_generator)</p></td>
 <td><p>Make async POST request to NEPSE API.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTLSVerification</span></code>([flag])</p></td>
 <td><p>Enable or disable TLS certificate verification.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id73" title="nepse_client.AsyncNepseClient.headers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">headers</span></code></a></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
