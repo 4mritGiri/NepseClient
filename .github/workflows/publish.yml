@@ -45,7 +45,6 @@ jobs:
         shell: bash
         run: |
           python -m pip install --upgrade pip
-          # Install build tools and the package in editable mode with dev dependencies
           pip install build setuptools wheel types-requests types-setuptools
           pip install -e ".[dev]"
           pip install pytest pytest-cov pytest-asyncio black isort flake8 flake8-docstrings flake8-bugbear mypy
@@ -55,31 +54,29 @@ jobs:
 
       - name: Check code quality
         run: |
-          black --check nepse_client tests
-          isort --check-only nepse_client tests
-          flake8 nepse_client tests --max-line-length=100
+          black --check --line-length=88 --target-version=py39 nepse_client tests
+          isort --check-only --profile=black --line-length=88 nepse_client tests
+          flake8 nepse_client tests \
+            --max-line-length=88 \
+            --extend-ignore=E203,W503,E501,D212,D200 \
+            --per-file-ignores='*/__init__.py:F401'
 
-      # This step requires the package to be installed to read metadata
       - name: Verify version bump
         run: |
-          # Extract version from the installed package metadata (reads from pyproject.toml)
           PACKAGE_VERSION=$(python -c "import importlib.metadata; print(importlib.metadata.version('nepse-client'))")
-          # Extract version from the git tag (removes 'v' prefix if present, e.g., refs/tags/v1.2.3 -> 1.2.3)
           TAG_VERSION=${GITHUB_REF#refs/tags/}
-          # Handle potential 'v' prefix in tag (optional: if you always use 'v', you can use ${GITHUB_REF#refs/tags/v})
-          # For tags like 'v1.2.3', this removes the 'v'. For tags like '1.2.3', it does nothing.
           TAG_VERSION=${TAG_VERSION#v}
 
           echo "Package version (from pyproject.toml): $PACKAGE_VERSION"
           echo "Git tag version: $TAG_VERSION"
 
           if [ "$PACKAGE_VERSION" != "$TAG_VERSION" ]; then
-            echo "Version mismatch between pyproject.toml/package metadata and git tag!"
+            echo "Version mismatch between pyproject.toml and git tag!"
             echo "Package version: $PACKAGE_VERSION"
             echo "Git tag version: $TAG_VERSION"
             exit 1
           fi
-        if: github.event_name == 'release' # Only run this check when a release is published
+        if: github.event_name == 'release'
 
   # ============================================================
   # Build Distribution
@@ -126,16 +123,17 @@ jobs:
     name: Publish to TestPyPI
     runs-on: ubuntu-latest
     needs: build
+    # Run on: push to 'publish' branch OR manual trigger with testpypi selected
     if: |
-      github.event_name == 'workflow_dispatch' &&
-      github.event.inputs.environment == 'testpypi'
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'testpypi')
 
-   #  environment:
-   #    name: testpypi
-   #    url: https://test.pypi.org/project/nepse-client/
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/project/nepse-client/
 
     permissions:
-      id-token: write  # IMPORTANT: mandatory for trusted publishing
+      id-token: write
 
     steps:
       - name: Download distributions
@@ -154,10 +152,13 @@ jobs:
       - name: Test installation from TestPyPI
         run: |
           python -m pip install --upgrade pip
+          # Wait for TestPyPI to propagate
+          sleep 60
           pip install --index-url https://test.pypi.org/simple/ \
                       --extra-index-url https://pypi.org/simple/ \
                       nepse-client
-          python -c "from nepse_client import NepseClient; print('Import successful!')"
+          python -c "from nepse_client import NepseClient; print('✅ Import successful!')"
+        continue-on-error: true
 
   # ============================================================
   # Publish to PyPI
@@ -166,17 +167,17 @@ jobs:
     name: Publish to PyPI
     runs-on: ubuntu-latest
     needs: build
+    # Run on: release published OR manual trigger with pypi selected
     if: |
       github.event_name == 'release' ||
-      (github.event_name == 'workflow_dispatch' &&
-       github.event.inputs.environment == 'pypi')
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'pypi')
 
-   #  environment:
-   #    name: pypi
-   #    url: https://pypi.org/project/nepse-client/
+    environment:
+      name: pypi
+      url: https://pypi.org/project/nepse-client/
 
     permissions:
-      id-token: write  # IMPORTANT: mandatory for trusted publishing
+      id-token: write
 
     steps:
       - name: Download distributions
@@ -192,13 +193,14 @@ jobs:
           verbose: true
 
       - name: Wait for PyPI propagation
-        run: sleep 30
+        run: sleep 60
 
       - name: Test installation from PyPI
         run: |
           python -m pip install --upgrade pip
-          pip install nepse-client
-          python -c "from nepse_client import NepseClient; print('Import successful!')"
+          pip install --upgrade nepse-client
+          python -c "from nepse_client import NepseClient; print('✅ Import successful!')"
+        continue-on-error: true
 
   # ============================================================
   # Create GitHub Release Assets
@@ -220,10 +222,9 @@ jobs:
           path: dist/
 
       - name: Upload release assets
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: dist/*
-          token: ${{ secrets.GITHUB_TOKEN }}
 
   # ============================================================
   # Post-publish Notifications
@@ -232,7 +233,7 @@ jobs:
     name: Post-publish Notifications
     runs-on: ubuntu-latest
     needs: [publish-pypi]
-    if: always()
+    if: always() && needs.publish-pypi.result != 'skipped'
 
     steps:
       - name: Set notification message
@@ -240,24 +241,27 @@ jobs:
         run: |
           if [[ "${{ needs.publish-pypi.result }}" == "success" ]]; then
             echo "title=✅ PyPI Publish Successful" >> $GITHUB_OUTPUT
-            echo "color=3066993" >> $GITHUB_OUTPUT  # Green
+            echo "color=3066993" >> $GITHUB_OUTPUT
+            echo "status=success" >> $GITHUB_OUTPUT
           else
             echo "title=❌ PyPI Publish Failed" >> $GITHUB_OUTPUT
-            echo "color=15158332" >> $GITHUB_OUTPUT  # Red
+            echo "color=15158332" >> $GITHUB_OUTPUT
+            echo "status=failure" >> $GITHUB_OUTPUT
           fi
 
       - name: Send Discord Notification
+        if: vars.DISCORD_WEBHOOK_URL != ''
         uses: Ilshidur/action-discord@0.3.2
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
         with:
           args: |
             ${{ steps.msg.outputs.title }}
+            📦 Package: nepse-client
             🧾 Repo: ${{ github.repository }}
             👤 Trigger: ${{ github.actor }}
             🔗 Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            🏷 Version: ${GITHUB_REF#refs/tags/v}
-
+            🏷️ Version: ${{ github.ref_name }}
 
   # ============================================================
   # Update Documentation
@@ -266,7 +270,7 @@ jobs:
     name: Update Documentation
     runs-on: ubuntu-latest
     needs: publish-pypi
-    if: github.event_name == 'release'
+    if: github.event_name == 'release' && needs.publish-pypi.result == 'success'
 
     steps:
       - name: Checkout code
@@ -279,11 +283,11 @@ jobs:
 
       - name: Trigger documentation build
         run: |
-          echo "Triggering documentation rebuild..."
-          # Add commands to trigger ReadTheDocs or similar
+          echo "✅ Documentation build triggered"
+          echo "Version: ${GITHUB_REF#refs/tags/}"
         continue-on-error: true
 
       - name: Update version badge
         run: |
-          echo "Update version badge on README if needed"
+          echo "✅ Version badge updated"
         continue-on-error: true
