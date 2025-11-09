@@ -130,5 +130,5 @@ def get_client_info():
             "Trading data",
             "Floor sheet access",
         ],
-        "python_requires": ">=3.9",
+        "python_requires": ">=3.11",
     }

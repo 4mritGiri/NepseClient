@@ -11,7 +11,7 @@ authors = [
     {name = "Amrit Giri", email = "amritgiri.dev@gmail.com"}
 ]
 license = {text = "MIT"}
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -19,8 +19,6 @@ classifiers = [
     "Topic :: Office/Business :: Financial :: Investment",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -162,7 +160,7 @@ directory = "htmlcov"
 # mypy configuration
 # ============================================================
 [tool.mypy]
-python_version = "3.9"
+python_version = "3.11"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = false
