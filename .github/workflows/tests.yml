@@ -31,6 +31,7 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
+        shell: bash
         run: |
           python -m pip install --upgrade pip
           pip install black isort flake8 flake8-docstrings flake8-bugbear
@@ -42,6 +43,7 @@ jobs:
         run: isort --check-only --diff --profile=black --line-length=88 nepse_client tests examples
 
       - name: Lint with flake8
+        shell: bash
         run: |
           flake8 nepse_client tests examples \
             --count \
@@ -68,6 +70,7 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
+        shell: bash
         run: |
           python -m pip install --upgrade pip
           pip install mypy types-requests types-setuptools
@@ -132,8 +135,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -e ".[dev]"
+          pip install pytest
 
       - name: Run tests with pytest
+        shell: bash
         run: |
           pytest tests/ \
             -v \
@@ -171,9 +176,11 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
+        shell: bash
         run: |
           python -m pip install --upgrade pip
           pip install -e ".[dev]"
+          pip install pytest pytest-cov
 
       - name: Generate coverage report
         run: |
@@ -181,7 +188,7 @@ jobs:
 
       - name: Check coverage threshold
         run: |
-          coverage report --fail-under=20
+          coverage report --fail-under=80
         continue-on-error: true
 
       - name: Upload coverage HTML report
@@ -277,3 +284,36 @@ jobs:
             exit 1
           fi
           echo "All jobs passed successfully!"
+
+
+  # ------------------------ DISCORD NOTIFICATION ------------------------
+  notify:
+    name: Discord Notification
+    runs-on: ubuntu-latest
+    needs: [status]
+    if: always()
+
+    steps:
+      - name: Set message based on status
+        id: msg
+        run: |
+          STATUS="${{ needs.status.result }}"
+          if [[ "$STATUS" == "success" ]]; then
+            echo "color=3066993" >> $GITHUB_OUTPUT  # Green
+            echo "result=✅ Documentation pipeline succeeded!" >> $GITHUB_OUTPUT
+          else
+            echo "color=15158332" >> $GITHUB_OUTPUT  # Red
+            echo "result=❌ Documentation pipeline failed!" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send Discord Notification
+        uses: Ilshidur/action-discord@0.3.2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        with:
+          args: |
+            📌 **CI Build Result**
+            🧾 Repo: ${{ github.repository }}
+            👤 Trigger: ${{ github.actor }}
+            ✅ Status: ${{ job.status }}
+            🔗 Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
