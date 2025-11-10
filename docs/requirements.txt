@@ -1,8 +1,10 @@
 # Defining the minimum compatible version to ensure features work
 
 httpx[http2]>=0.24.0
+pywasm>=1.0.8
 sphinx>=8.2.3 # Updated from ==5.3.0 to meet other dependencies' requirements
 sphinx-autodoc-typehints>=2.3.0
 sphinx-copybutton>=0.5.2
 sphinx-notfound-page==1.0.2
 sphinx-rtd-theme>=3.0.2
+tqdm>=4.65.0
