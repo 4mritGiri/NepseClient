@@ -5,8 +5,6 @@ This module provides a blocking, synchronous interface to the NEPSE API,
 suitable for scripts, notebooks, and applications that don't require concurrency.
 """
 
-# import json
-
 import logging
 from collections import defaultdict
 from datetime import date, datetime, timedelta
@@ -140,6 +138,22 @@ class NepseClient(_NepseBase):
                 # Retry immediately after token refresh
                 return request_func(*args, **kwargs)
 
+    def _build_query_params(self, **kwargs) -> str:
+        """Helper function to build query parameters string.
+
+        Args:
+            **kwargs: Key-value pairs for query parameters
+
+        Returns:
+            str: Query string with non-None values
+        """
+        params = []
+        for key, value in kwargs.items():
+            print(key, value)
+            if value is not None:
+                params.append(f"{key}={value}")
+        return "&".join(params)
+
     def requestGETAPI(self, url: str, include_authorization_headers: bool = True) -> Any:
         """
         Make GET request to NEPSE API.
@@ -181,8 +195,8 @@ class NepseClient(_NepseBase):
             response = self.client.post(
                 self.get_full_url(api_url=url),
                 headers=self.getAuthorizationHeaders(),
-                data=payload,
-                # data=json.dumps(payload),
+                json=payload,
+                # data=payload,
             )
             return self.handle_response(response, request_data=payload)
 
@@ -635,6 +649,7 @@ class NepseClient(_NepseBase):
         self,
         symbol: str,
         business_date: Optional[Union[str, date]] = None,
+        size: int = 500,
     ) -> list[dict[str, Any]]:
         """
         Get floor sheet for a specific company.
@@ -655,10 +670,10 @@ class NepseClient(_NepseBase):
         else:
             business_date = date.today()
 
-        url = (
-            f"{self.api_end_points['company_floorsheet']}{company_id}"
-            f"?businessDate={business_date}&size={self.floor_sheet_size}&sort=contractid,desc"
+        query_string = self._build_query_params(
+            businessDate=business_date, size=size or self.floor_sheet_size
         )
+        url = f"{self.api_end_points['company_floorsheet']}{company_id}?{query_string}&sort=contractid,desc"
 
         sheet = self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForFloorSheet)
 
@@ -696,22 +711,466 @@ class NepseClient(_NepseBase):
 
     def getHolidayList(self, year: int = 2025) -> list[dict[str, Any]]:
         """Get list of market holidays for specified year."""
-        url = f"{self.api_end_points['holiday-list']}?year={year}"
+        query_string = self._build_query_params(year=year)
+        url = f"{self.api_end_points['holiday-list']}?{query_string}"
         self.holiday_list = self.requestGETAPI(url=url)
         return list(self.holiday_list)
 
     def getDebentureAndBondList(self, bond_type: str = "debenture") -> list[dict[str, Any]]:
         """Get list of debentures and bonds."""
-        url = f"{self.api_end_points['debenture-and-bond']}?type={bond_type}"
+        query_string = self._build_query_params(type=bond_type)
+        url = f"{self.api_end_points['debenture-and-bond']}?{query_string}"
         return cast(list[dict[str, Any]], self.requestGETAPI(url=url))
+
+    def _process_news_item(
+        self, item: dict, base_file_url: str, strip_tags_func, field_name: str, is_strip_tags: bool
+    ) -> dict:
+        """Helper function to process individual news items."""
+        processed_item = item.copy()
+        file_path = processed_item.get("filePath")
+
+        if is_strip_tags and processed_item.get(field_name):
+            processed_item[field_name] = strip_tags_func(processed_item[field_name])
+
+        if file_path:
+            processed_item["fullFilePath"] = f"{base_file_url}{file_path}"
+
+        return processed_item
+
+    def _validate_pagination_params(self, page: int, page_size: int) -> tuple[int, int]:
+        """Validate and normalize pagination parameters."""
+        try:
+            page = int(page)
+            page_size = int(page_size)
+        except (ValueError, TypeError):
+            print("Invalid page or page_size provided, defaulting to page 1, size 100.")
+            page = 1
+            page_size = 100
+
+        page = max(1, page)
+        page_size = max(1, page_size)
+
+        return page, page_size
+
+    def _calculate_pagination(self, processed_data: list, page: int, page_size: int) -> dict:
+        """Calculate pagination metadata."""
+        total_count = len(processed_data)
+        total_pages = (total_count + page_size - 1) // page_size
+        page = min(page, total_pages) if total_pages > 0 else 1
+
+        start_index = (page - 1) * page_size
+        end_index = start_index + page_size
+
+        paginated_results = (
+            [] if start_index >= total_count else processed_data[start_index:end_index]
+        )
+
+        return {
+            "paginated_results": paginated_results,
+            "total_pages": total_pages,
+            "next_page": page + 1 if page < total_pages else None,
+            "previous_page": page - 1 if page > 1 else None,
+        }
+
+    def getCompanyNewsList(
+        self, page: int = 0, page_size: int = 100, is_strip_tags: bool = True
+    ) -> dict[str, Any]:
+        """Get list of company news."""
+        from django.utils.html import strip_tags
+
+        url = self.api_end_points["company-news"]
+        raw_data = self.requestGETAPI(url=url) or []
+
+        if not isinstance(raw_data, list):
+            print(
+                f"Warning: API response is not a list. Type: {type(raw_data)}. Attempting to convert."
+            )
+            try:
+                raw_data = list(raw_data)
+            except (TypeError, ValueError):
+                print("Error: Could not convert API response to list. Returning empty results.")
+                raw_data = []
+
+        base_file_url = self.get_full_url(self.api_end_points["fetch-security-files"])
+        processed_data = [
+            self._process_news_item(item, base_file_url, strip_tags, "newsBody", is_strip_tags)
+            for item in raw_data
+            if isinstance(item, dict)
+        ]
+
+        total_count = len(processed_data)
+        if total_count == 0:
+            return {
+                "results": [],
+                "count": 0,
+                "page": page,
+                "page_size": page_size,
+                "total_pages": 0,
+                "next_page": None,
+                "previous_page": None,
+            }
+
+        page, page_size = self._validate_pagination_params(page, page_size)
+        pagination = self._calculate_pagination(processed_data, page, page_size)
+
+        return {
+            "results": pagination["paginated_results"],
+            "count": total_count,
+            "page": page,
+            "page_size": page_size,
+            "total_pages": pagination["total_pages"],
+            "next_page": pagination["next_page"],
+            "previous_page": pagination["previous_page"],
+            "params": ["page: number", "pageSize: number", "isStripTags: bool"],
+        }
+
+    def getNewsAndAlertList(
+        self, page: int = 0, page_size: int = 100, is_strip_tags: bool = True
+    ) -> dict[str, Any]:
+        """Get list of News and Alert."""
+        from django.utils.html import strip_tags
+
+        url = self.api_end_points["news-alerts"]
+        raw_data = self.requestGETAPI(url=url) or []
+
+        if not isinstance(raw_data, list):
+            print(
+                f"Warning: API response is not a list. Type: {type(raw_data)}. Attempting to convert."
+            )
+            try:
+                raw_data = list(raw_data)
+            except (TypeError, ValueError):
+                print("Error: Could not convert API response to list. Returning empty results.")
+                raw_data = []
+
+        base_file_url = self.get_full_url(self.api_end_points["fetch-security-files"])
+        processed_data = [
+            self._process_news_item(item, base_file_url, strip_tags, "messageBody", is_strip_tags)
+            for item in raw_data
+            if isinstance(item, dict)
+        ]
+
+        total_count = len(processed_data)
+        if total_count == 0:
+            return {
+                "results": [],
+                "count": 0,
+                "page": page,
+                "page_size": page_size,
+                "total_pages": 0,
+                "next": None,
+                "previous": None,
+            }
+
+        page, page_size = self._validate_pagination_params(page, page_size)
+        pagination = self._calculate_pagination(processed_data, page, page_size)
+
+        return {
+            "results": pagination["paginated_results"],
+            "count": total_count,
+            "page": page,
+            "page_size": page_size,
+            "total_pages": pagination["total_pages"],
+            "next": pagination["next_page"],
+            "previous": pagination["previous_page"],
+            "params": ["page: number", "pageSize: number", "isStripTags: bool"],
+        }
+
+    def getPressRelease(self, page: int = 0, size: int = 20) -> dict[str, Any]:
+        """Get list of Press release.
+
+        Args:
+            page (int, optional): _description_. Defaults to None.
+            size (int, optional): _description_. Defaults to 20.
+
+        Returns:
+            dict[str, Any]: Response containing press releases with full file paths
+        """
+        query_string = self._build_query_params(page=page, size=size)
+        url = f"{self.api_end_points['press-release']}?{query_string}"
+        data = self.requestGETAPI(url=url)
+
+        base_file_url = self.get_full_url(self.api_end_points["fetch-files"])
+
+        # Handle nested list structure in content
+        for item_list in data.get("content", []):
+            if isinstance(item_list, list):
+                for item in item_list:
+                    if isinstance(item, dict):
+                        file_path = item.get("noticeFilePath")
+                        if file_path:
+                            item["fullFilePath"] = f"{base_file_url}{file_path}"
+
+        return cast(dict[str, Any], data)
+
+    def getNepseNotice(self, page: int = 0, size: int = 10) -> dict[str, Any]:
+        """Get NEPSE Notice data.
+
+        Args:
+            page (int, optional): _description_. Defaults to 0.
+            size (int, optional): _description_. Defaults to 10.
+
+        Returns:
+            dict[str, Any]: _description_
+        """
+        query_string = self._build_query_params(page=page, size=size)
+        url = f"{self.api_end_points['nepse-notice']}?{query_string}"
+
+        data = self.requestGETAPI(url=url) or []
+        base_file_url = self.get_full_url(self.api_end_points["fetch-files"])
+
+        for item in data:
+            try:
+                content = item.get("content", {})
+                file_path = content.get("noticeFilePath")
+                if file_path:
+                    item.setdefault("content", {})[
+                        "fullNoticeFilePath"
+                    ] = f"{base_file_url}{file_path}"
+            except (AttributeError, TypeError):
+                continue
+
+        return cast(dict[str, Any], data)
 
     def getPriceVolumeHistory(self, business_date: Optional[str] = None) -> dict[str, Any]:
         """Get price volume history for a business date."""
         date_param = f"&businessDate={business_date}" if business_date else ""
         url = f"{self.api_end_points['todays_price']}?size=500{date_param}"
+        response = self.requestPOSTAPI(
+            url=url, payload_generator=self.getPOSTPayloadIDForFloorSheet
+        )
+        return cast(dict[str, Any], response)
+
+    def getDailyNepseIndexGraph(self) -> list[Any]:
+        """Get price volume history for a business date."""
+        response = self.requestPOSTAPI(
+            url=self.api_end_points["nepse_index_daily_graph"],
+            payload_generator=self.getPOSTPayloadID,
+        )
+        return cast(list[Any], response)
+
+    def getDailySensitiveIndexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Sensitive Index Graph.
+
+        Returns:
+            list[Any]: _description_
+        """
         return cast(
-            dict[str, Any],
-            self.requestPOSTAPI(url=url, payload_generator=self.getPOSTPayloadIDForFloorSheet),
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["sensitive_index_daily_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyFloatIndexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Float Index Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["float_index_daily_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailySensitiveFloatIndexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Sensitive Float Index Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["sensitive_float_index_daily_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyBankSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Bank Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["banking_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyDevelopmentBankSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Development Bank Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["development_bank_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyFinanceSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Finance Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["finance_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyHotelTourismSubindexGraph(self) -> list[Any]:
+        """Gat NEPSE Daily Hotel Tourism Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["hotel_tourism_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyHydroSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Hydro Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["hydro_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyInvestmentSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Investment Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["investment_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyLifeInsuranceSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Life Insurance Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["life_insurance_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyManufacturingSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Manufacturing Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["manufacturing_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyMicrofinanceSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Microfinance Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["microfinance_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyMutualfundSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Mutual Fund Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["mutual_fund_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyNonLifeInsuranceSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Non Life Insurance Subindex Graph data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["non_life_insurance_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyOthersSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Other Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["others_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
+        )
+
+    def getDailyTradingSubindexGraph(self) -> list[Any]:
+        """Get NEPSE Daily Trading Subindex Graph Data.
+
+        Returns:
+            list[Any]: _description_
+        """
+        return cast(
+            list[Any],
+            self.requestPOSTAPI(
+                url=self.api_end_points["trading_sub_index_graph"],
+                payload_generator=self.getPOSTPayloadID,
+            ),
         )
 
 

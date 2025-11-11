@@ -5,8 +5,6 @@ This module provides a non-blocking, asynchronous interface to the NEPSE API,
 suitable for concurrent operations and high-performance applications.
 """
 
-# import json
-
 import asyncio
 import logging
 from collections import defaultdict
@@ -196,8 +194,8 @@ class AsyncNepseClient(_NepseBase):
             response = await self.client.post(
                 self.get_full_url(api_url=url),
                 headers=await self.getAuthorizationHeaders(),
-                data=payload,
-                # data=json.dumps(payload),
+                json=payload,
+                # data=payload,
             )
             return self.handle_response(response, request_data=payload)
 
