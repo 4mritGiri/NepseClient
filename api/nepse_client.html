@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nepse_client Package &mdash; NEPSE Client v0.1.2</title>
+  <title>nepse_client Package &mdash; NEPSE Client v0.1.3</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://nepse-client.readthedocs.io/api/nepse_client.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=92734c54"></script>
+      <script src="../_static/documentation_options.js?v=360bc84d"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -306,15 +306,36 @@
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getCompanyIDKeyMap"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyIDKeyMap()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getCompanyList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getCompanyMarketDepth"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyMarketDepth()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getCompanyNewsList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyNewsList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getCompanyPriceVolumeHistory"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyPriceVolumeHistory()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyBankSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyBankSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyDevelopmentBankSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyDevelopmentBankSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyFinanceSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyFinanceSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyFloatIndexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyFloatIndexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyHotelTourismSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyHotelTourismSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyHydroSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyHydroSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyInvestmentSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyInvestmentSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyLifeInsuranceSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyLifeInsuranceSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyManufacturingSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyManufacturingSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyMicrofinanceSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyMicrofinanceSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyMutualfundSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyMutualfundSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyNepseIndexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyNepseIndexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyNonLifeInsuranceSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyNonLifeInsuranceSubindexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyOthersSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyOthersSubindexGraph()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyScripPriceGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyScripPriceGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailySensitiveFloatIndexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailySensitiveFloatIndexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailySensitiveIndexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailySensitiveIndexGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDailyTradingSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyTradingSubindexGraph()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getDebentureAndBondList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDebentureAndBondList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getFloorSheet"><code class="docutils literal notranslate"><span class="pre">NepseClient.getFloorSheet()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getFloorSheetOf"><code class="docutils literal notranslate"><span class="pre">NepseClient.getFloorSheetOf()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getHolidayList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getHolidayList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getNepseNotice"><code class="docutils literal notranslate"><span class="pre">NepseClient.getNepseNotice()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getNewsAndAlertList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getNewsAndAlertList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getPOSTPayloadID"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPOSTPayloadID()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getPOSTPayloadIDForFloorSheet"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPOSTPayloadIDForFloorSheet()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getPOSTPayloadIDForScrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPOSTPayloadIDForScrips()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getPressRelease"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPressRelease()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getPriceVolumeHistory"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPriceVolumeHistory()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getSectorScrips"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSectorScrips()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nepse_client.NepseClient.getSecurityIDKeyMap"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSecurityIDKeyMap()</span></code></a></li>
@@ -440,7 +461,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#asyncnepseclient">AsyncNepseClient</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">AsyncNepseClient</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -537,7 +558,28 @@
 <li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getSymbolMarketDepth"><code class="docutils literal notranslate"><span class="pre">NepseClient.getSymbolMarketDepth()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getHolidayList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getHolidayList()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDebentureAndBondList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDebentureAndBondList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getCompanyNewsList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getCompanyNewsList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getNewsAndAlertList"><code class="docutils literal notranslate"><span class="pre">NepseClient.getNewsAndAlertList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getPressRelease"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPressRelease()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getNepseNotice"><code class="docutils literal notranslate"><span class="pre">NepseClient.getNepseNotice()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getPriceVolumeHistory"><code class="docutils literal notranslate"><span class="pre">NepseClient.getPriceVolumeHistory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyNepseIndexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyNepseIndexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailySensitiveIndexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailySensitiveIndexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyFloatIndexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyFloatIndexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailySensitiveFloatIndexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailySensitiveFloatIndexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyBankSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyBankSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyDevelopmentBankSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyDevelopmentBankSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyFinanceSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyFinanceSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyHotelTourismSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyHotelTourismSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyHydroSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyHydroSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyInvestmentSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyInvestmentSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyLifeInsuranceSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyLifeInsuranceSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyManufacturingSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyManufacturingSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyMicrofinanceSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyMicrofinanceSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyMutualfundSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyMutualfundSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyNonLifeInsuranceSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyNonLifeInsuranceSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyOthersSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyOthersSubindexGraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#nepse_client.sync_client.NepseClient.getDailyTradingSubindexGraph"><code class="docutils literal notranslate"><span class="pre">NepseClient.getDailyTradingSubindexGraph()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="client.html#market-data-methods">Market Data Methods</a><ul>
@@ -1246,6 +1288,24 @@ during the API request.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getCompanyNewsList">
+<span class="sig-name descname"><span class="pre">getCompanyNewsList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_strip_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getCompanyNewsList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getCompanyNewsList" title="Link to this definition"></a></dt>
+<dd><p>Get list of company news.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em>)</p></li>
+<li><p><strong>page_size</strong> (<em>int</em>)</p></li>
+<li><p><strong>is_strip_tags</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nepse_client.NepseClient.getCompanyPriceVolumeHistory">
 <span class="sig-name descname"><span class="pre">getCompanyPriceVolumeHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getCompanyPriceVolumeHistory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getCompanyPriceVolumeHistory" title="Link to this definition"></a></dt>
 <dd><p>Get price and volume history for a company.</p>
@@ -1267,6 +1327,199 @@ during the API request.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyBankSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyBankSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyBankSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyBankSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Bank Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyDevelopmentBankSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyDevelopmentBankSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyDevelopmentBankSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyDevelopmentBankSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Development Bank Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyFinanceSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyFinanceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyFinanceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyFinanceSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Finance Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyFloatIndexGraph">
+<span class="sig-name descname"><span class="pre">getDailyFloatIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyFloatIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyFloatIndexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Float Index Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyHotelTourismSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyHotelTourismSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyHotelTourismSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyHotelTourismSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Gat NEPSE Daily Hotel Tourism Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyHydroSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyHydroSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyHydroSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyHydroSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Hydro Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyInvestmentSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyInvestmentSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyInvestmentSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyInvestmentSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Investment Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyLifeInsuranceSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyLifeInsuranceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyLifeInsuranceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyLifeInsuranceSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Life Insurance Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyManufacturingSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyManufacturingSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyManufacturingSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyManufacturingSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Manufacturing Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyMicrofinanceSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyMicrofinanceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyMicrofinanceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyMicrofinanceSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Microfinance Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyMutualfundSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyMutualfundSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyMutualfundSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyMutualfundSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Mutual Fund Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyNepseIndexGraph">
+<span class="sig-name descname"><span class="pre">getDailyNepseIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyNepseIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyNepseIndexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get price volume history for a business date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyNonLifeInsuranceSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyNonLifeInsuranceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyNonLifeInsuranceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyNonLifeInsuranceSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Non Life Insurance Subindex Graph data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyOthersSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyOthersSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyOthersSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyOthersSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Other Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyScripPriceGraph">
 <span class="sig-name descname"><span class="pre">getDailyScripPriceGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyScripPriceGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyScripPriceGraph" title="Link to this definition"></a></dt>
 <dd><p>Get daily price graph data for a scrip.</p>
@@ -1279,6 +1532,48 @@ during the API request.</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Graph data dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailySensitiveFloatIndexGraph">
+<span class="sig-name descname"><span class="pre">getDailySensitiveFloatIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailySensitiveFloatIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailySensitiveFloatIndexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Sensitive Float Index Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailySensitiveIndexGraph">
+<span class="sig-name descname"><span class="pre">getDailySensitiveIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailySensitiveIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailySensitiveIndexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Sensitive Index Graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getDailyTradingSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyTradingSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyTradingSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getDailyTradingSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Trading Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1320,13 +1615,14 @@ during the API request.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nepse_client.NepseClient.getFloorSheetOf">
-<span class="sig-name descname"><span class="pre">getFloorSheetOf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getFloorSheetOf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getFloorSheetOf" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getFloorSheetOf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getFloorSheetOf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getFloorSheetOf" title="Link to this definition"></a></dt>
 <dd><p>Get floor sheet for a specific company.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>symbol</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Company symbol</p></li>
 <li><p><strong>business_date</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Business date (YYYY-MM-DD string or date object)</p></li>
+<li><p><strong>size</strong> (<em>int</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -1348,6 +1644,44 @@ during the API request.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>year</strong> (<em>int</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getNepseNotice">
+<span class="sig-name descname"><span class="pre">getNepseNotice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getNepseNotice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getNepseNotice" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Notice data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to 0.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to 10.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>_description_</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getNewsAndAlertList">
+<span class="sig-name descname"><span class="pre">getNewsAndAlertList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_strip_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getNewsAndAlertList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getNewsAndAlertList" title="Link to this definition"></a></dt>
+<dd><p>Get list of News and Alert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em>)</p></li>
+<li><p><strong>page_size</strong> (<em>int</em>)</p></li>
+<li><p><strong>is_strip_tags</strong> (<em>bool</em>)</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1387,6 +1721,26 @@ during the API request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.NepseClient.getPressRelease">
+<span class="sig-name descname"><span class="pre">getPressRelease</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getPressRelease"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.NepseClient.getPressRelease" title="Link to this definition"></a></dt>
+<dd><p>Get list of Press release.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to 20.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response containing press releases with full file paths</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2962,13 +3316,14 @@ during the API request.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id25">
-<span class="sig-name descname"><span class="pre">getFloorSheetOf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getFloorSheetOf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id25" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getFloorSheetOf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getFloorSheetOf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id25" title="Link to this definition"></a></dt>
 <dd><p>Get floor sheet for a specific company.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>symbol</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Company symbol</p></li>
 <li><p><strong>business_date</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Business date (YYYY-MM-DD string or date object)</p></li>
+<li><p><strong>size</strong> (<em>int</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -3027,7 +3382,83 @@ during the API request.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id29">
-<span class="sig-name descname"><span class="pre">getPriceVolumeHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getPriceVolumeHistory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id29" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getCompanyNewsList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_strip_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getCompanyNewsList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id29" title="Link to this definition"></a></dt>
+<dd><p>Get list of company news.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em>)</p></li>
+<li><p><strong>page_size</strong> (<em>int</em>)</p></li>
+<li><p><strong>is_strip_tags</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-name descname"><span class="pre">getNewsAndAlertList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_strip_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getNewsAndAlertList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id30" title="Link to this definition"></a></dt>
+<dd><p>Get list of News and Alert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em>)</p></li>
+<li><p><strong>page_size</strong> (<em>int</em>)</p></li>
+<li><p><strong>is_strip_tags</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id31">
+<span class="sig-name descname"><span class="pre">getPressRelease</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getPressRelease"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id31" title="Link to this definition"></a></dt>
+<dd><p>Get list of Press release.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to 20.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response containing press releases with full file paths</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id32">
+<span class="sig-name descname"><span class="pre">getNepseNotice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getNepseNotice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id32" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Notice data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to 0.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to 10.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>_description_</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id33">
+<span class="sig-name descname"><span class="pre">getPriceVolumeHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getPriceVolumeHistory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id33" title="Link to this definition"></a></dt>
 <dd><p>Get price volume history for a business date.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3039,39 +3470,274 @@ during the API request.</p>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id30">
-<span class="sig-name descname"><span class="pre">headers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]</span></em><a class="headerlink" href="#id30" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id31">
-<span class="sig-name descname"><span class="pre">company_symbol_id_keymap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id31" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id32">
-<span class="sig-name descname"><span class="pre">security_symbol_id_keymap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id32" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id33">
-<span class="sig-name descname"><span class="pre">company_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id33" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
+<dl class="py method">
 <dt class="sig sig-object py" id="id34">
-<span class="sig-name descname"><span class="pre">security_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id34" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">getDailyNepseIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyNepseIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id34" title="Link to this definition"></a></dt>
+<dd><p>Get price volume history for a business date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
 
-<dl class="py attribute">
+<dl class="py method">
 <dt class="sig sig-object py" id="id35">
-<span class="sig-name descname"><span class="pre">holiday_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id35" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getDailySensitiveIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailySensitiveIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id35" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Sensitive Index Graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id36">
+<span class="sig-name descname"><span class="pre">getDailyFloatIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyFloatIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id36" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Float Index Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id37">
+<span class="sig-name descname"><span class="pre">getDailySensitiveFloatIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailySensitiveFloatIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id37" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Sensitive Float Index Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id38">
+<span class="sig-name descname"><span class="pre">getDailyBankSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyBankSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id38" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Bank Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id39">
+<span class="sig-name descname"><span class="pre">getDailyDevelopmentBankSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyDevelopmentBankSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id39" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Development Bank Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id40">
+<span class="sig-name descname"><span class="pre">getDailyFinanceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyFinanceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id40" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Finance Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id41">
+<span class="sig-name descname"><span class="pre">getDailyHotelTourismSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyHotelTourismSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id41" title="Link to this definition"></a></dt>
+<dd><p>Gat NEPSE Daily Hotel Tourism Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id42">
+<span class="sig-name descname"><span class="pre">getDailyHydroSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyHydroSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id42" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Hydro Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id43">
+<span class="sig-name descname"><span class="pre">getDailyInvestmentSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyInvestmentSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id43" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Investment Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id44">
+<span class="sig-name descname"><span class="pre">getDailyLifeInsuranceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyLifeInsuranceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id44" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Life Insurance Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id45">
+<span class="sig-name descname"><span class="pre">getDailyManufacturingSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyManufacturingSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id45" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Manufacturing Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id46">
+<span class="sig-name descname"><span class="pre">getDailyMicrofinanceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyMicrofinanceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id46" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Microfinance Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id47">
+<span class="sig-name descname"><span class="pre">getDailyMutualfundSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyMutualfundSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id47" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Mutual Fund Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id48">
+<span class="sig-name descname"><span class="pre">getDailyNonLifeInsuranceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyNonLifeInsuranceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id48" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Non Life Insurance Subindex Graph data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id49">
+<span class="sig-name descname"><span class="pre">getDailyOthersSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyOthersSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id49" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Other Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id50">
+<span class="sig-name descname"><span class="pre">getDailyTradingSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyTradingSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id50" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Trading Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id51">
+<span class="sig-name descname"><span class="pre">headers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]</span></em><a class="headerlink" href="#id51" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id36">
-<span class="sig-name descname"><span class="pre">sector_scrips</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]]</span></em><a class="headerlink" href="#id36" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id52">
+<span class="sig-name descname"><span class="pre">company_symbol_id_keymap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id52" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id53">
+<span class="sig-name descname"><span class="pre">security_symbol_id_keymap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id53" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id54">
+<span class="sig-name descname"><span class="pre">company_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id54" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id55">
+<span class="sig-name descname"><span class="pre">security_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id55" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id56">
+<span class="sig-name descname"><span class="pre">holiday_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id56" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id57">
+<span class="sig-name descname"><span class="pre">sector_scrips</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]]</span></em><a class="headerlink" href="#id57" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -3080,8 +3746,8 @@ during the API request.</p>
 <section id="asyncnepseclient">
 <h3>AsyncNepseClient<a class="headerlink" href="#asyncnepseclient" title="Link to this heading"></a></h3>
 <dl class="py class">
-<dt class="sig sig-object py" id="id37">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nepse_client.</span></span><span class="sig-name descname"><span class="pre">AsyncNepseClient</span></span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id37" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id58">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nepse_client.</span></span><span class="sig-name descname"><span class="pre">AsyncNepseClient</span></span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id58" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_NepseBase</span></code></p>
 <p>Asynchronous client for NEPSE API.</p>
 <p>This client provides non-blocking async methods to access Nepal Stock Exchange
@@ -3138,8 +3804,8 @@ manages authentication tokens and handles token expiration.</p>
 </pre></div>
 </div>
 <dl class="py method">
-<dt class="sig sig-object py" id="id38">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_request_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id38" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id59">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_request_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id59" title="Link to this definition"></a></dt>
 <dd><p>Initialize asynchronous NEPSE client.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -3153,8 +3819,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id39">
-<span class="sig-name descname"><span class="pre">init_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tls_verify</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.init_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id39" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id60">
+<span class="sig-name descname"><span class="pre">init_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tls_verify</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.init_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id60" title="Link to this definition"></a></dt>
 <dd><p>Initialize async HTTP client with specified settings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -3167,20 +3833,20 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id40">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__aenter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.__aenter__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id40" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id61">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__aenter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.__aenter__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id61" title="Link to this definition"></a></dt>
 <dd><p>Async context manager entry.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id41">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__aexit__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exc_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exc_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exc_tb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.__aexit__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id41" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id62">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__aexit__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exc_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exc_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exc_tb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.__aexit__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id62" title="Link to this definition"></a></dt>
 <dd><p>Async context manager exit - cleanup resources.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id42">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id42" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id63">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id63" title="Link to this definition"></a></dt>
 <dd><p>Close HTTP client and cleanup resources.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3190,8 +3856,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id43">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">requestGETAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_authorization_headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.requestGETAPI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id43" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id64">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">requestGETAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_authorization_headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.requestGETAPI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id64" title="Link to this definition"></a></dt>
 <dd><p>Make async GET request to NEPSE API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -3210,8 +3876,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id44">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">requestPOSTAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload_generator</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.requestPOSTAPI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id44" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id65">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">requestPOSTAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload_generator</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.requestPOSTAPI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id65" title="Link to this definition"></a></dt>
 <dd><p>Make async POST request to NEPSE API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -3230,8 +3896,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id45">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getAuthorizationHeaders</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getAuthorizationHeaders"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id45" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id66">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getAuthorizationHeaders</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getAuthorizationHeaders"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id66" title="Link to this definition"></a></dt>
 <dd><p>Get headers with authorization token.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3244,8 +3910,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id46">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getPOSTPayloadIDForScrips</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getPOSTPayloadIDForScrips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id46" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id67">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getPOSTPayloadIDForScrips</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getPOSTPayloadIDForScrips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id67" title="Link to this definition"></a></dt>
 <dd><p>Generate payload ID for scrip-related requests.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3255,8 +3921,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id47">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getPOSTPayloadID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getPOSTPayloadID"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id47" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id68">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getPOSTPayloadID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getPOSTPayloadID"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id68" title="Link to this definition"></a></dt>
 <dd><p>Generate general payload ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3266,8 +3932,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id48">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getPOSTPayloadIDForFloorSheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getPOSTPayloadIDForFloorSheet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id48" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id69">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getPOSTPayloadIDForFloorSheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getPOSTPayloadIDForFloorSheet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id69" title="Link to this definition"></a></dt>
 <dd><p>Generate payload ID for floor sheet requests.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -3283,8 +3949,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id49">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getMarketStatus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getMarketStatus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id49" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id70">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getMarketStatus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getMarketStatus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id70" title="Link to this definition"></a></dt>
 <dd><p>Get current market status (open/closed).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3294,8 +3960,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id50">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getPriceVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getPriceVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id50" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id71">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getPriceVolume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getPriceVolume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id71" title="Link to this definition"></a></dt>
 <dd><p>Get current price and volume data for all securities.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3305,8 +3971,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id51">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSummary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSummary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id51" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id72">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSummary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSummary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id72" title="Link to this definition"></a></dt>
 <dd><p>Get market summary with turnover, trades, etc.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3316,8 +3982,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id52">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTopGainers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTopGainers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id52" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id73">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTopGainers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTopGainers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id73" title="Link to this definition"></a></dt>
 <dd><p>Get list of top gaining stocks.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3327,8 +3993,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id53">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTopLosers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTopLosers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id53" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id74">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTopLosers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTopLosers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id74" title="Link to this definition"></a></dt>
 <dd><p>Get list of top losing stocks.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3338,8 +4004,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id54">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTopTenTradeScrips</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTopTenTradeScrips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id54" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id75">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTopTenTradeScrips</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTopTenTradeScrips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id75" title="Link to this definition"></a></dt>
 <dd><p>Get top 10 scrips by trade volume.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3349,8 +4015,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id55">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTopTenTransactionScrips</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTopTenTransactionScrips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id55" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id76">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTopTenTransactionScrips</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTopTenTransactionScrips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id76" title="Link to this definition"></a></dt>
 <dd><p>Get top 10 scrips by transaction count.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3360,8 +4026,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id56">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTopTenTurnoverScrips</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTopTenTurnoverScrips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id56" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id77">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTopTenTurnoverScrips</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTopTenTurnoverScrips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id77" title="Link to this definition"></a></dt>
 <dd><p>Get top 10 scrips by turnover.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3371,8 +4037,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id57">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSupplyDemand</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSupplyDemand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id57" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id78">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSupplyDemand</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSupplyDemand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id78" title="Link to this definition"></a></dt>
 <dd><p>Get supply and demand data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3382,8 +4048,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id58">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getNepseIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getNepseIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id58" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id79">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getNepseIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getNepseIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id79" title="Link to this definition"></a></dt>
 <dd><p>Get NEPSE index data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3393,8 +4059,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id59">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getNepseSubIndices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getNepseSubIndices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id59" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id80">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getNepseSubIndices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getNepseSubIndices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id80" title="Link to this definition"></a></dt>
 <dd><p>Get all NEPSE sub-indices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3404,8 +4070,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id60">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getLiveMarket</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getLiveMarket"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id60" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id81">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getLiveMarket</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getLiveMarket"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id81" title="Link to this definition"></a></dt>
 <dd><p>Get live market data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3415,8 +4081,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id61">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTradingAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nDays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">180</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTradingAverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id61" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id82">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getTradingAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nDays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">180</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getTradingAverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id82" title="Link to this definition"></a></dt>
 <dd><p>Get trading average data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3432,8 +4098,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id62">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getCompanyList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getCompanyList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id62" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id83">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getCompanyList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getCompanyList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id83" title="Link to this definition"></a></dt>
 <dd><p>Get list of all listed companies.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3443,8 +4109,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id63">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSecurityList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSecurityList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id63" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id84">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSecurityList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSecurityList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id84" title="Link to this definition"></a></dt>
 <dd><p>Get list of all securities (non-delisted).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3454,8 +4120,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id64">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getCompanyIDKeyMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getCompanyIDKeyMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id64" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id85">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getCompanyIDKeyMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getCompanyIDKeyMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id85" title="Link to this definition"></a></dt>
 <dd><p>Get mapping of company symbols to IDs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3468,8 +4134,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id65">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSecurityIDKeyMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSecurityIDKeyMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id65" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id86">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSecurityIDKeyMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSecurityIDKeyMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id86" title="Link to this definition"></a></dt>
 <dd><p>Get mapping of security symbols to IDs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3482,8 +4148,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id66">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSectorScrips</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSectorScrips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id66" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id87">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSectorScrips</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSectorScrips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id87" title="Link to this definition"></a></dt>
 <dd><p>Get scrips grouped by sector.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3493,8 +4159,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id67">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getCompanyDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getCompanyDetails"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id67" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id88">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getCompanyDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getCompanyDetails"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id88" title="Link to this definition"></a></dt>
 <dd><p>Get detailed information for a specific company.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3507,8 +4173,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id68">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getCompanyPriceVolumeHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getCompanyPriceVolumeHistory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id68" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id89">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getCompanyPriceVolumeHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getCompanyPriceVolumeHistory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id89" title="Link to this definition"></a></dt>
 <dd><p>Get price and volume history for a company.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3525,8 +4191,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id69">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getDailyScripPriceGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getDailyScripPriceGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id69" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id90">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getDailyScripPriceGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getDailyScripPriceGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id90" title="Link to this definition"></a></dt>
 <dd><p>Get daily price graph data for a scrip.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3539,8 +4205,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id70">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getFloorSheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show_progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getFloorSheet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id70" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id91">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getFloorSheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show_progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getFloorSheet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id91" title="Link to this definition"></a></dt>
 <dd><p>Get complete floor sheet data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -3556,8 +4222,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id71">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getFloorSheetOf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getFloorSheetOf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id71" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id92">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getFloorSheetOf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getFloorSheetOf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id92" title="Link to this definition"></a></dt>
 <dd><p>Get floor sheet for a specific company.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3573,8 +4239,8 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id72">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSymbolMarketDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSymbolMarketDepth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id72" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id93">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getSymbolMarketDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/async_client.html#AsyncNepseClient.getSymbolMarketDepth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id93" title="Link to this definition"></a></dt>
 <dd><p>Get market depth for a symbol.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3587,38 +4253,38 @@ manages authentication tokens and handles token expiration.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id73">
-<span class="sig-name descname"><span class="pre">headers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]</span></em><a class="headerlink" href="#id73" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id94">
+<span class="sig-name descname"><span class="pre">headers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]</span></em><a class="headerlink" href="#id94" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id74">
-<span class="sig-name descname"><span class="pre">company_symbol_id_keymap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id74" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id95">
+<span class="sig-name descname"><span class="pre">company_symbol_id_keymap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id95" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id75">
-<span class="sig-name descname"><span class="pre">security_symbol_id_keymap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id75" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id96">
+<span class="sig-name descname"><span class="pre">security_symbol_id_keymap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id96" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id76">
-<span class="sig-name descname"><span class="pre">company_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id76" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id97">
+<span class="sig-name descname"><span class="pre">company_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id97" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id77">
-<span class="sig-name descname"><span class="pre">security_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id77" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id98">
+<span class="sig-name descname"><span class="pre">security_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id98" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id78">
-<span class="sig-name descname"><span class="pre">holiday_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id78" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id99">
+<span class="sig-name descname"><span class="pre">holiday_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id99" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id79">
-<span class="sig-name descname"><span class="pre">sector_scrips</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]]</span></em><a class="headerlink" href="#id79" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id100">
+<span class="sig-name descname"><span class="pre">sector_scrips</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]]</span></em><a class="headerlink" href="#id100" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4169,13 +4835,14 @@ during the API request.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getFloorSheetOf">
-<span class="sig-name descname"><span class="pre">getFloorSheetOf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getFloorSheetOf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getFloorSheetOf" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getFloorSheetOf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getFloorSheetOf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getFloorSheetOf" title="Link to this definition"></a></dt>
 <dd><p>Get floor sheet for a specific company.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>symbol</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Company symbol</p></li>
 <li><p><strong>business_date</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – Business date (YYYY-MM-DD string or date object)</p></li>
+<li><p><strong>size</strong> (<em>int</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -4233,6 +4900,82 @@ during the API request.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getCompanyNewsList">
+<span class="sig-name descname"><span class="pre">getCompanyNewsList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_strip_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getCompanyNewsList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getCompanyNewsList" title="Link to this definition"></a></dt>
+<dd><p>Get list of company news.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em>)</p></li>
+<li><p><strong>page_size</strong> (<em>int</em>)</p></li>
+<li><p><strong>is_strip_tags</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getNewsAndAlertList">
+<span class="sig-name descname"><span class="pre">getNewsAndAlertList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_strip_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getNewsAndAlertList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getNewsAndAlertList" title="Link to this definition"></a></dt>
+<dd><p>Get list of News and Alert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em>)</p></li>
+<li><p><strong>page_size</strong> (<em>int</em>)</p></li>
+<li><p><strong>is_strip_tags</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getPressRelease">
+<span class="sig-name descname"><span class="pre">getPressRelease</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getPressRelease"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getPressRelease" title="Link to this definition"></a></dt>
+<dd><p>Get list of Press release.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to 20.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response containing press releases with full file paths</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getNepseNotice">
+<span class="sig-name descname"><span class="pre">getNepseNotice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getNepseNotice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getNepseNotice" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Notice data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to 0.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to 10.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>_description_</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getPriceVolumeHistory">
 <span class="sig-name descname"><span class="pre">getPriceVolumeHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">business_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getPriceVolumeHistory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getPriceVolumeHistory" title="Link to this definition"></a></dt>
 <dd><p>Get price volume history for a business date.</p>
@@ -4242,6 +4985,241 @@ during the API request.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>business_date</strong> (<em>str</em><em> | </em><em>None</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyNepseIndexGraph">
+<span class="sig-name descname"><span class="pre">getDailyNepseIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyNepseIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyNepseIndexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get price volume history for a business date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailySensitiveIndexGraph">
+<span class="sig-name descname"><span class="pre">getDailySensitiveIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailySensitiveIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailySensitiveIndexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Sensitive Index Graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyFloatIndexGraph">
+<span class="sig-name descname"><span class="pre">getDailyFloatIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyFloatIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyFloatIndexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Float Index Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailySensitiveFloatIndexGraph">
+<span class="sig-name descname"><span class="pre">getDailySensitiveFloatIndexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailySensitiveFloatIndexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailySensitiveFloatIndexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Sensitive Float Index Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyBankSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyBankSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyBankSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyBankSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Bank Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyDevelopmentBankSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyDevelopmentBankSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyDevelopmentBankSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyDevelopmentBankSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Development Bank Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyFinanceSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyFinanceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyFinanceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyFinanceSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Finance Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyHotelTourismSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyHotelTourismSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyHotelTourismSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyHotelTourismSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Gat NEPSE Daily Hotel Tourism Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyHydroSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyHydroSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyHydroSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyHydroSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Hydro Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyInvestmentSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyInvestmentSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyInvestmentSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyInvestmentSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Investment Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyLifeInsuranceSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyLifeInsuranceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyLifeInsuranceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyLifeInsuranceSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Life Insurance Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyManufacturingSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyManufacturingSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyManufacturingSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyManufacturingSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Manufacturing Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyMicrofinanceSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyMicrofinanceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyMicrofinanceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyMicrofinanceSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Microfinance Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyMutualfundSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyMutualfundSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyMutualfundSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyMutualfundSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Mutual Fund Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyNonLifeInsuranceSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyNonLifeInsuranceSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyNonLifeInsuranceSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyNonLifeInsuranceSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Non Life Insurance Subindex Graph data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyOthersSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyOthersSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyOthersSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyOthersSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Other Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nepse_client.sync_client.NepseClient.getDailyTradingSubindexGraph">
+<span class="sig-name descname"><span class="pre">getDailyTradingSubindexGraph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nepse_client/sync_client.html#NepseClient.getDailyTradingSubindexGraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nepse_client.sync_client.NepseClient.getDailyTradingSubindexGraph" title="Link to this definition"></a></dt>
+<dd><p>Get NEPSE Daily Trading Subindex Graph Data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Any]</p>
 </dd>
 </dl>
 </dd></dl>

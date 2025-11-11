@@ -23,8 +23,26 @@
       ~NepseClient.getCompanyIDKeyMap
       ~NepseClient.getCompanyList
       ~NepseClient.getCompanyMarketDepth
+      ~NepseClient.getCompanyNewsList
       ~NepseClient.getCompanyPriceVolumeHistory
+      ~NepseClient.getDailyBankSubindexGraph
+      ~NepseClient.getDailyDevelopmentBankSubindexGraph
+      ~NepseClient.getDailyFinanceSubindexGraph
+      ~NepseClient.getDailyFloatIndexGraph
+      ~NepseClient.getDailyHotelTourismSubindexGraph
+      ~NepseClient.getDailyHydroSubindexGraph
+      ~NepseClient.getDailyInvestmentSubindexGraph
+      ~NepseClient.getDailyLifeInsuranceSubindexGraph
+      ~NepseClient.getDailyManufacturingSubindexGraph
+      ~NepseClient.getDailyMicrofinanceSubindexGraph
+      ~NepseClient.getDailyMutualfundSubindexGraph
+      ~NepseClient.getDailyNepseIndexGraph
+      ~NepseClient.getDailyNonLifeInsuranceSubindexGraph
+      ~NepseClient.getDailyOthersSubindexGraph
       ~NepseClient.getDailyScripPriceGraph
+      ~NepseClient.getDailySensitiveFloatIndexGraph
+      ~NepseClient.getDailySensitiveIndexGraph
+      ~NepseClient.getDailyTradingSubindexGraph
       ~NepseClient.getDebentureAndBondList
       ~NepseClient.getDummyData
       ~NepseClient.getDummyID
@@ -34,10 +52,13 @@
       ~NepseClient.getLiveMarket
       ~NepseClient.getMarketStatus
       ~NepseClient.getNepseIndex
+      ~NepseClient.getNepseNotice
       ~NepseClient.getNepseSubIndices
+      ~NepseClient.getNewsAndAlertList
       ~NepseClient.getPOSTPayloadID
       ~NepseClient.getPOSTPayloadIDForFloorSheet
       ~NepseClient.getPOSTPayloadIDForScrips
+      ~NepseClient.getPressRelease
       ~NepseClient.getPriceVolume
       ~NepseClient.getPriceVolumeHistory
       ~NepseClient.getSectorScrips
