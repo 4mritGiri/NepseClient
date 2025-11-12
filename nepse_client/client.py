@@ -143,9 +143,9 @@ class _NepseBase:
             str: _description_
         """
         data_dir = pathlib.Path(__file__).parent / "data"
-        user_agents = self._load_json_file(data_dir / "USER_AGENTS.json")
+        user_agents = cast(dict[str, Any], self._load_json_file(data_dir / "USER_AGENTS.json"))
         user_agents = user_agents.get("USER_AGENTS", [])
-        return random.choice(user_agents)
+        return str(random.choice(user_agents))
 
     def _load_configurations(self) -> None:
         """Load API endpoints, dummy data, and headers from JSON files."""
