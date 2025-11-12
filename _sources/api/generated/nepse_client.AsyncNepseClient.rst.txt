@@ -46,6 +46,7 @@
       ~AsyncNepseClient.getTopTenTurnoverScrips
       ~AsyncNepseClient.getTradingAverage
       ~AsyncNepseClient.get_full_url
+      ~AsyncNepseClient.get_random_user_agent
       ~AsyncNepseClient.handle_response
       ~AsyncNepseClient.init_client
       ~AsyncNepseClient.requestGETAPI

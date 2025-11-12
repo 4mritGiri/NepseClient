@@ -74,6 +74,7 @@
       ~NepseClient.getTopTenTurnoverScrips
       ~NepseClient.getTradingAverage
       ~NepseClient.get_full_url
+      ~NepseClient.get_random_user_agent
       ~NepseClient.handle_response
       ~NepseClient.init_client
       ~NepseClient.requestGETAPI

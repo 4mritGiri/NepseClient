@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nepse_client.NepseClient &mdash; NEPSE Client v0.1.3</title>
+  <title>nepse_client.NepseClient &mdash; NEPSE Client v0.1.4</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://nepse-client.readthedocs.io/api/generated/nepse_client.NepseClient.html" />
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=360bc84d"></script>
+      <script src="../../_static/documentation_options.js?v=fd825880"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1244,19 +1244,22 @@ token expiration transparently.</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_full_url</span></code>(api_url)</p></td>
 <td><p>Construct full URL from API endpoint.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_response</span></code>(response[, request_data])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_random_user_agent</span></code>()</p></td>
+<td><p>Get random user agent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_response</span></code>(response[, request_data])</p></td>
 <td><p>Process HTTP response and handle errors.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id2" title="nepse_client.NepseClient.init_client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_client</span></code></a>(tls_verify)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id2" title="nepse_client.NepseClient.init_client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_client</span></code></a>(tls_verify)</p></td>
 <td><p>Initialize HTTP client with specified settings.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id6" title="nepse_client.NepseClient.requestGETAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">requestGETAPI</span></code></a>(url[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id6" title="nepse_client.NepseClient.requestGETAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">requestGETAPI</span></code></a>(url[, ...])</p></td>
 <td><p>Make GET request to NEPSE API.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../nepse_client.html#id7" title="nepse_client.NepseClient.requestPOSTAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">requestPOSTAPI</span></code></a>(url, payload_generator)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../nepse_client.html#id7" title="nepse_client.NepseClient.requestPOSTAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">requestPOSTAPI</span></code></a>(url, payload_generator)</p></td>
 <td><p>Make POST request to NEPSE API.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTLSVerification</span></code>([flag])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTLSVerification</span></code>([flag])</p></td>
 <td><p>Enable or disable TLS certificate verification.</p></td>
 </tr>
 </tbody>

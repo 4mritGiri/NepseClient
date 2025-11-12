@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nepse_client.sync_client &mdash; NEPSE Client v0.1.3</title>
+  <title>nepse_client.sync_client &mdash; NEPSE Client v0.1.4</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://nepse-client.readthedocs.io/_modules/nepse_client/sync_client.html" />
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=360bc84d"></script>
+      <script src="../../_static/documentation_options.js?v=fd825880"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1189,7 +1189,9 @@
 
         <span class="k">def</span><span class="w"> </span><span class="nf">_make_request</span><span class="p">():</span>
             <span class="n">headers</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">getAuthorizationHeaders</span><span class="p">()</span> <span class="k">if</span> <span class="n">include_authorization_headers</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">getAuthorizationHeaders</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">include_authorization_headers</span>
+                <span class="k">else</span> <span class="p">{</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_random_user_agent</span><span class="p">()}</span>
             <span class="p">)</span>
             <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">get_full_url</span><span class="p">(</span><span class="n">api_url</span><span class="o">=</span><span class="n">url</span><span class="p">),</span>
@@ -1241,6 +1243,7 @@
             <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Salter </span><span class="si">{</span><span class="n">access_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
             <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
+            <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_random_user_agent</span><span class="p">(),</span>
         <span class="p">}</span></div>
 
 
