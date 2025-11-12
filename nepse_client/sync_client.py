@@ -168,7 +168,9 @@ class NepseClient(_NepseBase):
 
         def _make_request():
             headers = (
-                self.getAuthorizationHeaders() if include_authorization_headers else self.headers
+                self.getAuthorizationHeaders()
+                if include_authorization_headers
+                else {**self.headers, "User-Agent": self.get_random_user_agent()}
             )
             response = self.client.get(
                 self.get_full_url(api_url=url),
@@ -214,6 +216,7 @@ class NepseClient(_NepseBase):
             "Authorization": f"Salter {access_token}",
             "Content-Type": "application/json",
             **self.headers,
+            "User-Agent": self.get_random_user_agent(),
         }
 
     # Payload ID generators

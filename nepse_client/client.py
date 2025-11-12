@@ -8,6 +8,8 @@ including common utilities, configuration loading, and response handling.
 import json
 import logging
 import pathlib
+import random
+import time
 from datetime import datetime
 from functools import singledispatch
 from typing import Any, Optional, Union, cast
@@ -20,6 +22,9 @@ from .exceptions import (
     NepseNetworkError,
     NepseServerError,
 )
+
+
+# from nepse_client.data import USER_AGENTS
 
 
 # Configure module logger
@@ -131,6 +136,17 @@ class _NepseBase:
         # Load configuration files
         self._load_configurations()
 
+    def get_random_user_agent(self) -> str:
+        """Get random user agent.
+
+        Returns:
+            str: _description_
+        """
+        data_dir = pathlib.Path(__file__).parent / "data"
+        user_agents = self._load_json_file(data_dir / "USER_AGENTS.json")
+        user_agents = user_agents.get("USER_AGENTS", [])
+        return random.choice(user_agents)
+
     def _load_configurations(self) -> None:
         """Load API endpoints, dummy data, and headers from JSON files."""
         data_dir = pathlib.Path(__file__).parent / "data"
@@ -148,15 +164,20 @@ class _NepseBase:
             headers_raw = self._load_json_file(data_dir / "HEADERS.json")
             if not isinstance(headers_raw, dict):
                 raise NepseConfigurationError("HEADERS.json must contain a JSON object")
-            self.headers = headers_raw
-            self.headers["Host"] = self.base_url.replace("https://", "")
-            self.headers["Referer"] = self.base_url
-
+            self.headers = headers_raw.copy()
+            self._update_dynamic_headers()
             self.logger.debug("Configuration files loaded successfully")
 
         except Exception as e:
             self.logger.error(f"Failed to load configuration: {e}")
             raise NepseConfigurationError(f"Configuration loading failed: {e}") from e
+
+    def _update_dynamic_headers(self):
+        """Update headers that should change per request or periodically."""
+        self.headers["Host"] = self.base_url.replace("https://", "")
+        self.headers["Referer"] = self.base_url
+        self.headers["User-Agent"] = self.get_random_user_agent()
+        time.sleep(random.uniform(0.1, 0.5))
 
     @staticmethod
     def _load_json_file(filepath: pathlib.Path) -> Union[dict, list]:

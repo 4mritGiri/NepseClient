@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nepse-client"
-version = "0.1.3"
+version = "0.1.4"
 description = "A comprehensive Python client for Nepal Stock Exchange (NEPSE) API"
 readme = "README.md"
 authors = [
